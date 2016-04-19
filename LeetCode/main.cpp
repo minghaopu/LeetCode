@@ -7,20 +7,16 @@
 //
 
 #include <iostream>
-#include "293_File_Game.cpp"
+#include "290_Word_Pattern.cpp"
 
 
 
 int main(int argc, const char * argv[]) {
-    string ss = "--";
-    string ss1 = ss;
-    ss1[0] = '-';
-    ss1[1] = '-';
+    string pattern = "abba";
+    string str = "dog dog dog dog";
+    Solution so(pattern,str);
+    cout<<so.wordPattern()<<endl;
 
-    Solution s(ss);
-    vector<string> result = s.generatePossibleNextMoves();
-    for (int i = 0; i < result.size(); i++) {
-        cout<<result[i]<<endl;
-    }
+    
     return 0;
 }
