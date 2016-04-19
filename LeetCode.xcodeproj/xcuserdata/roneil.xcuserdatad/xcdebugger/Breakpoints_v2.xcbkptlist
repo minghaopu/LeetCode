@@ -223,8 +223,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "generatePossibleNextMoves()"
-            landmarkType = "5">
+            landmarkName = "class Solution"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,9 +238,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "generatePossibleNextMoves()"
-            landmarkType = "5">
+            endingLineNumber = "35">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
