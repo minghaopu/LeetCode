@@ -13,6 +13,7 @@
 		708919961CC573400042FCA1 /* 293_File_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919951CC573400042FCA1 /* 293_File_Game.cpp */; };
 		70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */; };
 		70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */; };
+		70D454A91CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		708919951CC573400042FCA1 /* 293_File_Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 293_File_Game.cpp; sourceTree = "<group>"; };
 		70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 292_Nim_Game.cpp; sourceTree = "<group>"; };
 		70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 290_Word_Pattern.cpp; sourceTree = "<group>"; };
+		70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 288_Unique_Word_Abbreviation.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				708919951CC573400042FCA1 /* 293_File_Game.cpp */,
 				70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */,
 				70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */,
+				70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70D454A91CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp in Sources */,
 				70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */,
 				708919961CC573400042FCA1 /* 293_File_Game.cpp in Sources */,
 				708919921CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp in Sources */,

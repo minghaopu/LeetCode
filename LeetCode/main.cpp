@@ -7,15 +7,16 @@
 //
 
 #include <iostream>
-#include "290_Word_Pattern.cpp"
+#include "288_Unique_Word_Abbreviation.cpp"
 
 
 
 int main(int argc, const char * argv[]) {
-    string pattern = "abba";
-    string str = "dog dog dog dog";
-    Solution so(pattern,str);
-    cout<<so.wordPattern()<<endl;
+    vector<string> a {"dog","dig"};
+    
+    ValidWordAbbr so(a);
+    so.isUnique("dog");
+    
 
     
     return 0;
