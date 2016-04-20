@@ -6,18 +6,17 @@
 //  Copyright © 2016年 Minghao Pu. All rights reserved.
 //
 
-#include <iostream>
-#include "288_Unique_Word_Abbreviation.cpp"
+
+#include "278_First_Bad_Version.cpp"
 
 
 
 int main(int argc, const char * argv[]) {
-    vector<string> a {"dog","dig"};
-    
-    ValidWordAbbr so(a);
-    so.isUnique("dog");
-    
 
+    
+    Solution so(3);
+    cout<<so.firstBadVersion()<<endl;
+    
     
     return 0;
 }

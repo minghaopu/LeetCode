@@ -12,6 +12,7 @@
 		708919921CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919911CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp */; };
 		708919941CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919931CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp */; };
 		708919961CC573400042FCA1 /* 293_File_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919951CC573400042FCA1 /* 293_File_Game.cpp */; };
+		70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C41C7A1CC834BE00194CA3 /* 278_First_Bad_Version.cpp */; };
 		70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */; };
 		70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */; };
 		70D454A91CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */; };
@@ -37,6 +38,7 @@
 		708919911CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 303_Range_Sum_Query_Immutable.cpp; sourceTree = "<group>"; };
 		708919931CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 299_Bulls_and_Cows.cpp; sourceTree = "<group>"; };
 		708919951CC573400042FCA1 /* 293_File_Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 293_File_Game.cpp; sourceTree = "<group>"; };
+		70C41C7A1CC834BE00194CA3 /* 278_First_Bad_Version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 278_First_Bad_Version.cpp; sourceTree = "<group>"; };
 		70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 292_Nim_Game.cpp; sourceTree = "<group>"; };
 		70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 290_Word_Pattern.cpp; sourceTree = "<group>"; };
 		70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 288_Unique_Word_Abbreviation.cpp; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */,
 				70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */,
 				706EBC531CC7DD8300D1775F /* 283_Move_Zeros.cpp */,
+				70C41C7A1CC834BE00194CA3 /* 278_First_Bad_Version.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */,
 				706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */,
 				70D454A91CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp in Sources */,
 				70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */,
