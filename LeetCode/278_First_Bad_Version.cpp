@@ -32,11 +32,9 @@ public:
         int low = 1;
         int high = n;
         int mid;
-        bool value;
         while (low <= high) {
             mid = low + (high - low)/2;
-            value = isBadVersion(mid);
-            if (value) {
+            if (isBadVersion(mid)) {
                 high = mid - 1;
             }else{
                 low = mid + 1;
