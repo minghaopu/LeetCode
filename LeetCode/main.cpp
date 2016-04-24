@@ -7,15 +7,15 @@
 //
 
 
-#include "278_First_Bad_Version.cpp"
+#include "276_Paint_Fence.cpp"
 
 
 
 int main(int argc, const char * argv[]) {
 
     
-    Solution so(3);
-    cout<<so.firstBadVersion()<<endl;
+    Solution so(2,3);
+    cout<<so.numWays()<<endl;
     
     
     return 0;
