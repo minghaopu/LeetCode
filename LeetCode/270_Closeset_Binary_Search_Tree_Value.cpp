@@ -18,17 +18,11 @@ struct TreeNode {
 class Solution {
 public:
     int closestValue(TreeNode* root, double target) {
-        double sub = abs(root->val - target), temp;
-        TreeNode* cur = root;
-        TreeNode* pre = root;
-        while (cur != NULL) {
-            temp = abs(cur->val - target);
-            if (temp<sub) {
-                sub = temp;
-                pre = cur;
-            }
-            cur = target > cur->val?cur->right:cur->left;
+        double min = root->val;
+        while (root != NULL) {
+            min = abs(root->val - target)<abs(min - target)?root->val:min;
+            root = target > root->val?root->right:root->left;
         }
-        return pre->val;
+        return min;
     }
 };
