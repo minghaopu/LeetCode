@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */; };
 		7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */; };
+		7036CD431CCEA7D10049FA47 /* 258_Add_Digits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */; };
 		706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706EBC531CC7DD8300D1775F /* 283_Move_Zeros.cpp */; };
 		7089198B1CC436220042FCA1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7089198A1CC436220042FCA1 /* main.cpp */; };
 		708919921CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919911CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 270_Closeset_Binary_Search_Tree_Value.cpp; sourceTree = "<group>"; };
 		7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 263_Ugly_Number.cpp; sourceTree = "<group>"; };
+		7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 258_Add_Digits.cpp; sourceTree = "<group>"; };
 		706EBC531CC7DD8300D1775F /* 283_Move_Zeros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 283_Move_Zeros.cpp; sourceTree = "<group>"; };
 		706EBC551CC7DDB700D1775F /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */,
 				70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */,
 				7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */,
+				7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */,
 				706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */,
 				70E260151CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp in Sources */,
+				7036CD431CCEA7D10049FA47 /* 258_Add_Digits.cpp in Sources */,
 				70D454A91CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp in Sources */,
 				70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */,
 				70C41C7D1CC8528100194CA3 /* 276_Paint_Fence.cpp in Sources */,
