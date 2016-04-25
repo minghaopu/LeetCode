@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */; };
+		7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */; };
 		706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706EBC531CC7DD8300D1775F /* 283_Move_Zeros.cpp */; };
 		7089198B1CC436220042FCA1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7089198A1CC436220042FCA1 /* main.cpp */; };
 		708919921CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919911CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 270_Closeset_Binary_Search_Tree_Value.cpp; sourceTree = "<group>"; };
+		7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 263_Ugly_Number.cpp; sourceTree = "<group>"; };
 		706EBC531CC7DD8300D1775F /* 283_Move_Zeros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 283_Move_Zeros.cpp; sourceTree = "<group>"; };
 		706EBC551CC7DDB700D1775F /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				70C41C7C1CC8528100194CA3 /* 276_Paint_Fence.cpp */,
 				702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */,
 				70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */,
+				7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				708919941CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp in Sources */,
 				70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */,
 				702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */,
+				7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

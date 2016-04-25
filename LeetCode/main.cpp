@@ -7,7 +7,7 @@
 //
 
 
-#include "266_Palindrome_Permutation.cpp"
+#include "263_Ugly_Number.cpp"
 
 
 
@@ -16,7 +16,7 @@ int main(int argc, const char * argv[]) {
     std::unordered_map<char, int> letter_counts;
     Solution so;
     string s = "aaa";
-    so.canPermutePalindrome(s);
+    so.isUgly(-2147483648);
     
     return 0;
 }
