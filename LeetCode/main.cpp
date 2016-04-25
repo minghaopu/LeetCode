@@ -7,16 +7,16 @@
 //
 
 
-#include "276_Paint_Fence.cpp"
+#include "266_Palindrome_Permutation.cpp"
 
 
 
 int main(int argc, const char * argv[]) {
 
-    
-    Solution so(2,3);
-    cout<<so.numWays()<<endl;
-    
+    std::unordered_map<char, int> letter_counts;
+    Solution so;
+    string s = "aaa";
+    so.canPermutePalindrome(s);
     
     return 0;
 }

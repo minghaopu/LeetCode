@@ -18,6 +18,7 @@
 		70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */; };
 		70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */; };
 		70D454A91CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */; };
+		70E260151CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,7 @@
 		70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 292_Nim_Game.cpp; sourceTree = "<group>"; };
 		70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 290_Word_Pattern.cpp; sourceTree = "<group>"; };
 		70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 288_Unique_Word_Abbreviation.cpp; sourceTree = "<group>"; };
+		70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 266_Palindrome_Permutation.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				70C41C7A1CC834BE00194CA3 /* 278_First_Bad_Version.cpp */,
 				70C41C7C1CC8528100194CA3 /* 276_Paint_Fence.cpp */,
 				702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */,
+				70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			files = (
 				70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */,
 				706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */,
+				70E260151CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp in Sources */,
 				70D454A91CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp in Sources */,
 				70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */,
 				70C41C7D1CC8528100194CA3 /* 276_Paint_Fence.cpp in Sources */,
