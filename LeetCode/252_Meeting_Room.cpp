@@ -26,7 +26,7 @@ public:
         int sz = intervals.size();
         if (sz < 2) return true;
         sort(intervals.begin(),intervals.end(), comparator);    //O(n) = nlog;
-        for (int index = 0; index < intervals.size()-1; index++) {      //O(n) = n;
+        for (int index = 0; index < sz-1; index++) {      //O(n) = n;
             if (intervals[index].end > intervals[index+1].start) return false;
         }
         return true;
