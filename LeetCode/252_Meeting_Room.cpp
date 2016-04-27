@@ -18,18 +18,58 @@ struct Interval {
 
 class Solution {
 private:
-    static bool comparator(Interval i, Interval j){       //This method has to be written in this place.
-        return i.start < j.start;
-    }
+
 public:
+    bool comparator(Interval i, Interval j){       //This method has to be written in this place.
+        if (i.start > j.start) {
+            if (i.start < j.end) {
+                isAll = false;
+            }
+            return false;
+        }
+        if (i.start < j.start) {
+            if (i.end > j.start) {
+                isAll = false;
+            }
+            return true;
+        }
+        isAll = false;
+        return true;
+    }
+    bool isAll = true;
     bool canAttendMeetings(vector<Interval>& intervals) {
         int sz = intervals.size();
         if (sz < 2) return true;
-        sort(intervals.begin(),intervals.end(), comparator);    //O(n) = nlog;
-        for (int index = 0; index < sz-1; index++) {      //O(n) = n;
-            if (intervals[index].end > intervals[index+1].start) return false;
-        }
-        return true;
+
+        quicksort(intervals, 0, intervals.size()-1);
+
+        return isAll;
     };
-    
+    void quicksort(vector<Interval>& intervals, const int left, const int right){
+        
+        if (left >= right) {
+            return;
+        }
+        int part = partition(intervals, left, right);
+        
+        quicksort(intervals, left, part - 1);
+        quicksort(intervals, part + 1, right);
+    }
+    int partition(vector<Interval>& intervals, const int left, const int right) {
+        Interval x = intervals[right];
+        int i = left-1;
+        for (int j = left; j< right; j++) {
+            if (comparator(intervals[j], x)) {
+                i = i+1;
+                swapIntervals(intervals, i, j);
+            }
+        }
+        swapIntervals(intervals,i+1, right);
+        return i+1;
+    }
+    void swapIntervals(vector<Interval>& intervals, int i, int j) {
+        Interval temp = intervals[i];
+        intervals[i] = intervals[j];
+        intervals[j] = temp;
+    }
 };

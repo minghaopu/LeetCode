@@ -7,7 +7,7 @@
 //
 
 
-#include "263_Ugly_Number.cpp"
+#include "252_Meeting_Room.cpp"
 
 
 
@@ -15,8 +15,13 @@ int main(int argc, const char * argv[]) {
 
     std::unordered_map<char, int> letter_counts;
     Solution so;
-    string s = "aaa";
-    so.isUgly(-2147483648);
+    
+    
+    Interval a(3,10);
+    Interval b(2,4);
+    
+    vector<Interval> s {a,b};
+    so.canAttendMeetings(s);
     
     return 0;
 }
