@@ -10,6 +10,7 @@
 		702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */; };
 		7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */; };
 		7036CD431CCEA7D10049FA47 /* 258_Add_Digits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */; };
+		7043F84F1CD2D70B00D3130E /* 50_Pow(x, n).cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7043F84E1CD2D70B00D3130E /* 50_Pow(x, n).cpp */; };
 		706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706EBC531CC7DD8300D1775F /* 283_Move_Zeros.cpp */; };
 		7083BD381CCEFE9200E6F3F7 /* 257_Binary_Tree_Paths.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7083BD371CCEFE9200E6F3F7 /* 257_Binary_Tree_Paths.cpp */; };
 		7083BD3A1CD049E100E6F3F7 /* 252_Meeting_Room.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7083BD391CD049E100E6F3F7 /* 252_Meeting_Room.cpp */; };
@@ -42,6 +43,7 @@
 		702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 270_Closeset_Binary_Search_Tree_Value.cpp; sourceTree = "<group>"; };
 		7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 263_Ugly_Number.cpp; sourceTree = "<group>"; };
 		7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 258_Add_Digits.cpp; sourceTree = "<group>"; };
+		7043F84E1CD2D70B00D3130E /* 50_Pow(x, n).cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "50_Pow(x, n).cpp"; sourceTree = "<group>"; };
 		706EBC531CC7DD8300D1775F /* 283_Move_Zeros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 283_Move_Zeros.cpp; sourceTree = "<group>"; };
 		706EBC551CC7DDB700D1775F /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		7083BD371CCEFE9200E6F3F7 /* 257_Binary_Tree_Paths.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 257_Binary_Tree_Paths.cpp; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				7083BD371CCEFE9200E6F3F7 /* 257_Binary_Tree_Paths.cpp */,
 				7083BD391CD049E100E6F3F7 /* 252_Meeting_Room.cpp */,
 				708BB1BF1CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp */,
+				7043F84E1CD2D70B00D3130E /* 50_Pow(x, n).cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				708919941CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp in Sources */,
 				70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */,
 				702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */,
+				7043F84F1CD2D70B00D3130E /* 50_Pow(x, n).cpp in Sources */,
 				7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

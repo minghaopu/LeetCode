@@ -7,7 +7,7 @@
 //
 
 
-#include "249_Group_Shifted_Strings.cpp"
+#include "50_Pow(x, n).cpp"
 
 
 
@@ -22,10 +22,7 @@ int main(int argc, const char * argv[]) {
 //    
 //    vector<Interval> s {a,b};
 //    so.canAttendMeetings(s);
-    
-    vector<string> ss {"az", "ba", "a", "z"};
-    string s = "abcc";
-    vector<vector<string>> sg = so.groupStrings(ss);
-//    
+//
+    double s = so.myPow(2, -2147483648);
     return 0;
 }
