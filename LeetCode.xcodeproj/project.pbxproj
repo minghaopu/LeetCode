@@ -17,6 +17,7 @@
 		708919921CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919911CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp */; };
 		708919941CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919931CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp */; };
 		708919961CC573400042FCA1 /* 293_File_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708919951CC573400042FCA1 /* 293_File_Game.cpp */; };
+		708BB1C01CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708BB1BF1CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp */; };
 		70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C41C7A1CC834BE00194CA3 /* 278_First_Bad_Version.cpp */; };
 		70C41C7D1CC8528100194CA3 /* 276_Paint_Fence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70C41C7C1CC8528100194CA3 /* 276_Paint_Fence.cpp */; };
 		70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */; };
@@ -50,6 +51,7 @@
 		708919911CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 303_Range_Sum_Query_Immutable.cpp; sourceTree = "<group>"; };
 		708919931CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 299_Bulls_and_Cows.cpp; sourceTree = "<group>"; };
 		708919951CC573400042FCA1 /* 293_File_Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 293_File_Game.cpp; sourceTree = "<group>"; };
+		708BB1BF1CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 249_Group_Shifted_Strings.cpp; sourceTree = "<group>"; };
 		70C41C7A1CC834BE00194CA3 /* 278_First_Bad_Version.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 278_First_Bad_Version.cpp; sourceTree = "<group>"; };
 		70C41C7C1CC8528100194CA3 /* 276_Paint_Fence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 276_Paint_Fence.cpp; sourceTree = "<group>"; };
 		70D454A41CC6A49D00B21CB3 /* 292_Nim_Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 292_Nim_Game.cpp; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */,
 				7083BD371CCEFE9200E6F3F7 /* 257_Binary_Tree_Paths.cpp */,
 				7083BD391CD049E100E6F3F7 /* 252_Meeting_Room.cpp */,
+				708BB1BF1CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				708919961CC573400042FCA1 /* 293_File_Game.cpp in Sources */,
 				708919921CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp in Sources */,
 				7089198B1CC436220042FCA1 /* main.cpp in Sources */,
+				708BB1C01CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp in Sources */,
 				708919941CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp in Sources */,
 				70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */,
 				702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */,
