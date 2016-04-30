@@ -25,6 +25,7 @@
 		70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */; };
 		70D454A91CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */; };
 		70E260151CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */; };
+		70E274A71CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E274A61CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -60,6 +61,7 @@
 		70D454A61CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 290_Word_Pattern.cpp; sourceTree = "<group>"; };
 		70D454A81CC6CC8000B21CB3 /* 288_Unique_Word_Abbreviation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 288_Unique_Word_Abbreviation.cpp; sourceTree = "<group>"; };
 		70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 266_Palindrome_Permutation.cpp; sourceTree = "<group>"; };
+		70E274A61CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 206_Reverse_Linked_List.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				7083BD391CD049E100E6F3F7 /* 252_Meeting_Room.cpp */,
 				708BB1BF1CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp */,
 				7043F84E1CD2D70B00D3130E /* 50_Pow(x, n).cpp */,
+				70E274A61CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */,
 				706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */,
+				70E274A71CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp in Sources */,
 				7083BD3A1CD049E100E6F3F7 /* 252_Meeting_Room.cpp in Sources */,
 				70E260151CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp in Sources */,
 				7036CD431CCEA7D10049FA47 /* 258_Add_Digits.cpp in Sources */,

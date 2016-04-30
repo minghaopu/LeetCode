@@ -7,7 +7,7 @@
 //
 
 
-#include "50_Pow(x, n).cpp"
+#include "206_Reverse_Linked_List.cpp"
 
 
 
@@ -23,6 +23,11 @@ int main(int argc, const char * argv[]) {
 //    vector<Interval> s {a,b};
 //    so.canAttendMeetings(s);
 //
-    double s = so.myPow(2, -2147483648);
+
+    ListNode * node = new ListNode(1);
+    node->next = new ListNode(2);
+    node->next->next = new ListNode(3);
+    node->next->next->next = new ListNode(4);
+    so.reverseList(node);
     return 0;
 }
