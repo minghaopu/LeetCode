@@ -7,27 +7,19 @@
 //
 
 
-#include "206_Reverse_Linked_List.cpp"
+#include "21_Merge_Two_Sorted_Lists.cpp"
 
 
 
 int main(int argc, const char * argv[]) {
 
-//    std::unordered_map<char, int> letter_counts;
-    Solution so;
-//
-//    
-//    Interval a(3,10);
-//    Interval b(2,4);
-//    
-//    vector<Interval> s {a,b};
-//    so.canAttendMeetings(s);
-//
-
-    ListNode * node = new ListNode(1);
-    node->next = new ListNode(2);
-    node->next->next = new ListNode(3);
-    node->next->next->next = new ListNode(4);
-    so.reverseList(node);
+    Solution s;
+    ListNode *l1, *l2;
+    l1 = new ListNode(1);
+    l1->next = new ListNode(5);
+    l2 = new ListNode(3);
+    l2->next =new ListNode(6);
+    ListNode *l3 = s.mergeTwoLists(l1, l2);
+    
     return 0;
 }

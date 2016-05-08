@@ -10,9 +10,10 @@
 
 class MinStack {
 private:
-public:
     vector<int> stack;
-    int min;
+    int min = NULL;
+public:
+
     /** initialize your data structure here. */
     
     void push(int x) {
