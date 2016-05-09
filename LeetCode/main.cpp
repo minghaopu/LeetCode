@@ -7,7 +7,7 @@
 //
 
 
-#include "198_House_Robber.cpp"
+#include "26_Remove_Duplicate_from_Sorted_Array.cpp"
 
 
 
@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     l2 = new ListNode(3);
     l2->next =new ListNode(6);
 
-    vector<int> nums {7, 1,3,6,8,3};
-    s.rob(nums);
+    vector<int> nums {1,1,1,2,2};
+    s.removeDuplicates(nums);
     return 0;
 }

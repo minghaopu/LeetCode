@@ -20,6 +20,7 @@
 		705646CA1CE0247D002F19DF /* 27_Remove_Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */; };
 		705646CC1CE1173F002F19DF /* 198_House_Robber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */; };
 		705646CE1CE11E46002F19DF /* 217_Contains_Duplicate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646CD1CE11E46002F19DF /* 217_Contains_Duplicate.cpp */; };
+		705646D01CE12F4A002F19DF /* 26_Remove_Duplicate_from_Sorted_Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646CF1CE12F4A002F19DF /* 26_Remove_Duplicate_from_Sorted_Array.cpp */; };
 		705D02961CDADCEA00EBAB74 /* 66_Plus_One.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705D02951CDADCEA00EBAB74 /* 66_Plus_One.cpp */; };
 		70671B921CD80FD700D2AB1F /* 155_Min_Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70671B911CD80FD700D2AB1F /* 155_Min_Stack.cpp */; };
 		70671B941CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70671B931CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp */; };
@@ -67,6 +68,7 @@
 		705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 27_Remove_Element.cpp; sourceTree = "<group>"; };
 		705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 198_House_Robber.cpp; sourceTree = "<group>"; };
 		705646CD1CE11E46002F19DF /* 217_Contains_Duplicate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 217_Contains_Duplicate.cpp; sourceTree = "<group>"; };
+		705646CF1CE12F4A002F19DF /* 26_Remove_Duplicate_from_Sorted_Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 26_Remove_Duplicate_from_Sorted_Array.cpp; sourceTree = "<group>"; };
 		705D02951CDADCEA00EBAB74 /* 66_Plus_One.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 66_Plus_One.cpp; sourceTree = "<group>"; };
 		70671B911CD80FD700D2AB1F /* 155_Min_Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 155_Min_Stack.cpp; sourceTree = "<group>"; };
 		70671B931CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 141_Linked_List_Cycle.cpp; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */,
 				705646CD1CE11E46002F19DF /* 217_Contains_Duplicate.cpp */,
 				705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */,
+				705646CF1CE12F4A002F19DF /* 26_Remove_Duplicate_from_Sorted_Array.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				705D02961CDADCEA00EBAB74 /* 66_Plus_One.cpp in Sources */,
+				705646D01CE12F4A002F19DF /* 26_Remove_Duplicate_from_Sorted_Array.cpp in Sources */,
 				70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */,
 				70343B111CE0065400BE221B /* 38_Count_and_Say.cpp in Sources */,
 				706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */,
