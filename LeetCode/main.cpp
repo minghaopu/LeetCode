@@ -7,7 +7,7 @@
 //
 
 
-#include "38_Count_and_Say.cpp"
+#include "198_House_Robber.cpp"
 
 
 
@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     l2 = new ListNode(3);
     l2->next =new ListNode(6);
 
-    s.countAndSay(2);
-    
+    vector<int> nums {7, 1,3,6,8,3};
+    s.rob(nums);
     return 0;
 }

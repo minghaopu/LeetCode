@@ -17,6 +17,8 @@
 		7036CD431CCEA7D10049FA47 /* 258_Add_Digits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */; };
 		703A19B81CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703A19B71CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp */; };
 		7043F84F1CD2D70B00D3130E /* 50_Pow(x, n).cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7043F84E1CD2D70B00D3130E /* 50_Pow(x, n).cpp */; };
+		705646CA1CE0247D002F19DF /* 27_Remove_Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */; };
+		705646CC1CE1173F002F19DF /* 198_House_Robber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */; };
 		705D02961CDADCEA00EBAB74 /* 66_Plus_One.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705D02951CDADCEA00EBAB74 /* 66_Plus_One.cpp */; };
 		70671B921CD80FD700D2AB1F /* 155_Min_Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70671B911CD80FD700D2AB1F /* 155_Min_Stack.cpp */; };
 		70671B941CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70671B931CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp */; };
@@ -61,6 +63,8 @@
 		7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 258_Add_Digits.cpp; sourceTree = "<group>"; };
 		703A19B71CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 191_Number_of_1_Bits.cpp; sourceTree = "<group>"; };
 		7043F84E1CD2D70B00D3130E /* 50_Pow(x, n).cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "50_Pow(x, n).cpp"; sourceTree = "<group>"; };
+		705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 27_Remove_Element.cpp; sourceTree = "<group>"; };
+		705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 198_House_Robber.cpp; sourceTree = "<group>"; };
 		705D02951CDADCEA00EBAB74 /* 66_Plus_One.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 66_Plus_One.cpp; sourceTree = "<group>"; };
 		70671B911CD80FD700D2AB1F /* 155_Min_Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 155_Min_Stack.cpp; sourceTree = "<group>"; };
 		70671B931CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 141_Linked_List_Cycle.cpp; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				70343B0E1CDFF78700BE221B /* 121_Best_Time_to_Buy_and_Sell_Stock.cpp */,
 				70343B101CE0065400BE221B /* 38_Count_and_Say.cpp */,
 				70343B121CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp */,
+				705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */,
+				705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 				706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */,
 				70E274A71CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp in Sources */,
 				7083BD3A1CD049E100E6F3F7 /* 252_Meeting_Room.cpp in Sources */,
+				705646CC1CE1173F002F19DF /* 198_House_Robber.cpp in Sources */,
 				70E260151CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp in Sources */,
 				70FB53C41CDA2C97009A38CD /* 169_Majority_Element.cpp in Sources */,
 				7036CD431CCEA7D10049FA47 /* 258_Add_Digits.cpp in Sources */,
@@ -229,6 +236,7 @@
 				708919941CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp in Sources */,
 				70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */,
 				70343B0B1CDEBA0300BE221B /* 70_Climbing_Stairs.cpp in Sources */,
+				705646CA1CE0247D002F19DF /* 27_Remove_Element.cpp in Sources */,
 				702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */,
 				7043F84F1CD2D70B00D3130E /* 50_Pow(x, n).cpp in Sources */,
 				7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */,
