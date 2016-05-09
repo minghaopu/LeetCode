@@ -7,7 +7,7 @@
 //
 
 
-#include "21_Merge_Two_Sorted_Lists.cpp"
+#include "38_Count_and_Say.cpp"
 
 
 
@@ -19,7 +19,8 @@ int main(int argc, const char * argv[]) {
     l1->next = new ListNode(5);
     l2 = new ListNode(3);
     l2->next =new ListNode(6);
-    ListNode *l3 = s.mergeTwoLists(l1, l2);
+
+    s.countAndSay(2);
     
     return 0;
 }

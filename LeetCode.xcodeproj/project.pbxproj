@@ -11,6 +11,8 @@
 		70343B0B1CDEBA0300BE221B /* 70_Climbing_Stairs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70343B0A1CDEBA0300BE221B /* 70_Climbing_Stairs.cpp */; };
 		70343B0D1CDEBB5500BE221B /* 21_Merge_Two_Sorted_Lists.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70343B0C1CDEBB5500BE221B /* 21_Merge_Two_Sorted_Lists.cpp */; };
 		70343B0F1CDFF78700BE221B /* 121_Best_Time_to_Buy_and_Sell_Stock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70343B0E1CDFF78700BE221B /* 121_Best_Time_to_Buy_and_Sell_Stock.cpp */; };
+		70343B111CE0065400BE221B /* 38_Count_and_Say.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70343B101CE0065400BE221B /* 38_Count_and_Say.cpp */; };
+		70343B131CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70343B121CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp */; };
 		7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */; };
 		7036CD431CCEA7D10049FA47 /* 258_Add_Digits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */; };
 		703A19B81CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703A19B71CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp */; };
@@ -53,6 +55,8 @@
 		70343B0A1CDEBA0300BE221B /* 70_Climbing_Stairs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 70_Climbing_Stairs.cpp; sourceTree = "<group>"; };
 		70343B0C1CDEBB5500BE221B /* 21_Merge_Two_Sorted_Lists.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 21_Merge_Two_Sorted_Lists.cpp; sourceTree = "<group>"; };
 		70343B0E1CDFF78700BE221B /* 121_Best_Time_to_Buy_and_Sell_Stock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 121_Best_Time_to_Buy_and_Sell_Stock.cpp; sourceTree = "<group>"; };
+		70343B101CE0065400BE221B /* 38_Count_and_Say.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 38_Count_and_Say.cpp; sourceTree = "<group>"; };
+		70343B121CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 160_Intersection_of_Two_Linked_List.cpp; sourceTree = "<group>"; };
 		7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 263_Ugly_Number.cpp; sourceTree = "<group>"; };
 		7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 258_Add_Digits.cpp; sourceTree = "<group>"; };
 		703A19B71CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 191_Number_of_1_Bits.cpp; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				70343B0A1CDEBA0300BE221B /* 70_Climbing_Stairs.cpp */,
 				70343B0C1CDEBB5500BE221B /* 21_Merge_Two_Sorted_Lists.cpp */,
 				70343B0E1CDFF78700BE221B /* 121_Best_Time_to_Buy_and_Sell_Stock.cpp */,
+				70343B101CE0065400BE221B /* 38_Count_and_Say.cpp */,
+				70343B121CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 			files = (
 				705D02961CDADCEA00EBAB74 /* 66_Plus_One.cpp in Sources */,
 				70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */,
+				70343B111CE0065400BE221B /* 38_Count_and_Say.cpp in Sources */,
 				706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */,
 				70E274A71CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp in Sources */,
 				7083BD3A1CD049E100E6F3F7 /* 252_Meeting_Room.cpp in Sources */,
@@ -216,6 +223,7 @@
 				708919921CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp in Sources */,
 				7089198B1CC436220042FCA1 /* main.cpp in Sources */,
 				70671B941CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp in Sources */,
+				70343B131CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp in Sources */,
 				703A19B81CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp in Sources */,
 				708BB1C01CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp in Sources */,
 				708919941CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp in Sources */,
