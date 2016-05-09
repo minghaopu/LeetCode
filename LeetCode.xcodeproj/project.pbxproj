@@ -19,6 +19,7 @@
 		7043F84F1CD2D70B00D3130E /* 50_Pow(x, n).cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7043F84E1CD2D70B00D3130E /* 50_Pow(x, n).cpp */; };
 		705646CA1CE0247D002F19DF /* 27_Remove_Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */; };
 		705646CC1CE1173F002F19DF /* 198_House_Robber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */; };
+		705646CE1CE11E46002F19DF /* 217_Contains_Duplicate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705646CD1CE11E46002F19DF /* 217_Contains_Duplicate.cpp */; };
 		705D02961CDADCEA00EBAB74 /* 66_Plus_One.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 705D02951CDADCEA00EBAB74 /* 66_Plus_One.cpp */; };
 		70671B921CD80FD700D2AB1F /* 155_Min_Stack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70671B911CD80FD700D2AB1F /* 155_Min_Stack.cpp */; };
 		70671B941CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70671B931CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp */; };
@@ -65,6 +66,7 @@
 		7043F84E1CD2D70B00D3130E /* 50_Pow(x, n).cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "50_Pow(x, n).cpp"; sourceTree = "<group>"; };
 		705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 27_Remove_Element.cpp; sourceTree = "<group>"; };
 		705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 198_House_Robber.cpp; sourceTree = "<group>"; };
+		705646CD1CE11E46002F19DF /* 217_Contains_Duplicate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 217_Contains_Duplicate.cpp; sourceTree = "<group>"; };
 		705D02951CDADCEA00EBAB74 /* 66_Plus_One.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 66_Plus_One.cpp; sourceTree = "<group>"; };
 		70671B911CD80FD700D2AB1F /* 155_Min_Stack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 155_Min_Stack.cpp; sourceTree = "<group>"; };
 		70671B931CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 141_Linked_List_Cycle.cpp; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				70343B101CE0065400BE221B /* 38_Count_and_Say.cpp */,
 				70343B121CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp */,
 				705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */,
+				705646CD1CE11E46002F19DF /* 217_Contains_Duplicate.cpp */,
 				705646CB1CE1173F002F19DF /* 198_House_Robber.cpp */,
 			);
 			path = LeetCode;
@@ -239,6 +242,7 @@
 				705646CA1CE0247D002F19DF /* 27_Remove_Element.cpp in Sources */,
 				702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */,
 				7043F84F1CD2D70B00D3130E /* 50_Pow(x, n).cpp in Sources */,
+				705646CE1CE11E46002F19DF /* 217_Contains_Duplicate.cpp in Sources */,
 				7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */,
 				70343B0D1CDEBB5500BE221B /* 21_Merge_Two_Sorted_Lists.cpp in Sources */,
 			);
