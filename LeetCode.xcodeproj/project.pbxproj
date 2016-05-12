@@ -40,8 +40,11 @@
 		70D601E91CE2B5A40061B962 /* 189_Rotate_Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D601E81CE2B5A40061B962 /* 189_Rotate_Array.cpp */; };
 		70D601EB1CE403DF0061B962 /* 88_Merge_Sorted_Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D601EA1CE403DF0061B962 /* 88_Merge_Sorted_Array.cpp */; };
 		70D601ED1CE418C90061B962 /* 202_Happy_Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D601EC1CE418C90061B962 /* 202_Happy_Number.cpp */; };
+		70D601EF1CE41CE40061B962 /* 100_Same_Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D601EE1CE41CE40061B962 /* 100_Same_Tree.cpp */; };
+		70D601F11CE421630061B962 /* 172_Factorial_Trailing_Zeroes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70D601F01CE421630061B962 /* 172_Factorial_Trailing_Zeroes.cpp */; };
 		70E260151CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */; };
 		70E274A71CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E274A61CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp */; };
+		70F2F5291CE4C7C800EB23A3 /* 28_Implement_strStr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F2F5281CE4C7C800EB23A3 /* 28_Implement_strStr.cpp */; };
 		70FB53C41CDA2C97009A38CD /* 169_Majority_Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70FB53C31CDA2C97009A38CD /* 169_Majority_Element.cpp */; };
 /* End PBXBuildFile section */
 
@@ -93,8 +96,11 @@
 		70D601E81CE2B5A40061B962 /* 189_Rotate_Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 189_Rotate_Array.cpp; sourceTree = "<group>"; };
 		70D601EA1CE403DF0061B962 /* 88_Merge_Sorted_Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 88_Merge_Sorted_Array.cpp; sourceTree = "<group>"; };
 		70D601EC1CE418C90061B962 /* 202_Happy_Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 202_Happy_Number.cpp; sourceTree = "<group>"; };
+		70D601EE1CE41CE40061B962 /* 100_Same_Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 100_Same_Tree.cpp; sourceTree = "<group>"; };
+		70D601F01CE421630061B962 /* 172_Factorial_Trailing_Zeroes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 172_Factorial_Trailing_Zeroes.cpp; sourceTree = "<group>"; };
 		70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 266_Palindrome_Permutation.cpp; sourceTree = "<group>"; };
 		70E274A61CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 206_Reverse_Linked_List.cpp; sourceTree = "<group>"; };
+		70F2F5281CE4C7C800EB23A3 /* 28_Implement_strStr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 28_Implement_strStr.cpp; sourceTree = "<group>"; };
 		70FB53C31CDA2C97009A38CD /* 169_Majority_Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 169_Majority_Element.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,7 +146,9 @@
 				70D601EC1CE418C90061B962 /* 202_Happy_Number.cpp */,
 				70C41C7A1CC834BE00194CA3 /* 278_First_Bad_Version.cpp */,
 				70C41C7C1CC8528100194CA3 /* 276_Paint_Fence.cpp */,
+				70D601EE1CE41CE40061B962 /* 100_Same_Tree.cpp */,
 				702EFE9D1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp */,
+				70D601F01CE421630061B962 /* 172_Factorial_Trailing_Zeroes.cpp */,
 				70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */,
 				7036CD3E1CCE5A720049FA47 /* 263_Ugly_Number.cpp */,
 				7036CD421CCEA7D10049FA47 /* 258_Add_Digits.cpp */,
@@ -165,6 +173,7 @@
 				70D601EA1CE403DF0061B962 /* 88_Merge_Sorted_Array.cpp */,
 				705646CF1CE12F4A002F19DF /* 26_Remove_Duplicate_from_Sorted_Array.cpp */,
 				70D601E81CE2B5A40061B962 /* 189_Rotate_Array.cpp */,
+				70F2F5281CE4C7C800EB23A3 /* 28_Implement_strStr.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -249,8 +258,10 @@
 				70671B941CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp in Sources */,
 				70343B131CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp in Sources */,
 				703A19B81CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp in Sources */,
+				70F2F5291CE4C7C800EB23A3 /* 28_Implement_strStr.cpp in Sources */,
 				708BB1C01CD1FF6C004CF241 /* 249_Group_Shifted_Strings.cpp in Sources */,
 				708919941CC46A260042FCA1 /* 299_Bulls_and_Cows.cpp in Sources */,
+				70D601F11CE421630061B962 /* 172_Factorial_Trailing_Zeroes.cpp in Sources */,
 				70D601EB1CE403DF0061B962 /* 88_Merge_Sorted_Array.cpp in Sources */,
 				70D454A51CC6A49D00B21CB3 /* 292_Nim_Game.cpp in Sources */,
 				70343B0B1CDEBA0300BE221B /* 70_Climbing_Stairs.cpp in Sources */,
@@ -258,6 +269,7 @@
 				70D601ED1CE418C90061B962 /* 202_Happy_Number.cpp in Sources */,
 				702EFE9E1CCDB7C1000A5973 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */,
 				7043F84F1CD2D70B00D3130E /* 50_Pow(x, n).cpp in Sources */,
+				70D601EF1CE41CE40061B962 /* 100_Same_Tree.cpp in Sources */,
 				705646CE1CE11E46002F19DF /* 217_Contains_Duplicate.cpp in Sources */,
 				7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */,
 				70343B0D1CDEBB5500BE221B /* 21_Merge_Two_Sorted_Lists.cpp in Sources */,
