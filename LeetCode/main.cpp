@@ -7,7 +7,7 @@
 //
 
 
-#include "26_Remove_Duplicate_from_Sorted_Array.cpp"
+#include "189_Rotate_Array.cpp"
 
 
 
@@ -20,7 +20,10 @@ int main(int argc, const char * argv[]) {
     l2 = new ListNode(3);
     l2->next =new ListNode(6);
 
-    vector<int> nums {1,1,1,2,2};
-    s.removeDuplicates(nums);
+    vector<int> nums {1,2,3,4,5,6};
+    s.rotate(nums, 3);
+    
+    int r = -3%7;
+    
     return 0;
 }
