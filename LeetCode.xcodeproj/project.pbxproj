@@ -45,6 +45,9 @@
 		70E260151CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */; };
 		70E274A71CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70E274A61CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp */; };
 		70F2F5291CE4C7C800EB23A3 /* 28_Implement_strStr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F2F5281CE4C7C800EB23A3 /* 28_Implement_strStr.cpp */; };
+		70F2F52B1CE536E300EB23A3 /* 67_Add_Binary.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F2F52A1CE536E300EB23A3 /* 67_Add_Binary.cpp */; };
+		70F2F52D1CE54BEA00EB23A3 /* 177_Excel_Sheet_Column_Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F2F52C1CE54BEA00EB23A3 /* 177_Excel_Sheet_Column_Number.cpp */; };
+		70F2F52F1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F2F52E1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp */; };
 		70FB53C41CDA2C97009A38CD /* 169_Majority_Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70FB53C31CDA2C97009A38CD /* 169_Majority_Element.cpp */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +104,9 @@
 		70E260141CCDC31200CF16AF /* 266_Palindrome_Permutation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 266_Palindrome_Permutation.cpp; sourceTree = "<group>"; };
 		70E274A61CD4346B00DDEE25 /* 206_Reverse_Linked_List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 206_Reverse_Linked_List.cpp; sourceTree = "<group>"; };
 		70F2F5281CE4C7C800EB23A3 /* 28_Implement_strStr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 28_Implement_strStr.cpp; sourceTree = "<group>"; };
+		70F2F52A1CE536E300EB23A3 /* 67_Add_Binary.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 67_Add_Binary.cpp; sourceTree = "<group>"; };
+		70F2F52C1CE54BEA00EB23A3 /* 177_Excel_Sheet_Column_Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 177_Excel_Sheet_Column_Number.cpp; sourceTree = "<group>"; };
+		70F2F52E1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 125_Valid_Palindrome.cpp; sourceTree = "<group>"; };
 		70FB53C31CDA2C97009A38CD /* 169_Majority_Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 169_Majority_Element.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,9 +169,11 @@
 				70FB53C31CDA2C97009A38CD /* 169_Majority_Element.cpp */,
 				705D02951CDADCEA00EBAB74 /* 66_Plus_One.cpp */,
 				70343B0A1CDEBA0300BE221B /* 70_Climbing_Stairs.cpp */,
+				70F2F52C1CE54BEA00EB23A3 /* 177_Excel_Sheet_Column_Number.cpp */,
 				70343B0C1CDEBB5500BE221B /* 21_Merge_Two_Sorted_Lists.cpp */,
 				70343B0E1CDFF78700BE221B /* 121_Best_Time_to_Buy_and_Sell_Stock.cpp */,
 				70343B101CE0065400BE221B /* 38_Count_and_Say.cpp */,
+				70F2F52A1CE536E300EB23A3 /* 67_Add_Binary.cpp */,
 				70343B121CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp */,
 				705646C91CE0247D002F19DF /* 27_Remove_Element.cpp */,
 				705646CD1CE11E46002F19DF /* 217_Contains_Duplicate.cpp */,
@@ -174,6 +182,7 @@
 				705646CF1CE12F4A002F19DF /* 26_Remove_Duplicate_from_Sorted_Array.cpp */,
 				70D601E81CE2B5A40061B962 /* 189_Rotate_Array.cpp */,
 				70F2F5281CE4C7C800EB23A3 /* 28_Implement_strStr.cpp */,
+				70F2F52E1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -237,6 +246,7 @@
 				705D02961CDADCEA00EBAB74 /* 66_Plus_One.cpp in Sources */,
 				70D601E91CE2B5A40061B962 /* 189_Rotate_Array.cpp in Sources */,
 				705646D01CE12F4A002F19DF /* 26_Remove_Duplicate_from_Sorted_Array.cpp in Sources */,
+				70F2F52D1CE54BEA00EB23A3 /* 177_Excel_Sheet_Column_Number.cpp in Sources */,
 				70C41C7B1CC834BE00194CA3 /* 278_First_Bad_Version.cpp in Sources */,
 				70343B111CE0065400BE221B /* 38_Count_and_Say.cpp in Sources */,
 				706EBC541CC7DD8300D1775F /* 283_Move_Zeros.cpp in Sources */,
@@ -253,9 +263,11 @@
 				70343B0F1CDFF78700BE221B /* 121_Best_Time_to_Buy_and_Sell_Stock.cpp in Sources */,
 				70671B921CD80FD700D2AB1F /* 155_Min_Stack.cpp in Sources */,
 				708919961CC573400042FCA1 /* 293_File_Game.cpp in Sources */,
+				70F2F52B1CE536E300EB23A3 /* 67_Add_Binary.cpp in Sources */,
 				708919921CC43C0C0042FCA1 /* 303_Range_Sum_Query_Immutable.cpp in Sources */,
 				7089198B1CC436220042FCA1 /* main.cpp in Sources */,
 				70671B941CD9552100D2AB1F /* 141_Linked_List_Cycle.cpp in Sources */,
+				70F2F52F1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp in Sources */,
 				70343B131CE01E3E00BE221B /* 160_Intersection_of_Two_Linked_List.cpp in Sources */,
 				703A19B81CD7E12A00EDD4FB /* 191_Number_of_1_Bits.cpp in Sources */,
 				70F2F5291CE4C7C800EB23A3 /* 28_Implement_strStr.cpp in Sources */,
