@@ -49,6 +49,8 @@
 		70F2F52D1CE54BEA00EB23A3 /* 177_Excel_Sheet_Column_Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F2F52C1CE54BEA00EB23A3 /* 177_Excel_Sheet_Column_Number.cpp */; };
 		70F2F52F1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F2F52E1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp */; };
 		70F798551CE8001700782412 /* 110__Balanced_Binary_Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F798541CE8001700782412 /* 110__Balanced_Binary_Tree.cpp */; };
+		70F798591CE80E3100782412 /* 118_Pascal_Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F798581CE80E3100782412 /* 118_Pascal_Triangle.cpp */; };
+		70F7985B1CE8A2D800782412 /* 242_Valid_Anagram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F7985A1CE8A2D800782412 /* 242_Valid_Anagram.cpp */; };
 		70FB53C41CDA2C97009A38CD /* 169_Majority_Element.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70FB53C31CDA2C97009A38CD /* 169_Majority_Element.cpp */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +111,8 @@
 		70F2F52C1CE54BEA00EB23A3 /* 177_Excel_Sheet_Column_Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 177_Excel_Sheet_Column_Number.cpp; sourceTree = "<group>"; };
 		70F2F52E1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 125_Valid_Palindrome.cpp; sourceTree = "<group>"; };
 		70F798541CE8001700782412 /* 110__Balanced_Binary_Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 110__Balanced_Binary_Tree.cpp; sourceTree = "<group>"; };
+		70F798581CE80E3100782412 /* 118_Pascal_Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 118_Pascal_Triangle.cpp; sourceTree = "<group>"; };
+		70F7985A1CE8A2D800782412 /* 242_Valid_Anagram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 242_Valid_Anagram.cpp; sourceTree = "<group>"; };
 		70FB53C31CDA2C97009A38CD /* 169_Majority_Element.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 169_Majority_Element.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +190,8 @@
 				70F2F5281CE4C7C800EB23A3 /* 28_Implement_strStr.cpp */,
 				70F2F52E1CE5949C00EB23A3 /* 125_Valid_Palindrome.cpp */,
 				70F798541CE8001700782412 /* 110__Balanced_Binary_Tree.cpp */,
+				70F798581CE80E3100782412 /* 118_Pascal_Triangle.cpp */,
+				70F7985A1CE8A2D800782412 /* 242_Valid_Anagram.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				70D454A71CC6AA0E00B21CB3 /* 290_Word_Pattern.cpp in Sources */,
 				70C41C7D1CC8528100194CA3 /* 276_Paint_Fence.cpp in Sources */,
 				70343B0F1CDFF78700BE221B /* 121_Best_Time_to_Buy_and_Sell_Stock.cpp in Sources */,
+				70F798591CE80E3100782412 /* 118_Pascal_Triangle.cpp in Sources */,
 				70671B921CD80FD700D2AB1F /* 155_Min_Stack.cpp in Sources */,
 				708919961CC573400042FCA1 /* 293_File_Game.cpp in Sources */,
 				70F2F52B1CE536E300EB23A3 /* 67_Add_Binary.cpp in Sources */,
@@ -289,6 +296,7 @@
 				705646CE1CE11E46002F19DF /* 217_Contains_Duplicate.cpp in Sources */,
 				7036CD3F1CCE5A720049FA47 /* 263_Ugly_Number.cpp in Sources */,
 				70343B0D1CDEBB5500BE221B /* 21_Merge_Two_Sorted_Lists.cpp in Sources */,
+				70F7985B1CE8A2D800782412 /* 242_Valid_Anagram.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
