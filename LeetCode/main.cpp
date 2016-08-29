@@ -7,7 +7,7 @@
 //
 
 
-#include "189_Rotate_Array.cpp"
+#include "125_Valid_Palindrome.cpp"
 
 
 
@@ -21,9 +21,14 @@ int main(int argc, const char * argv[]) {
     l2->next =new ListNode(6);
 
     vector<int> nums {1,2,3,4,5,6};
-    s.rotate(nums, 3);
     
-    int r = -3%7;
+    string s1 = "0P";
+    char a = '9';
+    char b = 'z';
+    cout<<int(a)<<endl;
+
+
+
     
     return 0;
 }
