@@ -9,6 +9,12 @@
 #include "Header.h"
 class Solution {
 public:
+
+    /*
+     *
+     *      151  Reverse Words in a String
+     *
+     */
     void reverseWords(string &s) {
         vector<string> stack;
         string newS = "";
@@ -29,7 +35,11 @@ public:
         }
         s = newS.substr(0, newS.length() - 1);
     }
-    
+    /*
+     *
+     *      3  Longest Substring Without Repeating Characters
+     *
+     */
     int lengthOfLongestSubstring(string s) {
         int map[128];
         memset(map, -1, sizeof(map));
@@ -43,6 +53,12 @@ public:
         if (cur != last) res = max(res, last - cur);
         return res;
     }
+    
+    /*
+     *
+     *      5   Longest Palindromic Substring
+     *
+     */
     string longestPalindrome(string s) {
         int l = s.length();
         int longestBegin = 0;
@@ -69,5 +85,44 @@ public:
             }
         }
         return s.substr(longestBegin, max);
+    }
+    /*
+     *
+     *      15   3sum
+     *
+     */
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> result;
+        
+        int a;
+        int b;
+        int c;
+        int len = nums.size();
+        
+        for (int i = 0; i < len - 2; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            a = nums[i];
+            
+            int l = i + 1;
+            int r = len - 1;
+            while (l < r) {
+                b = nums[l];
+                c = nums[r];
+                if (a + b + c == 0) {
+                    vector<int> temp = {a, b, c};
+                    result.push_back(temp);
+                    while (nums[l]==nums[l+1]) l++;
+                    while (nums[r]==nums[r-1]) r--;
+                    l++;
+                    r--;
+                } else if (a + b + c < 0) {
+                    l++;
+                } else {
+                    r--;
+                }
+            }
+        }
+        return result;
     }
 };
