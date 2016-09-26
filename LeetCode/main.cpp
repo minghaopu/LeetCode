@@ -14,8 +14,8 @@
 int main(int argc, const char * argv[]) {
 
     Solution So;
-    string s = "a b";
-    So.reverseWords(s);
-    cout<<s<<endl;
+    vector<string> s{"eat", "tea", "tan", "ate", "nat", "bat"};
+    string st = "accdd";
+    st += 'a';
     return 0;
 }
