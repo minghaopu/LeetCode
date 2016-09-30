@@ -332,4 +332,25 @@ public:
         }
         return result;
     }
+    /*
+     *
+     *      152. Maximum Product Subarray
+     *
+     */
+//    Fist we assume there is no zero in the A[]. The answer must be A[0] A[1] .... A[i] OR A[j] *A[j+1] A[n - 1]. (Try to prove yourself)
+//    
+//    Then when we have zero in the A[] (assum A[k] == 0). We could see A[0],A[1]...A[k - 1 ] As An Array and A[k + 1] A[k + 2]...A[n-1] is another.
+    int maxProduct(vector<int>& nums) {
+        int len = nums.size();
+        if (len == 0) return 0;
+        int result = INT_MIN;
+        for (int i = 0, frontproduct = 1, backproduct = 1; i < len; i++) {
+            frontproduct *= nums[i];
+            backproduct *= nums[len - i - 1];
+            result = max(result, max(frontproduct, backproduct));
+            if (frontproduct == 0) frontproduct = 1;
+            if (backproduct == 0) backproduct = 1;
+        }
+        return result;
+    }
 };
