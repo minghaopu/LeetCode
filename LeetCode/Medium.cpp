@@ -353,4 +353,25 @@ public:
         }
         return result;
     }
+    /*
+     *
+     *      179. Largest Number
+     *
+     */
+    static bool compareString(int a, int b) {
+        string str_a = to_string(a);
+        string str_b = to_string(b);
+        return str_a + str_b > str_b + str_b;                   // descending
+    }
+    string largestNumber(vector<int>& nums) {
+        sort(nums.begin(), nums.end(), compareString);
+        string res = "";
+        for (int i = 0; i < nums.size(); i++) {
+            res += nums[i];
+        }
+        return res[0] == '0'?"0":res;
+    }
+    unsigned long getNumberLength(int num) {
+        return to_string(num).length();
+    }
 };
