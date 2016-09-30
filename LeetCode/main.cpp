@@ -16,6 +16,7 @@ int main(int argc, const char * argv[]) {
     Solution So;
     vector<string> s{"eat", "tea", "tan", "ate", "nat", "bat"};
     string st = "accdd";
-    st += 'a';
+    st += 'test';
+    
     return 0;
 }
