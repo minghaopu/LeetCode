@@ -374,4 +374,36 @@ public:
     unsigned long getNumberLength(int num) {
         return to_string(num).length();
     }
+    /*
+     *
+     *      127. Word Ladder
+     *
+     */
+    int ladderLength(string beginWord, string endWord, unordered_set<string>& wordList) {
+        queue<string> q;
+        q.push(beginWord);
+        wordList.erase(beginWord);
+        int dist = 2;
+        while (!q.empty()) {
+            int l = q.size();
+            for (int i = 0; i < l; i++) {
+                beginWord = q.front();
+                q.pop();
+                for (int i = 0; i < beginWord.length(); i++) {
+                    string tmp = beginWord;
+                    for (int j = 0; j < 26; j++) {
+                        tmp[i] = 'a' + j;
+                        if (tmp == endWord) return dist;
+                        if (tmp != beginWord && wordList.find(tmp) != wordList.end()) {
+                            q.push(tmp);
+                            wordList.erase(tmp);
+                        }
+                    }
+                }
+                
+            }
+            dist++;
+        }
+        return 0;
+    }
 };
