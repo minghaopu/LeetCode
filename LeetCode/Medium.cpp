@@ -455,4 +455,25 @@ public:
         return false;
         
     }
+    /*
+     *
+     *      49. Permutation;
+     *
+     */
+    vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> res;
+        dfs(res, nums, 0, nums.size());
+        return res;
+    }
+    void dfs(vector<vector<int>>& res, vector<int>& nums, int start, int length) {
+        if (start == length) {
+            res.push_back(nums);
+        }else {
+            for (int i = start; i < length; i++) {
+                swap(nums[i], nums[start]);
+                dfs(res, nums, start + 1, length);
+                swap(nums[i], nums[start]);
+            }
+        }
+    }
 };
