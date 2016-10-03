@@ -418,5 +418,41 @@ public:
         string C[10] = {"","C","CC","CCC","DC","D", "DC", "DCC", "DCCC", "CM"};
         return  M[num/1000] + C[(num%1000)/100] + X[(num%100)/10] + I[(num%10)];
     }
-
+    /*
+     *
+     *      79. Word Search
+     *
+     */
+    static bool isFound(vector<vector<char>>& board, string word,int start, int x, int y, int m, int n) {
+        if (start == word.length()) {
+            return true;
+        }
+        if (x < 0 || y < 0 || x >= m || y >= n) {
+            return false;
+        }
+        
+        char t = board[x][y];
+        bool res = false;
+        if (t != word[start] || t == '*') return false;
+        
+        board[x][y] = '*';
+        if (!res) res = isFound(board, word, start+1, x-1, y, m, n);
+        if (!res) res = isFound(board, word, start+1, x, y-1, m, n);
+        if (!res) res = isFound(board, word, start+1, x+1, y, m, n);
+        if (!res) res = isFound(board, word, start+1, x, y+1, m, n);
+        
+        board[x][y] = t;
+        return res;
+    }
+    bool exist(vector<vector<char>>& board, string word) {
+        int m = board.size();
+        int n = board[0].size();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (isFound(board, word.c_str(), 0, i, j, m, n)) return true;
+            }
+        }
+        return false;
+        
+    }
 };
