@@ -504,4 +504,22 @@ public:
         }
         return res;
     }
+    /*
+     *
+     *      22. Generate Parentheses
+     *
+     */
+    vector<string> generateParenthesis(int n) {
+        vector<string> res;
+        dfs_Parenthesis(res, "", n, 0);
+        return res;
+    }
+    void dfs_Parenthesis(vector<string>& res, string str, int left, int right) {
+        if (left == 0 && right == 0) {
+            res.push_back(str);
+            return;
+        }
+        if (right > 0) dfs_Parenthesis(res, str + ')', left, right - 1);
+        if (left > 0) dfs_Parenthesis(res, str + '(', left - 1, right + 1);
+    }
 };
