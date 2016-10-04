@@ -476,4 +476,32 @@ public:
             }
         }
     }
+    /*
+     *
+     *      54. Spiral Matrix
+     *
+     */
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        vector<int> res;
+        if (matrix.empty()) return res;
+        int m = matrix.size();
+        int n = matrix[0].size();
+        res.resize(m*n);
+        int a = 0, b = 0, c = m - 1, d = n - 1, i = 0;
+        while (true) {
+            //right
+            for (int col = b; col <= d; col++) res[i++] = matrix[a][col];
+            if (++a > c) break;
+            //down
+            for (int row = a; row <= c; row++) res[i++] = matrix[row][d];
+            if (--d < b) break;
+            //left
+            for (int col = d; col >= b; col--) res[i++] = matrix[c][col];
+            if (--c < a) break;
+            //up
+            for (int row = c; row >= a; row--) res[i++] = matrix[row][b];
+            if (++b > d) break;
+        }
+        return res;
+    }
 };
