@@ -522,4 +522,139 @@ public:
         if (right > 0) dfs_Parenthesis(res, str + ')', left, right - 1);
         if (left > 0) dfs_Parenthesis(res, str + '(', left - 1, right + 1);
     }
+    /*
+     *
+     *      142. Linked List Cycle II
+     *
+     */
+    ListNode *detectCycle(ListNode *head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+        ListNode* entry = head;
+        while (fast != NULL && fast->next != NULL) {
+            slow = slow->next;
+            fast = fast->next->next;
+            if (slow == fast) {
+                while (entry != slow) {
+                    entry = entry->next;
+                    slow = slow->next;
+                }
+                return entry;
+            }
+        }
+        return NULL;
+    }
+    /*
+     *
+     *      142. Linked List Cycle II
+     *
+     */
+    int numIslands(vector<vector<char>>& grid) {
+        if (grid.size() == 0) return 0;
+        int res = 0;
+        int m = grid.size();
+        int n = grid[0].size();
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] != '1') continue;
+                else {
+                    res++;
+                    expand(grid, i, j, m, n);
+                }
+            }
+        }
+        return res;
+    }
+    void expand(vector<vector<char>>& grid, int x, int y, int m, int n) {
+        grid[x][y] = '*';
+        if (x < m - 1 && grid[x + 1][y] == '1') expand(grid, x + 1, y, m, n);
+        if (y < n - 1 && grid[x][y + 1] == '1') expand(grid, x, y + 1, m, n);
+        if (y > 0 && grid[x][y - 1] == '1') expand(grid, x, y - 1, m, n);
+        if (x > 0 && grid[x - 1][y] == '1') expand(grid, x - 1, y, m, n);
+    }
+    /*
+     *
+     *     48. rotate image
+     *
+     */
+    void rotateImage(vector<vector<int>>& matrix) {
+        int l = matrix.size();
+        vector<vector<int>> res;
+        if (l == 0) return;
+        res.resize(l);
+        for (int i = 0; i < l; i++) {
+            res[i].resize(l);
+        }
+        for (int i = 0; i < l; i++) {
+            for (int j = 0; j < l; j++) {
+                res[j][l - 1 - i] = matrix[i][j];
+            }
+        }
+        matrix = res;
+    }
+    void rotateImageInPlace(vector<vector<int>>& matrix) {
+        int l = matrix.size();
+        if (l == 0) return;
+        for (int i = 0; i < l; i++) {
+            for (int j = i + 1; j < l; j++) {
+                int t = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = t;
+            }
+        }
+        for (int i = 0; i < l; i++) {
+            for (int j = 0; j < l - j - 1; j++) {
+                int t = matrix[i][j];
+                matrix[i][j] = matrix[i][l - j - 1];
+                matrix[i][l - j - 1] = t;
+            }
+        }
+    }
+    /*
+     *
+     *      96. Unique Binary Search Trees
+     *
+     */
+    int numTrees(int n) {
+        vector<int> dp(n + 1, 0);
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            for (int j = 0; j < i; j++) {
+                dp[i] += dp[j] * dp[i - j - 1];
+            }
+        }
+        return dp[n];
+    }
+    /*
+     *
+     *      147. Insertion Sort List
+     *
+     */
+    ListNode* insertionSortList(ListNode* head) {
+        if (head == NULL) return head;
+        ListNode* new_head = new ListNode(0);
+        ListNode* cur = head;
+        ListNode* pre = new_head;
+        ListNode* next = NULL;
+        while (cur != NULL) {
+            next = cur->next;
+            while (pre->next != NULL && pre->next->val < cur->val) {
+                pre = pre->next;
+            }
+            cur->next = pre->next;
+            pre->next = cur;
+            cur = next;
+            pre = new_head;
+        }
+        return new_head->next;
+    }
+    /*
+     *
+     *      SJF Shorted Job First
+     *
+     */
+    void SJF(vector<int>& request, vector<int>& duration) {
+        
+    }
 };
