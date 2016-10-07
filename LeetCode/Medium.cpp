@@ -654,7 +654,65 @@ public:
      *      SJF Shorted Job First
      *
      */
-    void SJF(vector<int>& request, vector<int>& duration) {
+    float SJF(vector<int>& request, vector<int>& duration) {
+        int nowTime = 0;
+        int length = request.size();
+//        vector<int> start(length,0);
         
+        int nextIndex;
+        int sum = 0;
+
+        while (!request.empty()) {
+            vector<int> queue;
+            findIndex(request, queue, nowTime);
+            nextIndex = findNextDuration(duration, queue);
+            sum += nowTime - request[nextIndex];
+            nowTime += duration[nextIndex];
+            request.erase(request.begin() + nextIndex);
+            duration.erase(duration.begin() + nextIndex);
+        }
+        return (float)sum / (float)length;
+    }
+    void findIndex(vector<int>& crequest, vector<int>& queue, int nowTime) {
+        for (int i = 0; i < crequest.size(); i++) {
+            if (crequest[i] <= nowTime) queue.push_back(i);
+        }
+    }
+    int findNextDuration(vector<int>& duration, vector<int>& queue) {
+        int minDuration = INT_MAX;
+        int minIndex = -1;
+        for (int i = 0; i < queue.size(); i++) {
+            if (duration[queue[i]] < minDuration) {
+                minIndex = queue[i];
+                minDuration = duration[minIndex];
+            }
+        }
+        return minIndex;
+    }
+    /*
+     *
+     *      Round Robin Average Wait Time
+     *
+     */
+    float rrAvgWaitTime(vector<int>& request, vector<int>& duration, int quantum) {
+        
+        int num = duration.size();
+        vector<int> start(1,0);
+        int i = 1;
+        while(i < duration.size()) {
+            if (duration[i - 1] > quantum) {
+                start.push_back(start[i-1] + quantum);
+                duration.push_back(duration[i - 1] - quantum);
+                request.push_back(start.back());
+            } else {
+                start.push_back(start[i - 1] + duration[i - 1]);
+            }
+            i++;
+        }
+        int sum = 0;
+        for (int i = 1; i < start.size(); i++) {
+            sum += start[i] - request[i];
+        }
+        return (float)sum/(float)num;
     }
 };
