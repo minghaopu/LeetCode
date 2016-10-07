@@ -720,7 +720,7 @@ public:
      *      91. Decode Ways
      *
      */
-    int numDecodings(string s) {
+    int numDecodings(string s) {        //3ms
         int l = s.length();
         if (l == 0 || s[0] == '0') return 0;
         vector<int> dp(l, 0);
@@ -737,5 +737,72 @@ public:
             else dp[i] = dp[i - 1] + ((s[i - 1] == '1' || (s[i - 1] == '2' && s[i] < '7')) ? dp[i - 2]:0);
         }
         return dp[l-1];
+    }
+    int numDecodings_2(string s) {          // 0ms
+        if (s.length() == 0 || s.front() == '0') return 0;
+        int r1 = 1, r2 = 1;
+        for (int i = 1; i < s.length(); i++) {
+            if (s[i] == '0') r1 = 0;
+            
+            if (s[i - 1] == '1' ||(s[i] < '7' && s[i - 1] == '2')) {
+                r1 = r1 + r2;
+                r2 = r1 - r2;
+            } else {
+                r2 = r1;
+            }
+        }
+        return r1;
+    }
+    /*
+     *
+     *      228. Summary Ranges
+     *
+     */
+    vector<string> summaryRanges(vector<int>& nums) {
+        vector<string> res;
+        if (nums.size() == 0) return res;
+        res.resize(nums.size());
+        string str;
+        string to = "->";
+        long long start = nums[0];
+        long long end = start;
+        int k = 0;
+        nums.push_back(start);
+        for (int i = 1; i < nums.size(); i++) {
+            if (end + 1 == nums[i]) {
+                end = nums[i];
+            } else {
+                str = "";
+                if (start == end) {
+                    str += to_string(start);
+                } else {
+                    str += to_string(start) + to + to_string(end);
+                }
+                res[k] = str;
+                k++;
+                start = nums[i];
+                end = start;
+            }
+        }
+        res.resize(k);
+        return res;
+    }
+    /*
+     *
+     *      238. Product of Array Except Self
+     *
+     */
+    vector<int> productExceptSelf(vector<int>& nums) {
+        int l = nums.size();
+        vector<int>res(l,1);
+        for (int i = 1; i < l; i++) {
+            res[i] = res[i-1] * nums[i-1];
+        }
+        vector<int>right(l,1);
+        for (int i = l - 2; i > -1; i--) {
+            right[i] = right[i+1] * nums[i+1];
+            res[i] *= right[i];
+        }
+        return res;
     }
 };
