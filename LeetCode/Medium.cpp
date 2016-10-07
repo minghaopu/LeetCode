@@ -715,4 +715,27 @@ public:
         }
         return (float)sum/(float)num;
     }
+    /*
+     *
+     *      91. Decode Ways
+     *
+     */
+    int numDecodings(string s) {
+        int l = s.length();
+        if (l == 0 || s[0] == '0') return 0;
+        vector<int> dp(l, 0);
+        dp[0] = 1;
+        if (l >= 2) {
+            if (s[0] > '2' && s[1] == '0') dp[1] = 0;
+            else dp[1] = ((s[0] == '1' && s[1] != '0')|| (s[0] == '2' && s[1] < '7' && s[1] > '0')) ? 2 : 1;
+        }
+        for (int i = 2; i < l; i++) {
+            if(s[i] == '0') {
+                if (s[i - 1] == '1' || s[i - 1] == '2') dp[i] = dp[i - 2];
+                else return 0;
+            }
+            else dp[i] = dp[i - 1] + ((s[i - 1] == '1' || (s[i - 1] == '2' && s[i] < '7')) ? dp[i - 2]:0);
+        }
+        return dp[l-1];
+    }
 };
