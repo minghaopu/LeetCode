@@ -805,4 +805,52 @@ public:
         }
         return res;
     }
+    /*
+     *
+     *      143. Reorder List && Reverse List
+     *
+     */
+    ListNode* reverseList(ListNode* head) {
+        if (head == NULL) return NULL;
+        ListNode* pre = NULL;
+        ListNode* cur = head;
+        while(cur != NULL) {
+            ListNode* next = cur->next;
+            cur->next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
+    void reorderList(ListNode* head) {
+        if (head == NULL) return;
+        ListNode* cur = head;
+        ListNode* slow = head;
+        ListNode* fast = head;
+        ListNode* mid;
+        while (fast && fast->next) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        if (fast) {
+            mid = slow->next;
+        } else {
+            mid = slow;
+        }
+        ListNode* back = reverseList(mid);
+        if (fast) {
+            slow->next = back;
+        } else {
+            slow = back;
+        }
+        while (back && cur->next != back) {
+            ListNode* aNext = cur->next;
+            ListNode* bNext = back->next;
+            back->next = cur->next;
+            cur->next = back;
+            cur = aNext;
+            back = bNext;
+        }
+        if (back == NULL) cur->next = NULL;
+    }
 };
