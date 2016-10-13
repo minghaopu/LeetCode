@@ -853,4 +853,258 @@ public:
         }
         if (back == NULL) cur->next = NULL;
     }
+    /*
+     *
+     *      16. 3Sum Closest
+     *
+     */
+    int threeSumClosest(vector<int>& nums, int target) {
+        if (nums.size() < 3) return 0;
+        int closet = nums[0] + nums[1] + nums[2];
+        sort(nums.begin(), nums.end());
+        int size = nums.size();
+        for (int first = 0; first < size - 2; first++) {
+            if (first > 0 && nums[first] == nums[first - 1]) continue;
+            int second = first + 1;
+            int third = size - 1;
+            while (second < third) {
+                int curSum = nums[first] + nums[second] + nums[third];
+                if (curSum == target) return curSum;
+                if (abs(curSum - target) < abs(closet - target)) closet = curSum;
+                if (curSum > target) {
+                    third--;
+                } else {
+                    second++;
+                }
+            }
+        }
+        return closet;
+    }
+    /*
+     *
+     *      43. Multiply Strings
+     *
+     */
+    string multiply(string num1, string num2) {
+        int l1 = num1.length();
+        int l2 = num2.length();
+        string s(l1 + l2, '0');
+        for (int i = l1 - 1; i > -1; i--) {
+            int carry = 0;
+            for (int j = l2 - 1; j > -1; j--) {
+                int tmp = (num1[i] - '0') * (num2[j] - '0') + (s[i + j + 1] - '0') + carry;
+                s[i + j + 1] = '0' + tmp % 10;
+                carry = tmp / 10;
+            }
+            s[i] += carry;
+        }
+        int start = 0;
+        while (start < l1 + l2 - 1) {
+            if (s[start] != '0') break;
+            start++;
+        }
+        return s.substr(start);
+    }
+    /*
+     *
+     *     116. Populating Next Right Pointers in Each Node
+     *
+     */
+    void connect_LessEfficient(TreeLinkNode *root) {
+        if (root == NULL) return;
+        queue<TreeLinkNode*> q;
+        q.push(root);
+        while (!q.empty()) {
+            queue<TreeLinkNode*> nextLevel;
+            TreeLinkNode* pre = q.front();
+            if (pre->left != NULL) {
+                nextLevel.push(pre->left);
+                nextLevel.push(pre->right);
+            }
+            q.pop();
+            TreeLinkNode* cur = NULL;
+            while (!q.empty()) {
+                cur = q.front();
+                if (cur->left != NULL) {
+                    nextLevel.push(cur->left);
+                    nextLevel.push(cur->right);
+                }
+                pre->next = cur;
+                pre = cur;
+                q.pop();
+            }
+            pre->next = NULL;
+            swap(q, nextLevel);
+        }
+    }
+    void connect(TreeLinkNode *root) {
+        if (root == NULL) return;
+        TreeLinkNode* pre = root;
+        TreeLinkNode* cur = NULL;
+        while (pre->left) {
+            cur = pre;
+            while (cur) {
+                cur->left->next = cur->right;
+                if (cur->next != NULL) cur->right->next = cur->next->left;
+                cur = cur->next;
+            }
+            pre = pre->left;
+        }
+    }
+    /*
+     *
+     *     98. Validate Binary Search Tree
+     *
+     */
+    bool isValidBST(TreeNode* root) {
+        return isSubTreeValid(root, NULL, NULL);
+    }
+    bool isSubTreeValid(TreeNode* root, TreeNode* min, TreeNode* max) {
+        if (root == NULL) return true;
+        if ((min && root->val <= min->val) || (max && root->val >= max->val)) return false;
+        return isSubTreeValid(root->left, min, root) && isSubTreeValid(root->right, root, max);
+    }
+    /*
+     *
+     *     162. Find Peak Element
+     *
+     */
+    vector<int> findAllPeakElements(vector<int>& nums) {
+        int l = nums.size();
+        vector<int> res;
+        if (l == 1) {
+            res.push_back(0);
+            return res;
+        }
+        
+        int left = 0;
+        while (left <= l - 2) {
+            int start = left + 1;
+            if (start == l - 1) {
+                if (nums[left] < nums[start]) {
+                    res.push_back(start);
+                } else {
+                    res.push_back(left);
+                };
+                left++;
+            } else {
+                if (nums[left] < nums[start]) {
+                    if (nums[start] < nums[start + 1]) {
+                        left++;
+                    }
+                    else {
+                        res.push_back(start);
+                        left+=2;
+                    }
+                } else {
+                    res.push_back(left);
+                    left++;
+                }
+            }
+            
+        }
+        return res;
+    }
+    int findPeakElement(vector<int>& nums) {
+        int l = nums.size();
+        int left = 0;
+        while (left <= l - 2) {
+            int start = left + 1;
+            if (start == l - 1) {
+                if (nums[left] < nums[start]) {
+                    return start;
+                } else {
+                    return left;
+                };
+            } else {
+                if (nums[left] < nums[start]) {
+                    if (nums[start] < nums[start + 1]) {
+                        left++;
+                    }
+                    else {
+                        return start;
+                    }
+                } else {
+                    return left;
+                }
+            }
+            
+        }
+        return 0;
+    }
+    /*
+     *
+     *     75. Sort Colors
+     *
+     */
+    void sortColors(vector<int>& nums) {
+        int map[3] = {0,0,0};
+        for (int i = 0; i < nums.size(); i++) {
+            map[nums[i]]++;
+        }
+        int i = 0;
+        int total = 0;
+        int j = 0;
+        while (j < 3) {
+            if (i < map[j]) {
+                nums[total] = j;
+                total++;
+                i++;
+            } else {
+                j++;
+                i = 0;
+            }
+            
+        }
+    }
+    /*
+     *
+     *     55. Jump Game
+     *
+     */
+    bool canJump(vector<int>& nums) {
+        int maxIndex = 0;
+        int i = 0;
+        while(i <= maxIndex && i < nums.size()) {
+            int t = nums[i] + i;
+            if (t >= maxIndex) maxIndex = t;
+            i++;
+        }
+        return maxIndex >= nums.size() - 1;
+    }
+    /*
+     *
+     *     120. Triangle
+     *
+     */
+    int minimumTotal(vector<vector<int>>& triangle) {
+        int l = triangle.size();
+        vector<int> minlen(triangle.back());                //all the shortest path sum at kth level
+        for (int level = l - 2; level > -1; level--) {
+            for (int i = 0; i <= level; i++) {
+                minlen[i] = min(minlen[i], minlen[i+1]) + triangle[level][i];
+            }
+        }
+        return minlen[0];
+    }
+    /*
+     *
+     *     134. Gas Station
+     *
+     */
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+        int start = 0;
+        int l = gas.size();
+        int tank = 0;
+        int subsum = INT_MAX;
+        for (int i = 0; i < l; i++) {
+            tank += gas[i] - cost[i];
+            if (tank < subsum) {
+                subsum = tank;
+                start = i + 1;
+            }
+        }
+        return tank < 0? -1: (start%l);
+    }
+
 };
