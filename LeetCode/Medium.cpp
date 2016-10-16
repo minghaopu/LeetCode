@@ -1106,5 +1106,107 @@ public:
         }
         return tank < 0? -1: (start%l);
     }
-
+    /*
+     *
+     *     39. Combination Sum
+     *
+     */
+    vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int>> res;
+        sort(candidates.begin(), candidates.end());
+        for (int i = 0; i < candidates.size(); i++) {
+            if (i > 0 && candidates[i] == candidates[i-1]) continue;
+            vector<int> row = {candidates[i]};
+            findRest(res, candidates, target - candidates[i], row, i);
+        }
+        return res;
+    }
+    void findRest(vector<vector<int>> & res, vector<int>& candidates, int target, vector<int>& row, int start) {
+        if (target == 0) res.push_back(row);
+        if (target <  candidates[start]) return;
+        else {
+            for (int i = start; i < candidates.size(); i++) {
+                int t = target - candidates[i];
+                row.push_back(candidates[i]);
+                findRest(res, candidates, t, row, i);
+                row.pop_back();
+            }
+        }
+    }
+    /*
+     *
+     *     187. Repeated DNA Sequences
+     *
+     */
+    
+    vector<string> findRepeatedDnaSequences(string s) {
+        unordered_map<string, int> hash;
+        vector<string> res;
+        for (int i = 0; i < s.length() - 9; i++) {
+            string t = s.substr(i, 10);
+            if (hash.find(t) == hash.end()) hash[t] = 1;
+            else hash[t]++;
+        }
+        for (auto it = hash.begin(); it != hash.end(); it++) {
+            if (it->second > 1) res.push_back(it->first);
+        }
+        return res;
+    }
+    /*
+     *
+     *     31. Next Permutation
+     *
+     */
+    void nextPermutation(vector<int>& nums) {
+        int i = nums.size() - 2;
+        while (i > -1 && nums[i] >= nums[i + 1]) {
+            i--;
+        }
+        reverse(nums.begin() + i + 1, nums.end());
+        
+        if (i == -1) return;
+        int index;
+        for (index = i+1; index < nums.size(); index++) {
+            if (nums[index] > nums[i]) break;
+        }
+        swap(nums[index],nums[i]);
+    }
+    /*
+     *
+     *     62. Unique Paths
+     *
+     */
+    int uniquePaths(int m, int n) {
+        int map[m][n];
+        map[0][0] = 1;
+        for (int i = 0; i < m; i++) {
+            map[i][0] = 1;
+        }
+        for (int i = 0; i < n; i++) {
+            map[0][i] = 1;
+        }
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                map[i][j] = map[i-1][j] + map[i][j-1];
+            }
+        }
+        return map[m-1][n-1];
+    }
+    /*
+     *
+     *     78. Subsets
+     *
+     */
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> res(1, vector<int>());
+        sort(nums.begin(), nums.end());
+        for (int i = 0; i < nums.size(); i++) {
+            int n = res.size();
+            for (int j = 0; j < n; j++) {
+                res.push_back(res[j]);
+                res.back().push_back(nums[i]);
+            }
+        }
+        return res;
+    }
 };
