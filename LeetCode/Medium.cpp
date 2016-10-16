@@ -1209,4 +1209,166 @@ public:
         }
         return res;
     }
+    /*
+     *
+     *     220. Contains Duplicate III
+     *
+     */
+    bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
+        if (k == 0 || nums.size() < 2) return false;
+        auto size = nums.size();
+        set<int> rec;
+        for (int i = 0; i < size; i++) {
+            
+            if (i > k) rec.erase(nums[i - k - 1]);
+            long long a = nums[i];
+            set<int>::iterator it = rec.lower_bound(nums[i] - t);
+            if (it != rec.end() && abs(nums[i] - *it) <= t) return true;
+            rec.insert(nums[i]);
+        }
+        return false;
+    }
+    /*
+     *
+     *     18. 4Sum
+     *
+     */
+    vector<vector<int>> fourSum(vector<int>& nums, int target) {
+        vector<vector<int>> res;
+        sort(nums.begin(), nums.end());
+        auto size = nums.size();
+        if (size < 4) return res;
+        for (int i = 0; i < size - 3; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            for (int j = i + 1; j < size - 2; j++) {
+                if (j > i + 1 && nums[j] == nums[j - 1]) continue;
+                int k = j + 1;
+                int l = size - 1;
+                while (k < l) {
+                    int sum = nums[i] + nums[j] + nums[k] + nums[l];
+                    if (sum > target) l--;
+                    else if (sum < target) k++;
+                    else {
+                        res.push_back(vector<int> {nums[i], nums[j], nums[k], nums[l]});
+                        while (nums[k] == nums[k+1]) k++;
+                        while (nums[l] == nums[l-1]) l--;
+                        k++;
+                        l--;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    /*
+     *
+     *     268. Missing Number
+     *
+     */
+    int missingNumber(vector<int>& nums) {
+        // int start = 0;
+        int num = nums.size();
+        for (int i = 0; i < nums.size(); i++) {
+            // num ^= i;
+            // start ^= nums[i];
+            num ^= i ^ nums[i];
+        }
+        // return start ^ num;
+        return num;
+    }
+    /*
+     *
+     *     34. Search for a Range
+     *
+     */
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int start = 0;
+        int end = nums.size();
+        int mid;
+        while (start < end) {
+            mid = (start + end) / 2;
+            if (nums[mid] >= target) {
+                end = mid;
+            } else {
+                start = mid + 1;
+            }
+        }
+        int left = start;
+        start = 0;
+        end = nums.size();
+        while (start < end) {
+            mid = (start + end) / 2;
+            if (nums[mid] <= target) {
+                start = mid + 1;
+            } else {
+                end = mid;
+            }
+        }
+        int right = start;
+        return left == right? vector<int> {-1, -1}:vector<int> {left, right -1};
+    }
+    /*
+     *
+     *     236. Lowest Common Ancestor of a Binary Tree
+     *
+     */
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if (!root || root == p || root == q) return root;
+        TreeNode* left = lowestCommonAncestor(root->left, p, q);
+        TreeNode* right = lowestCommonAncestor(root->right, p, q);
+        return !left ? right : (!right ? left : root);
+    }
+    /*
+     *
+     *     73. Set Matrix Zeroes
+     *
+     */
+    void setZeroes(vector<vector<int>>& matrix) {
+        auto m = matrix.size();
+        if (m == 0) return;
+        auto n = matrix[0].size();
+        bool col = false, row = false;
+        for (int i = 0; i < m; i++) {
+            if (matrix[i][0] == 0) row = true;
+            for (int j = 1; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[0][j] = matrix[i][0] = 0;
+                }
+            }
+        }
+        for (int i = m - 1; i > -1; i--) {
+            for (int j = n - 1; j > 0; j--) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) matrix[i][j] = 0;
+            }
+            if (row) matrix[i][0] = 0;
+        }
+    }
+    /*
+     *
+     *     108. Convert Sorted Array to Binary Search Tree
+     *
+     */
+    /**
+     * Definition for a binary tree node.
+     * struct TreeNode {
+     *     int val;
+     *     TreeNode *left;
+     *     TreeNode *right;
+     *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+     * };
+     */
+
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        if (nums.size() == 0) return NULL;
+        return createTree(nums, 0, nums.size() - 1);
+    }
+    TreeNode* createTree(vector<int>& nums, int start, int end) {
+        if (start > end) return NULL;
+        if (start == end) return new TreeNode(nums[start]);
+        int rootIndex = ceil((end - start) / 2) + start;
+        TreeNode* root = new TreeNode(nums[rootIndex]);
+        root->left = createTree(nums, start, rootIndex - 1);
+        root->right = createTree(nums, rootIndex + 1, end);
+        return root;
+    }
 };
