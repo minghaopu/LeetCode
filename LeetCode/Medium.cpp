@@ -1371,4 +1371,23 @@ public:
         root->right = createTree(nums, rootIndex + 1, end);
         return root;
     }
+    /*
+     *
+     *     89. Gray Code
+     *
+     */
+    vector<int> grayCode(int n) {
+        vector<int> res(1, 0);
+        for (int i = 1; i <= n; i++) {
+            vector<int> tmp = res;
+            reverse(tmp.begin(), tmp.end());
+            int l = pow(2, i);
+            int half = l / 2;
+            res.resize(l);
+            for (int j = 0; j < half; j++) {
+                res[j + half] = tmp[j] ^ half;
+            }
+        }
+        return res;
+    }
 };
