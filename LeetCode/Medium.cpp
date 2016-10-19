@@ -1390,4 +1390,327 @@ public:
         }
         return res;
     }
+    /*
+     *
+     *     144. Binary Tree Preorder Traversal
+     *
+     */
+    vector<int> preorderTraversal(TreeNode* root) {
+        vector<int> res;
+        if (root == NULL) return res;
+        stack<TreeNode*> s;
+        s.push(root);
+        while (!s.empty()) {
+            TreeNode* tmp = s.top();
+            s.pop();
+            res.push_back(tmp->val);
+            if (tmp->right != NULL) s.push(tmp->right);
+            if (tmp->left != NULL) s.push(tmp->left);
+        }
+        return res;
+    }
+    /*
+     *
+     *     94. Binary Tree Inorder Traversal
+     *
+     */
+
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> res;
+        if (root == NULL) return res;
+        stack<TreeNode*> s;
+        s.push(root);
+        while (!s.empty()) {
+            TreeNode* tmp = s.top();
+            if (tmp->left != NULL) {
+                s.push(tmp->left);
+                tmp->left = NULL;
+            } else {
+                res.push_back(tmp->val);
+                s.pop();
+                if (tmp->right != NULL) s.push(tmp->right);
+            }
+        }
+        return res;
+    }
+    vector<int> inorderTraversal2(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> s;
+        TreeNode* cur = root;
+        while (cur || !s.empty()) {
+            if (cur) {
+                s.push(cur);
+                cur = cur->left;
+            } else {
+                TreeNode* top = s.top();
+                res.push_back(top->val);
+                s.pop();
+                if (top->right) {
+                    cur = top->right;
+                }
+            }
+        }
+        return res;
+    }
+    /*
+     *
+     *     145. Binary Tree Postorder Traversal
+     *
+     */
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> s;
+        TreeNode* cur = root;
+        TreeNode* last = NULL;
+        while (cur || !s.empty()) {
+            if (cur) {
+                s.push(cur);
+                cur = cur->left;
+            } else {
+                TreeNode* top = s.top();
+                if (top->right && top->right != last) {
+                    cur = top->right;
+                } else {
+                    res.push_back(top->val);
+                    s.pop();
+                    last = top;
+                }
+            }
+        }
+        return res;
+    }
+    /*
+     *
+     *     215. Kth Largest Element in an Array
+     *
+     */
+    int findKthLargest(vector<int>& nums, int k) {
+        int left = 0, right = nums.size() - 1;
+        while (true) {
+            int p = partition(nums, left, right);
+            if (p == k - 1) return nums[p];
+            else if (p < k - 1) left = p + 1;
+            else right = p - 1;
+        }
+        return -1;
+    }
+    int partition(vector<int>& nums, int left, int right) {
+        int pivot = nums[left];
+        int l = left + 1, r = right;
+        while (l <= r) {
+            if (nums[l] < pivot && nums[r] > pivot) swap(nums[l++], nums[r--]);
+            if (nums[l] >= pivot) l++;
+            if (nums[r] <= pivot) r--;
+        }
+        swap(nums[left], nums[r]);
+        return r;
+    }
+    /*
+     *
+     *     166. Fraction to Recurring Decimal
+     *
+     */
+    string fractionToDecimal(int numerator, int denominator) {
+        if (numerator == 0) return "0";
+        string res = "";
+        if (numerator < 0 ^ denominator < 0) res += '-';
+        long nn = abs((long)numerator);
+        long dd = abs((long)denominator);
+        long integral = nn / dd;
+        res += to_string(integral);
+        long rmd = nn % dd;
+        if (rmd == 0) return res;
+        res += '.';
+        rmd *= 10;
+        unordered_map<long, int> hash;
+        while (rmd) {
+            if (hash.find(rmd) != hash.end()) {
+                res.insert(hash[rmd], 1, '(');
+                res += ')';
+                break;
+            }
+            long q = rmd / dd;
+            hash[rmd] = res.length();
+            res += to_string(q);
+            rmd = (rmd % dd) * 10;
+        }
+        
+        return res;
+    }
+    /*
+     *
+     *     61. Rotate List
+     *
+     */
+    ListNode* rotateRight(ListNode* head, int k) {
+        if (head == NULL) return head;
+        int count = 1;
+        ListNode* last = head;
+        while (last->next) {
+            count++;
+            last = last->next;
+        };
+        if (count == 1) return head;
+        k = count - (k % count);
+        while (k) {
+            ListNode* t = head;
+            head = head->next;
+            last->next = t;
+            t->next = NULL;
+            last = t;
+            k--;
+        }
+        return head;
+    }
+    ListNode* rotateRight2(ListNode* head, int k) {
+        if (head == NULL) return head;
+        int count = 1;
+        ListNode* last = head;
+        while (last->next) {
+            count++;
+            last = last->next;
+        };
+        last->next = head;
+        k = k % count;
+        if (k) {
+            for (int i = 0; i < count - k; i++) last = last->next;
+        }
+        ListNode* newHead = last->next;
+        last->next = NULL;
+        return newHead;
+    }
+    /*
+     *
+     *     35. Search Insert Position
+     *
+     */
+    int searchInsert(vector<int>& nums, int target) {
+        int l = 0;
+        int r = nums.size() - 1;
+        int mid;
+        while (l <= r) {
+            mid = (r - l) / 2 + l;
+            if (nums[mid] < target) l = mid + 1;
+            else r = mid - 1;
+        }
+        return l;
+    }
+    /*
+     *
+     *     338. Counting Bits
+     *
+     */
+    vector<int> countBits(int num) {
+        vector<int> res(num + 1, 0);
+        for (int i = 1; i <= num; i++) res[i] = res[i & (i - 1)] + 1;
+        return res;
+    }
+    /*
+     *
+     *     64. Minimum Path Sum
+     *
+     */
+    int minPathSum(vector<vector<int>>& grid) {
+        int m = grid.size();
+        if (m == 0) return 0;
+        int n = grid[0].size();
+        vector<vector<int>> res (m, vector<int> (n, 0));
+        res[0][0] = grid[0][0];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 && j > 0) res[0][j] = grid[0][j] + res[0][j-1];
+                else if (j == 0) res[i][0] = grid[i][0] + res[i-1][0];
+                else res[i][j] = min(res[i][j-1], res[i-1][j]) + grid[i][j];
+            }
+        }
+        return res[m-1][n-1];
+    }
+    /*
+     *
+     *     114. Flatten Binary Tree to Linked List
+     *
+     */
+    void flatten(TreeNode* root) {              // O(n) time & O(n) space
+        if (root == NULL) return;
+        TreeNode* ptr = new TreeNode(0);
+        TreeNode* newRoot = ptr;
+        stack<TreeNode*> s;
+        s.push(root);
+        while(!s.empty()) {
+            TreeNode* top = s.top();
+            ptr->right = new TreeNode(top->val);
+            ptr = ptr->right;
+            s.pop();
+            if (top->right) s.push(top->right);
+            if (top->left) s.push(top->left);
+        }
+        root->left = NULL;
+        root->right = newRoot->right->right;
+    }
+    void flatten2(TreeNode* root) {             // O(n) time & O(1) space
+        TreeNode* now = root;
+        while (now) {
+            if (now->left) {
+                TreeNode* pre = now->left;
+                while (pre->right) {
+                    pre = pre->right;
+                }
+                pre->right = now->right;
+                now->right = now->left;
+                now->left = NULL;
+            }
+            now = now->right;
+        }
+    }
+    /*
+     *
+     *     92. Reverse Linked List II
+     *
+     */
+    ListNode* reverseBetween(ListNode* head, int m, int n) {
+        if (m == n) return head;
+        ListNode* newHead = new ListNode(0);
+        ListNode* pre = newHead;
+        ListNode* p = head;
+        ListNode *next, *pm, *prem;
+        for (int i = 1; i < m; i++) {
+            pre->next = p;
+            pre = p;
+            p = p->next;
+        }
+        prem = pre;
+        pm = p;
+        for (int i = m; i < n; i++) {
+            next = p->next;
+            p->next = pre;
+            pre = p;
+            p = next;
+        }
+        pm->next = p->next;
+        p->next = pre;
+        prem->next = p;
+        return newHead->next;
+    }
+    /*
+     *
+     *     71. Simplify Path
+     *
+     */
+    string simplifyPath(string path) {
+        string res = "", token;
+        stringstream ss (path);
+        vector<string> tokens;
+        while (getline(ss, token, '/')) {
+            if (token == "" || token == ".") continue;
+            if (token == "..") {
+                if (tokens.size() != 0) tokens.pop_back();
+            }
+            else tokens.push_back(token);
+        }
+        if (tokens.size() == 0) return "/";
+        for (int i = 0; i < tokens.size(); i++) {
+            res += "/" + tokens[i];
+        }
+        return res;
+    }
 };
