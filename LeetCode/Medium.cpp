@@ -1713,6 +1713,11 @@ public:
         }
         return res;
     }
+    /*
+     *
+     *     google oa
+     *
+     */
     int googleOA1(int X) {
         string s = to_string(X);
         int maxNum = 0;
@@ -1736,8 +1741,8 @@ public:
             count = 0;
             while (token[count] == ' ') count++;
             while (level > count) {
-                len.pop();
                 level--;
+                len.pop();
             }
             if (token.find('.') != string::npos) {
                 string ext1 = token.substr(token.length() - 4);
@@ -1749,14 +1754,90 @@ public:
                     else tmp = 1;
                     res = max(res, tmp);
                 }
+
             } else {
                 // is dir
                 if (level > 0) len.push(len.top() + token.length() - count);
                 else len.push(token.length() - count);
                 level++;
-                
             }
         }
         return res;
     }
+    /*
+     *
+     *     388. Longest Absolute File Path
+     *
+     */
+    int lengthLongestPath(string input) {
+        input += '\n';
+        stack<int> len;
+        string token;
+        int res = 0;
+        int level = 0;
+        int count = 0;
+        bool isFile = false;
+        for (int i = 0; i < input.length(); i++) {
+            char c = input[i];
+            if (c == '\t') {
+                count++;
+            } else if (c == '\n') {
+                if (level > count){
+                    while (level != count) {
+                        len.pop();
+                        level--;
+                    }
+                }
+                if (isFile) {
+                    int tmp = 0;
+                    if (level > 0) tmp += len.top();
+                    tmp += token.length() + level;
+                    res = res > tmp ? res : tmp;
+                    isFile = false;
+                } else {
+                    
+                    if (level > 0) len.push(len.top() + token.length());
+                    else len.push(token.length());
+                    level++;
+                }
+                token = "";
+                count = 0;
+            } else {
+                if (c == '.') isFile = true;
+                token += c;
+            }
+        }
+        return res;
+    }
+    int lengthLongestPath2(string input) {
+        input += '\n';
+        stack<int> len;
+        string token;
+        int res = 0;
+        int level = 0;
+        int count = 0;
+        bool isFile = false;
+        stringstream ss(input);
+        while (getline(ss, token)) {
+            count = 0;
+            while (token[count] == ' ') count++;
+            while (level > count) {
+                len.pop();
+                level--;
+            }
+            if (token.find_last_of('.') != string::npos) {
+                int tmp = 0;
+                if (level > 0) tmp += len.top();
+                tmp += token.length();
+                res = max(res,tmp);
+            } else {
+                // dir
+                if (level > 0) len.push(len.top() + token.length() - count);
+                else len.push(token.length());
+                level++;
+            }
+        }
+        return res;
+    }
+
 };
