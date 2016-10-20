@@ -1713,4 +1713,100 @@ public:
         }
         return res;
     }
+    /*
+     *
+     *     388. Longest Absolute File Path
+     *
+     */
+    int lengthLongestPath(string input) {
+        input += '\n';
+        stack<int> len;
+        string token;
+        int res = 0;
+        int level = 0;
+        int count = 0;
+        bool isFile = false;
+        for (int i = 0; i < input.length(); i++) {
+            char c = input[i];
+            if (c == '\t') {
+                count++;
+            } else if (c == '\n') {
+                if (level > count){
+                    while (level != count) {
+                        len.pop();
+                        level--;
+                    }
+                }
+                if (isFile) {
+                    int tmp = 0;
+                    if (level > 0) tmp += len.top();
+                    tmp += token.length() + level;
+                    res = res > tmp ? res : tmp;
+                    isFile = false;
+                } else {
+                    
+                    if (level > 0) len.push(len.top() + token.length());
+                    else len.push(token.length());
+                    level++;
+                }
+                token = "";
+                count = 0;
+            } else {
+                if (c == '.') isFile = true;
+                token += c;
+            }
+        }
+        return res;
+    }
+    int lengthLongestPath2(string input) {
+        input += '\n';
+        stack<int> len;
+        string token;
+        int res = 0;
+        int level = 0;
+        int count = 0;
+        bool isFile = false;
+        stringstream ss(input);
+        while (getline(ss, token)) {
+            auto c = token.find_last_of('\t');
+            if (c == string::npos) count = 0;
+            else count = c + 1;
+            while (level > count) {
+                len.pop();
+                level--;
+            }
+            if (token.find_last_of('.') != string::npos) {
+                int tmp = 0;
+                if (level > 0) tmp += len.top();
+                tmp += token.length();
+                res = max(res,tmp);
+            } else {
+                // dir
+                if (level > 0) len.push(len.top() + token.length() - count);
+                else len.push(token.length());
+                level++;
+            }
+        }
+        return res;
+    }
+    int solution(int X) {
+        string s = to_string(X);
+        long minNum = INT_MAX;
+        if (s.length() < 2) return X;
+        for (long i = 0; i < s.length() - 1; i++) {
+            string t = s;
+            if (i == 0) {
+                if (t[i] > t[i+1]) t.erase(i+1, 1);
+                else t.erase(i,1);
+            } else {
+                if (t[i-1] > t[i]) t.erase(i, 1);
+                else {
+                    if (t[i] <= t[i+1]) t.erase(i, 1);
+                    else t.erase(i+1,1);
+                }
+            }
+            minNum = min(minNum, stol(t));
+        }
+        return minNum;
+    }
 };
