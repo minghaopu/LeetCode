@@ -1713,4 +1713,50 @@ public:
         }
         return res;
     }
+    int googleOA1(int X) {
+        string s = to_string(X);
+        int maxNum = 0;
+        if (s.length() < 2) return X;
+        for (auto i = 0; i < (int)s.length() - 1; i++) {
+            string t = s;
+            float sum = (t[i] - '0') + (t[i + 1] - '0');
+            int half = ceil(sum / 2);
+            t[i+1] = char('0'+half);
+            t.erase(i,1);
+            maxNum = max(maxNum, stoi(t));
+        }
+        return maxNum;
+    }
+    int googleOA2(string &S) {
+        string token;
+        stack<int> len;
+        int res = 0, level = 0, count = 0;
+        stringstream ss(S);
+        while (getline(ss, token)) {
+            count = 0;
+            while (token[count] == ' ') count++;
+            while (level > count) {
+                len.pop();
+                level--;
+            }
+            if (token.find('.') != string::npos) {
+                string ext1 = token.substr(token.length() - 4);
+                string ext2 = token.substr(token.length() - 5);
+                if (ext1 == ".png" || ext1 == ".gif" || ext2 == ".jpeg") {
+                    // is pic;
+                    int tmp = 0;
+                    if (level > 0) tmp += len.top() + level;
+                    else tmp = 1;
+                    res = max(res, tmp);
+                }
+            } else {
+                // is dir
+                if (level > 0) len.push(len.top() + token.length() - count);
+                else len.push(token.length() - count);
+                level++;
+                
+            }
+        }
+        return res;
+    }
 };
