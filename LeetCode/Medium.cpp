@@ -1867,5 +1867,113 @@ public:
         }
         return matrix[row][l] == target;
     }
-
+    /*
+     *
+     *     105. Construct Binary Tree from Preorder and Inorder Traversal
+     *
+     */
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        unordered_map<int, int> inHash;
+        int i;
+        for (i = 0; i < preorder.size(); i++) {
+            inHash[inorder[i]] = i;
+        }
+        return createTree(preorder, inHash, 0, preorder.size() - 1, 0, inorder.size() - 1);
+    }
+    TreeNode* createTree(vector<int>& preorder, unordered_map<int, int>& inHash, int pstart, int pend, int istart, int iend) {
+        if (pstart > pend || istart > iend) return NULL;
+        int rootVal = preorder[pstart];
+        TreeNode* root = new TreeNode(rootVal);
+        
+        if (inHash.find(rootVal) != inHash.end()) {
+            int iroot = inHash[rootVal];
+            root->left = createTree(preorder, inHash, pstart + 1, pstart + iroot - istart, istart, iroot);
+            root->right = createTree(preorder, inHash, pstart + iroot - istart + 1, pend, iroot + 1, iend);
+        }
+        return root;
+        
+    }
+    /*
+     *
+     *     279. Perfect Squares
+     *
+     */
+    int numSquares(int n) {
+        unordered_map<int,int> hash;
+        for (int i = 0; i * i <= n; i++) {
+            hash[i * i] = 1;
+        }
+        return findMinLeng(n, hash);
+    }
+    int findMinLeng(int n, unordered_map<int,int>& hash){
+        if (hash.find(n) != hash.end()) return hash[n];
+        int root = 1;
+        int minLength = INT_MAX;
+        while (n >= root * root) {
+            root++;
+        }
+        for (int i = 1; i < root; i++) {
+            int res = n - i * i;
+            minLength = min(findMinLeng(res,hash), minLength);
+        }
+        minLength+=1;
+        hash[n] = minLength;
+        return minLength;
+    }
+    /*
+     *
+     *     279. Perfect Squares math solution`
+     *
+     */
+    int numSquares2(int n) {
+        while (n % 4 == 0) n>>=2;
+        if (n % 8 == 7) return 4;
+        if (isSquare(n)) return 1;
+        int sqrt_n = (int) sqrt(n);
+        for (int i = 1; i <= sqrt_n; i++) {
+            if (isSquare(n - i * i)) return 2;
+        }
+        return 3;
+    }
+    int isSquare(int n) {
+        int t = (int) sqrt(n);
+        return t * t == n;
+    }
+    /*
+     *
+     *     77. Combinations
+     *
+     */
+    vector<vector<int>> combine(int n, int k) {
+        vector<vector<int>> res;
+        vector<int> tmp(k, 0);
+        int i = 0;
+        while (i >= 0) {
+            tmp[i]++;
+            if (tmp[i] > n) i--;
+            else if (i == k - 1) res.push_back(tmp);
+            else {
+                i++;
+                tmp[i] = tmp[i-1];
+            }
+        }
+        return res;
+    }
+    vector<vector<int>> combine2(int n, int k) {
+        vector<vector<int>> res;
+        vector<int> tmp;
+        dfsCombine(res, tmp, 1, n, k);
+        return res;
+    }
+    void dfsCombine(vector<vector<int>>& res, vector<int>& tmp, int start, int n, int k) {
+        if (k == 0) {
+            res.push_back(tmp);
+            return;
+        }
+        for (int i = start; i + k <= n + 1; i++) {
+            tmp.push_back(i);
+            dfsCombine(res, tmp, i + 1, n, k - 1);
+            tmp.pop_back();
+        }
+    }
 };
