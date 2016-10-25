@@ -1976,4 +1976,20 @@ public:
             tmp.pop_back();
         }
     }
+    /*
+     *
+     *     240. Search a 2D Matrix II
+     *
+     */
+    bool searchMatrix2(vector<vector<int>>& matrix, int target) {
+        int i = 0;
+        int j = matrix[0].size() - 1;
+        while (i < matrix.size() && j > -1) {
+            int t = matrix[i][j];
+            if (t == target) return true;
+            else if (t > target) j--;
+            else i++;
+        }
+        return false;
+    }
 };
