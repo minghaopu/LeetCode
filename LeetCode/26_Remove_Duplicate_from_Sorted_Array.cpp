@@ -11,18 +11,12 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        int l = nums.size(), i = 1, j = 0;
-        if (l < 2) return l;
-        while (i < nums.size()) {
-            if (nums[i] != nums[i-1]) {
-                if (i != j+1) nums.erase(nums.begin()+j, nums.begin()+i-1);
-                j++;
-                i = j+1;
-            }else {
-                if (i == nums.size()-1) nums.erase(nums.begin()+j, nums.begin()+i);
-                i++;
-            }
+        int count = 0;
+        for (int i = 1; i < nums.size(); i++) {
+            if (nums[i] == nums[i - 1]) count++;
+            else nums[i - count] = nums[i];
         }
+        nums.resize(nums.size() - count);
         return nums.size();
     }
 };

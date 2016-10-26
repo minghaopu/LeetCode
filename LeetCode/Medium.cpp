@@ -1992,4 +1992,179 @@ public:
         }
         return false;
     }
+    /*
+     *
+     *     80. Remove Duplicates from Sorted Array II
+     *
+     */
+    int removeDuplicates(vector<int>& nums) {
+        int count = 0;
+        int n = nums.size();
+        for (int i = 2; i < n; i++) {
+            if (nums[i] == nums[i- 2 - count]) count++;
+            else nums[i - count] = nums[i];
+        }
+        nums.resize(nums.size() - count);
+        return nums.size();
+    }
+    /*
+     *
+     *     109. Convert Sorted List to Binary Search Tree
+     *
+     */
+    TreeNode* sortedListToBST(ListNode* head) {
+        return buildTree(head, NULL);
+    }
+    TreeNode* buildTree(ListNode* head, ListNode* tail) {
+        if (head == tail) return NULL;
+        if (head->next == tail) return new TreeNode(head->val);
+        ListNode* slow = head;
+        ListNode* fast = head;
+        while (fast != tail && fast->next != tail) {
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        TreeNode* root = new TreeNode(slow->val);
+        root->left = buildTree(head, slow);
+        root->right = buildTree(slow->next, tail);
+        return root;
+    }
+    /*
+     *
+     *     86. Partition List
+     *
+     */
+    ListNode* partition(ListNode* head, int x) {
+        ListNode* greater = new ListNode(0);
+        ListNode* p = greater;
+        ListNode* smaller = new ListNode(0);
+        ListNode* q = smaller;
+        ListNode* next;
+        while (head) {
+            next = head->next;
+            if (head->val < x) {
+                q->next = head;
+                q = q->next;
+            } else {
+                p->next = head;
+                p = p->next;
+            }
+            head->next = NULL;
+            head = next;
+        }
+        q->next = greater->next;
+        return smaller->next;
+    }
+    /*
+     *
+     *     130. Surrounded Regions
+     *
+     */
+    void solve(vector<vector<char>>& board) {
+        int m = board.size();
+        if (m == 0) return;
+        int n = board[0].size();
+        int i, j;
+        for (i = 0; i < m; i++) {
+            check(board, i, 0, m, n);
+            
+            if (n > 1) check(board, i, n - 1, m, n);
+        }
+        for (j = 0; j < n; j++) {
+            check(board, 0, j, m, n);
+            if (m > 1) check(board, m - 1, j, m, n);
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == 'O') board[i][j] = 'X';
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (board[i][j] == '1') board[i][j] = 'O';
+            }
+        }
+    }
+    void check(vector<vector<char>>& board, int i, int j, int m, int n) {
+        if (board[i][j] == 'O') {
+            board[i][j] = '1';
+            if (i > 1) check(board, i - 1, j, m, n);
+            if (j > 1) check(board, i, j - 1, m, n);
+            if (i < m - 1) check(board, i + 1, j, m, n);
+            if (j < n - 1) check(board, i, j + 1, m, n);
+        }
+    }
+    /*
+     *
+     *     93. Restore IP Addresses
+     *
+     */
+    vector<string> restoreIpAddresses(string s) {
+        vector<string> res;
+        
+        int length = s.length();
+        if (length < 4 || length > 12) return res;
+        string s1, s2, s3, s4;
+        for (int first = 1; first < 4; first++) {
+            s1 = s.substr(0, first);
+            if (s1[0] == '0' && s1.length() > 1) continue;
+            if (stol(s1) < 256) {
+                for (int second = first + 1; second < length && second < first + 4; second++) {
+                    s2 = s.substr(first, second - first);
+                    if (s2[0] == '0' && s2.length() > 1) continue;
+                    if (stol(s2) < 256) {
+                        for (int third = second + 1; third < length && third < second + 4; third++) {
+                            s3 = s.substr(second, third - second);
+                            if (s3[0] == '0' && s3.length() > 1) continue;
+                            if (stol(s3) < 256) {
+                                s4 = s.substr(third);
+                                if (s4[0] == '0' && s4.length() > 1) continue;
+                                if (stol(s4) < 256) res.push_back(s1 + "." + s2 + "." + s3 + "." + s4);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    /*
+     *
+     *     33. Search in Rotated Sorted Array
+     *
+     */
+    int searchInRotateArray(vector<int>& nums, int target) {
+        int n = nums.size();
+        if (n == 0) return -1;
+        int low = 0, high = n - 1;
+        int mid, start;
+        while (low < high) {
+            mid = (low + high) / 2;
+            if (nums[mid] > nums[high]) low = mid + 1;
+            else high = mid;
+        }
+        start = low;
+        low = 0; high = n - 1;
+        while (low <= high) {
+            mid = ((low + high) / 2 + start) % n;
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] < target) low = mid + 1;
+            else high = mid - 1;
+        }
+        return -1;
+    }
+    int searchInRotateArray_method2(vector<int>& nums, int target) {
+        int n = nums.size();
+        if (n == 0) return -1;
+        int left = 0, right = n - 1;
+        int mid;
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (nums[mid] == target) return mid;
+            else if ((nums[left] <= nums[mid] && (nums[mid] < target || target < nums[left])) || (nums[left] > nums[mid] && nums[mid] < target && target <= nums[right])) left = mid + 1;
+            // else if ((nums[mid]>nums[left] && (target>nums[mid] || (target<nums[left]))) || (nums[mid]<nums[left] && target>nums[mid] && target<=nums[right])) left = mid + 1;
+            else right = mid - 1;
+        }
+        return -1;
+    }
 };
