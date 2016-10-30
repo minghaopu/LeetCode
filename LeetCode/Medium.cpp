@@ -2217,4 +2217,34 @@ public:
         }
         return count;
     }
+    /*
+     *
+     *     306. Additive Number
+     *
+     */
+    bool isAdditiveNumber(string num) {
+        int l = num.length();
+        if (l < 3) return false;
+        return isSubAdditiveNumber(num, 0, l, 1, 1);
+    }
+    bool isSubAdditiveNumber(string num, int start, int length, int num1length, int num2length) {
+        string sub3, res;
+        long num1, num2, num3;
+        int maxl1 = num[start] == '0' ? 1 : length - start - 2;
+        for (int l1 = num1length; l1 <= maxl1; l1++) {
+            for (int l2 = num2length; start + l1 + l2 <= length - 1; l2++) {
+                if (num[start + l1] == '0' && l2 > 1) continue;
+                num1 = stol(num.substr(start, l1));
+                num2 = stol(num.substr(start + l1, l2));
+                num3 = num1 + num2;
+                sub3 = to_string(num3);
+                res = num.substr(start + l1 + l2);
+                if (res.find(sub3) == 0) {
+                    if (start + l1 + l2 + sub3.length() == length) return true;
+                    else if (isSubAdditiveNumber(num, start + l1, length, l2, sub3.length())) return true;
+                }
+            }
+        }
+        return false;
+    }
 };
