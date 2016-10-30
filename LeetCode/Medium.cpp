@@ -7,7 +7,12 @@
 //
 
 #include "Header.h"
+bool sorTopKFrequent(pair<int, int> a, pair<int, int> b) {
+    return a.second < b.second;
+}
 class Solution {
+private:
+    
 public:
 
     /*
@@ -2247,4 +2252,31 @@ public:
         }
         return false;
     }
+    /*
+     *
+     *     347. Top K Frequent Elements
+     *
+     */
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int, int> hash;
+        for (int n : nums) hash[n]++;
+        vector<pair<int, int>> queue(hash.size());
+        int i = 0;
+        for (auto it = hash.begin(); it != hash.end(); it++) {
+            queue[i] = make_pair(it->first, it->second);
+            i++;
+        }
+        
+//        bool sorTopKFrequent(pair<int, int> a, pair<int, int> b) {
+//            return a.second < b.second;
+//        }
+        sort(queue.begin(), queue.end(), sorTopKFrequent);
+        vector<int> res(k);
+        for (i = 0; i < k; i++) {
+            res[i] = queue[i].first;
+        }
+        return res;
+    }
+    
+    
 };
