@@ -7,9 +7,9 @@
 //
 
 #include "Header.h"
-bool sorTopKFrequent(pair<int, int> a, pair<int, int> b) {
-    return a.second < b.second;
-}
+//bool sorTopKFrequent(pair<int, int> a, pair<int, int> b) {
+//    return a.second < b.second;
+//}
 class Solution {
 private:
     
@@ -2270,12 +2270,103 @@ public:
 //        bool sorTopKFrequent(pair<int, int> a, pair<int, int> b) {
 //            return a.second < b.second;
 //        }
-        sort(queue.begin(), queue.end(), sorTopKFrequent);
+//        sort(queue.begin(), queue.end(), sorTopKFrequent);
         vector<int> res(k);
         for (i = 0; i < k; i++) {
             res[i] = queue[i].first;
         }
         return res;
+    }
+    /*
+     *
+     *     229. Majority Element II
+     *
+     */
+    vector<int> majorityElement(vector<int>& nums) {
+        int count1 = 0, count2 = 0, a = 0, b = 1;
+        for (auto n: nums) {
+            if (a == n) count1++;
+            else if (b == n) count2++;
+            else if (count1 == 0) a = n;
+            else if (count2 == 0) b = n;
+            else {
+                count1--;
+                count2--;
+            }
+        }
+        count1 = 0;
+        count2 = 0;
+        
+        for (auto n : nums) {
+            if (a == n) count1++;
+            else if (b == n) count2++;
+        }
+        vector<int> res;
+        if (count1 > nums.size()/3) res.push_back(a);
+        if (count2 > nums.size()/3) res.push_back(a);
+        
+        return res;
+    }
+    /*
+     *
+     *     241. Different Ways to Add Parentheses   QuestionEditorial Solution
+     *
+     */
+    
+    vector<int> diffWaysToCompute(string input) {
+        vector<int> numbers;
+        vector<char> operation;
+        string num = "";
+        int l = input.length();
+        for (int i = 0; i < input.length(); i++) {
+            char t = input[i];
+            if (t <= '9' && t >= '0') {
+                num += t;
+            } else {
+                operation.push_back(t);
+                int tmp = stoi(num);
+                numbers.push_back(tmp);
+                num = "";
+            }
+        }
+        if (num != "") numbers.push_back(stoi(num));
+        vector<int> res =subCompute(numbers, operation, 0, numbers.size() - 1);
+        return res;
+    }
+    vector<int> subCompute(vector<int> numbers, vector<char> operation, int start, int end) {
+        vector<int> res, front, others;
+        if (end - start == 1) {
+            res.push_back(getComputeResult(numbers[start], numbers[end], operation[end - 1]));
+            return res;
+        }
+        for (int i = 0; start + i < end; i++) {
+            if (i == 0) {
+                others = subCompute(numbers, operation, start + 1, end);
+                for (int j = 0; j < others.size(); j++) {
+                    int tmp =getComputeResult(numbers[start], others[j], operation[start]);
+                    res.push_back(tmp);
+                }
+            } else if (i + start == end - 1) {
+                front = subCompute(numbers, operation, start, end - 1);
+                for (int j = 0; j < front.size(); j++) {
+                    res.push_back(getComputeResult(front[j], numbers[end], operation[end - 1]));
+                }
+            } else {
+                front = subCompute(numbers, operation, start, start + i);
+                others = subCompute(numbers, operation, start + i + 1, end);
+                for (int j = 0; j < front.size(); j++) {
+                    for (int k = 0; k < others.size(); k++) {
+                        res.push_back(getComputeResult(front[j], others[k], operation[start + i]));
+                    }
+                }
+            }
+        }
+        return res;
+    }
+    int getComputeResult(int a, int b, char op) {
+        if (op == '+') return a + b;
+        else if (op == '-') return a - b;
+        else return a * b;
     }
     
     
