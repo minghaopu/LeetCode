@@ -2368,6 +2368,26 @@ public:
         else if (op == '-') return a - b;
         else return a * b;
     }
-    
+    /*
+     *
+     *     334. Increasing Triplet Subsequence
+     *
+     */
+    bool increasingTriplet(vector<int>& nums) {
+        if (nums.size() < 3) return false;
+        int min1 = INT_MAX;
+        int min2 = INT_MAX;
+        for (int i = 0; i < nums.size(); i++) {
+            int t = nums[i];
+            if (t <= min1) {
+                min1 = t;
+            } else if (t <= min2) {
+                min2 = t;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
     
 };
