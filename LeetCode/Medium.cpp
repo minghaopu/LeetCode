@@ -2391,7 +2391,7 @@ public:
     }
     /*
      *
-     *     280. Wiggle Sort
+     *     280. Wiggle Sort &
      *
      */
     void wiggleSort(vector<int>& nums) {
@@ -2399,5 +2399,70 @@ public:
             if (((i & 1) && nums[i] < nums[i - 1]) || (!(i & 1) && nums[i] > nums[i - 1])) swap(nums[i], nums[i - 1]);
         }
     }
+    void wiggleSortII(vector<int>& nums) {
+        int n = nums.size();
+        auto midptr = nums.begin() + n / 2;
+        nth_element(nums.begin(), midptr, nums.end());
+        int median = *midptr; // find median
+        int first = 0, mid = 0, last = n-1;
+        while(mid <= last) {
+            int actmid = map_index(mid, n);
+            int actfirst = map_index(first, n);
+            int actlast = map_index(last, n);
+            // j: from 0 to 9;
+            // map index: 1 3 5 7 9 0 2 4 6 8
+            // 5 3 1 7 9 0 2 4 6 8
+            // 5 1 3 7 9 0 2 4 6 8
+            // 5 1 7 3 9 0 2 4 6 8
+            //
+            if (nums[actmid] > median) {
+                swap(nums[actfirst], nums[actmid]);
+                first++;
+                mid++;
+            } else if (nums[actmid] < median) {
+                swap(nums[actlast], nums[actmid]);
+                last--;
+            } else {
+                mid++;
+            }
+        }
+    }
+    /*
+     *
+     *     280. Wiggle Sort
+     *
+     */
+    int map_index(int idx, int n) {
+        // original index 0 1 2 3 4 5 6 7 8 9
+        // after map      1 3 5 7 9 0 2 4 6 8
+        
+        return (2 * idx + 1) % (n | 1);
+        // (n | 1) returns the nearest odd number larger than n;
+        // here (n | 1) == 11;
+    }
+    /*
+     *
+     *     318. Maximum Product of Word Lengths
+     *
+     */
     
+    int maxProduct(vector<string>& words) {
+        int l = words.size();
+        if (l < 2) return 0;
+        vector<int> mask(l);
+        for (int i = 0; i < l; i++) {
+            mask[i] = 0;
+            string s = words[i];
+            for (int j = 0; j < s.length(); j++) {
+                mask[i] |= 1 << (s[j] - 'a');
+            }
+        }
+        int res = 0;
+        for (int i = 0; i < l; i++) {
+            for (int j = i + 1; j < l; j++) {
+                if ((mask[i] & mask[j]) == 0) res = max(res, int(words[i].length() * words[j].length()));
+            }
+        }
+        return res;
+    }
 };
