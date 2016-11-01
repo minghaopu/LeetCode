@@ -2465,4 +2465,35 @@ public:
         }
         return res;
     }
+    /*
+     *
+     *     59. Spiral Matrix II
+     *
+     */
+    vector<vector<int>> generateMatrix(int n) {
+        if (n <= 0) return vector<vector<int>>();
+        int row_min = 0, col_min = 0, row_max = n - 1, col_max = n - 1;
+        int value = 1, row = 0, col = 0;
+        vector<vector<int>> res(n, vector<int>(n));
+        while (value <= n*n) {
+            for (col = col_min, row = row_min; col <= col_max; col++, value++) {
+                res[row][col] = value;
+            }
+            row_min++;
+            for (col = col_max, row = row_min; row <= row_max; row++, value++) {
+                res[row][col] = value;
+            }
+            col_max--;
+            for (col = col_max, row = row_max; col >= col_min; col--, value++) {
+                res[row][col] = value;
+            }
+            row_max--;
+            for (col = col_min, row = row_max; row >= row_min; row--, value++) {
+                res[row][col] = value;
+            }
+            col_min++;
+            
+        }
+        return res;
+    }
 };
