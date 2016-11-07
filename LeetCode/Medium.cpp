@@ -97,7 +97,9 @@ public:
      *
      */
     vector<vector<int>> threeSum(vector<int>& nums) {
+        
         sort(nums.begin(), nums.end());
+        
         vector<vector<int>> result;
         
         int a;
@@ -2002,11 +2004,30 @@ public:
      *     80. Remove Duplicates from Sorted Array II
      *
      */
+    int removeDuplicates1(vector<int>& nums) {
+        int count = 0;
+        for (int i = 1; i < nums.size(); i++) {
+            if (nums[i] == nums[i - 1]) count++;
+            else nums[i - count] = nums[i];
+        }
+        nums.resize(nums.size() - count);
+        return nums.size();
+    }
     int removeDuplicates(vector<int>& nums) {
         int count = 0;
         int n = nums.size();
         for (int i = 2; i < n; i++) {
             if (nums[i] == nums[i- 2 - count]) count++;
+            else nums[i - count] = nums[i];
+        }
+        nums.resize(nums.size() - count);
+        return nums.size();
+    }
+    int removeKDuplicates(vector<int>& nums, int k) {
+        int count = 0;
+        int n = nums.size();
+        for (int i = 2; i < n; i++) {
+            if (nums[i] == nums[i- k - count]) count++;
             else nums[i - count] = nums[i];
         }
         nums.resize(nums.size() - count);
@@ -2171,6 +2192,26 @@ public:
             else right = mid - 1;
         }
         return -1;
+    }
+    /*
+     *
+     *     81. Search in Rotated Sorted Array II
+     *
+     */
+    bool searchInRotateArray_withDuplicate(vector<int>& nums, int target) {
+        int size = nums.size();
+        if (size == 0) return false;
+        int left = 0, right = size - 1;
+        int mid;
+        while (left <= right) {
+            while (nums[left] == nums[left + 1]) left++;
+            while (nums[right]  == nums[right - 1]) right--;
+            mid = (left + right) / 2;
+            if (nums[mid] == target) return true;
+            if ((nums[left] <= nums[mid] && (nums[left] > target || nums[mid] < target)) || (nums[left] > nums[mid] && (nums[mid] < target && nums[right] >= target))) left = mid + 1;
+            else right = mid - 1;
+        }
+        return false;
     }
     /*
      *
@@ -2515,4 +2556,303 @@ public:
         }
         return res;
     }
+    /*
+     *
+     *     322 coin change
+     *
+     */
+    int coinChange(vector<int>& coins, int amount) {
+        vector<int> dp(amount + 1, amount + 1);
+        dp[0] = 0;
+        int l = coins.size();
+        for (int i = 1; i <= amount; i++) {
+            for (int j = 0; j < l; j++) {
+                if (i >= coins[j]) dp[i] = min(dp[i], dp[i - coins[j]] + 1);
+            }
+        }
+        return dp[amount] == amount + 1 ? -1 : dp[amount];
+    }
+    /*
+     *
+     *     222. Count Complete Tree Nodes
+     *
+     */
+    int countNodes(TreeNode* root) {
+        if (root == NULL) return 0;
+        int num = 1;
+        TreeNode* curL = root->left;
+        TreeNode* curR = root->left;
+        while (curR) {
+            curR = curR->right;
+            curL = curL->left;
+            num <<= 1;
+        }
+        return num + (curL == NULL ? countNodes(root->right):countNodes(root->left));
+    }
+    /*
+     *
+     *     140. Word Break II
+     *
+     */
+    vector<string> wordBreak2(string s, unordered_set<string>& wordDict) {
+        vector<vector<string>> res(s.length() + 1, vector<string> ());
+        if (wordDict.find(s) != wordDict.end()) {
+            res[s.length()].push_back(s);
+            return res[s.length()];
+        }
+        vector<bool> dp(s.length() + 1, false);
+        dp[0] = true;
+        string sub;
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = i - 1; j >= 0; j--) {
+                if (dp[j]) {
+                    sub = s.substr(j, i - j);
+                    if (wordDict.find(sub) != wordDict.end()) {
+                        dp[i] = true;
+                        if (res[j].size() == 0) res[i].push_back(sub);
+                        else {
+                            for (int k = 0; k < res[j].size(); k++) {
+                                res[i].push_back(res[j][k] + " " + sub);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return res[s.length()];
+    }
+    /*
+     *
+     *     332. Reconstruct Itinerary
+     *
+     */
+    vector<string> findItinerary(vector<pair<string, string>> tickets) {
+        unordered_map<string, multiset<string>> table;
+        vector<string> route;
+        for (int i = 0; i < tickets.size(); i++) {
+            table[tickets[i].first].insert(tickets[i].second);
+        }
+        visit("JFK", table, route);
+        reverse(route.begin(), route.end());
+        return route;
+    }
+    void visit(string start, unordered_map<string, multiset<string>>& table, vector<string>& route) {
+        while (table[start].size()) {
+            string next = *table[start].begin();
+            table[start].erase(table[start].begin());
+            visit(next, table, route);
+        }
+        route.push_back(start);
+    }
+    /*
+     *
+     *     311. Sparse Matrix Multiplication
+     *
+     */
+    vector<vector<int>> multiply(vector<vector<int>>& A, vector<vector<int>>& B) {
+        if (A.empty() || B.empty()) return vector<vector<int>> ();
+        vector<vector<int>> result(A.size(), vector<int> (B[0].size(), 0));
+        
+        for (int i = 0; i < A.size(); i++) {
+            for (int j = 0; j < B.size(); j++) {
+                if (A[i][j]) {
+                    for (int k = 0; k < B[0].size(); k++) {
+                        if (B[j][k]) {
+                            result[i][k] += A[i][j] * B[j][k];
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+    /*
+     *
+     *     395. Longest Substring with At Least K Repeating Characters
+     *
+     */
+    int longestSubstring(string s, int k) {
+        return helper_395(s, k, 0, s.length());
+    }
+    int helper_395(string s, int k, int begin, int end) {
+        if (end - begin < k) return 0;
+        int map[256]{};
+        for (int i = begin; i < end; i++) map[s[i]]++;
+        for (int i = begin; i < end; i++) {
+            if (map[s[i]] < k) return max(helper_395(s, k, begin, i), helper_395(s, k, i + 1, end));
+        }
+        return end - begin;
+        
+    }
+    /*
+     *
+     *     159. Longest Substring with At Most Two Distinct Characters
+     *
+     */
+    int lengthOfLongestSubstringTwoDistinct(string s) {
+        int length = 0;
+        int start = 0;
+        int end = 1;
+        for (int i = 1; i < s.length(); i++) {
+            if (s[i] == s[i-1]) continue;
+            else if (end >= 0 && s[i] != s[end]) {
+                length = max(length, i - start);
+                start = end + 1;
+            }
+            end = i - 1;
+        }
+        return max(length, (int)s.length() - start);
+    }
+    /*
+     *
+     *     340 Longest Substring with At Most K Distinct Characters
+     *
+     */
+    int lengthOfLongestSubstringKDistinct(string s, int K) {
+        int count[256];
+        memset(count, 0, sizeof(count));
+        int start = 0;
+        int maxLength = 0;
+        int numDistinct = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (count[s[i]] == 0) numDistinct++;
+            count[s[i]]++;
+            while (numDistinct > K) {
+                count[s[start]]--;
+                if (count[s[start]] == 0) numDistinct--;
+                start++;
+            }
+            maxLength = max(i - start + 1, maxLength);
+        }
+        return maxLength;
+    }
+    /*
+     *
+     *    163  Missing Ranges
+     *
+     */
+    vector<string> findMissingRanges(vector<int>& nums, int lower, int upper) {
+        vector<string> result;
+        long pre = lower - 1;
+        long cur;
+        for (int i = 0; i <= nums.size(); i++) {
+            cur = i != nums.size()? nums[i]:upper + 1;
+            if (cur - pre >= 2) {
+                result.push_back(getRange(pre + 1, cur - 1));
+            }
+            pre = cur;
+        }
+        return result;
+    }
+    string getRange(int start, int end) {
+        return start == end? to_string(start):to_string(start) + "->" + to_string(end);
+        
+    }
+    /*
+     *
+     *     161. One Edit Distance
+     *
+     */
+    bool isOneEditDistance(string s, string t) {
+        if (s == t) return true;
+        int ldif = s.length() - t.length();
+        if (abs(ldif) > 1) return false;
+        if (t == "" || s == "") return true;
+        if (ldif == -1) return isOneEditDistance(t, s);
+        int i = 0, j = 0;
+        while(s[i] == t[j] && i < s.length() && j < t.length()) {
+            i++;
+            j++;
+        }
+        if (ldif == 1) {
+            if (i == s.length() - 1) return true;
+            else {
+                i++;
+                while(s[i] == t[j] && i < s.length() && j < t.length()) {
+                    i++;
+                    j++;
+                }
+                if (i == s.length()) return true;
+            }
+        } else {
+            if (i == s.length()) return true;
+            else {
+                i++;j++;
+                while(s[i] == t[j] && i < s.length() && j < t.length()) {
+                    i++;
+                    j++;
+                }
+                if (i == s.length()) return true;
+            }
+        }
+        return false;
+    }
+    bool isOneEditDistance2(string s, string t) {
+        int m = s.length(), n = t.length();
+        if (m < n) return isOneEditDistance(t, s);
+        if (m - n > 1) return false;
+        int i = 0, shift = m - n;
+        while (i < n && s[i] == t[i]) i++;
+        if (i == m) return shift > 0;
+        if (shift == 0) i++;
+        while (i < m && s[i + shift] == t[i]) i++;
+        return i == m;
+    }
+    /*
+     *
+     *     343. Integer Break
+     *
+     */
+    int integerBreak(int n) {
+        if (n == 2) return 1;
+        else if (n == 3) return 2;
+        else if (n % 3 == 0) return pow(3, n /3);
+        else if (n % 3 == 1) return 4 * pow(3, (n - 4) / 3);
+        else return 2 * pow(3, (n - 2) / 3);
+    }
+    /*
+     *
+     *     309. Best Time to Buy and Sell Stock with Cooldown
+     *
+     */
+    int maxProfit_withCooldown(vector<int> & prices) {
+        int days = prices.size();
+        if (days < 2) return 0;
+        int result = 0;
+        vector<int> sell(days, 0);
+        vector<int> buy(days, 0);
+        buy[0] = -prices[0];
+        buy[1] = -prices[1];
+        for (int i = 1; i < days; i++) {
+            sell[i] = max(buy[i - 1] + prices[i], sell[i - 1] - prices[i - 1] + prices[i]);
+            if (result < sell[i]) result = sell[i];
+            if (i != 1) buy[i] = max(sell[i-2] - prices[i], buy[i - 1] + prices[i-1] - prices[i]);
+        }
+        return result;
+        
+    }
+    /*
+     *
+     *     199. Binary Tree Right Side View
+     *
+     */
+    vector<int> rightSideView(TreeNode* root) {
+        vector<int> result;
+        if (root == NULL) return result;
+        queue<TreeNode*> level;
+        level.push(root);
+        queue<TreeNode*> next;
+        while(!level.empty() || !next.empty()) {
+            TreeNode* t = level.front();
+            level.pop();
+            if (t->left) next.push(t->left);
+            if (t->right) next.push(t->right);
+            if (level.empty()) {
+                result.push_back(t->val);
+                swap(level, next);
+            }
+        }
+        return result;
+    }
+    
 };
