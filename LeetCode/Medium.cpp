@@ -2854,5 +2854,19 @@ public:
         }
         return result;
     }
-    
+    /*
+     *
+     *     331. Verify Preorder Serialization of a Binary Tree
+     *
+     */
+    bool isValidSerialization(string preorder) {
+        vector<string> nodes = split(preorder, ',');
+        int dif = 1;
+        for (int i = 0; i < nodes.size(); i++) {
+            dif--;
+            if (dif < 0) return false;
+            else if (nodes[i] != "#") dif += 2;
+        }
+        return dif == 0;
+    }
 };

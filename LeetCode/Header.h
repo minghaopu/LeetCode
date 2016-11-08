@@ -50,6 +50,16 @@ struct TreeLinkNode {
     TreeLinkNode *left, *right, *next;
     TreeLinkNode(int x): val(x), left(NULL), right(NULL), next(NULL) {}
 };
+vector<string> split(string s, char seperator) {
+    vector<string> elems;
+    stringstream ss;
+    ss.str(s);
+    string item;
+    while (getline(ss, item, seperator)) {
+        elems.push_back(item);
+    }
+    return elems;
+}
 #endif /* Header_h */
 
 
