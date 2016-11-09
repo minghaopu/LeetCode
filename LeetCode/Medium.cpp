@@ -2859,8 +2859,18 @@ public:
      *     331. Verify Preorder Serialization of a Binary Tree
      *
      */
+    vector<string> splitString(string s, char seperator) {
+        vector<string> elems;
+        stringstream ss;
+        ss.str(s);
+        string item;
+        while (getline(ss, item, seperator)) {
+            elems.push_back(item);
+        }
+        return elems;
+    }
     bool isValidSerialization(string preorder) {
-        vector<string> nodes = split(preorder, ',');
+        vector<string> nodes = splitString(preorder, ',');
         int dif = 1;
         for (int i = 0; i < nodes.size(); i++) {
             dif--;
@@ -2868,5 +2878,14 @@ public:
             else if (nodes[i] != "#") dif += 2;
         }
         return dif == 0;
+    }
+    int calculate(string s) {
+        string token;
+        int op1 = NULL;
+        int op2 = NULL;
+        for (int i = 0; i < s.length(); i++) {
+            
+        }
+        return 0;
     }
 };
