@@ -2879,13 +2879,4 @@ public:
         }
         return dif == 0;
     }
-    int calculate(string s) {
-        string token;
-        int op1 = NULL;
-        int op2 = NULL;
-        for (int i = 0; i < s.length(); i++) {
-            
-        }
-        return 0;
-    }
 };
