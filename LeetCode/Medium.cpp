@@ -3081,4 +3081,28 @@ public:
         }
         return room;
     }
+    /*
+     *
+     *     250. Count Univalue Subtrees
+     *
+     */
+    int countUnivalSubtrees(TreeNode* root) {
+        int count = 0;
+        helper250(root, count);
+        return count;
+    }
+    bool helper250(TreeNode* root, int& count) {
+        if (root == NULL) return true;
+        if (!root->left && !root->right) {
+            count++;
+            return true;
+        }
+        bool left = helper250(root->left, count);
+        bool right = helper250(root->right, count);
+        if (left && right && (root->left == NULL || root->left->val == root->val) && (root->right == NULL || root->right->val == root->val)) {
+            count++;
+            return true;
+        }
+        return false;
+    }
 };

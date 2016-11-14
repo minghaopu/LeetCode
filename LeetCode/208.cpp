@@ -6,7 +6,7 @@
 //  Copyright © 2016 Minghao Pu. All rights reserved.
 //
 
-#include <stdio.h>
+#include "Header.h"
 class TrieNode {
 public:
     bool isWord;
