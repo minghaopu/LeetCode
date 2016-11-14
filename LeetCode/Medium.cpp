@@ -2879,4 +2879,206 @@ public:
         }
         return dif == 0;
     }
+    /*
+     *
+     *     167. Two Sum II - Input array is sorted
+     *
+     */
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        vector<int> res(2);
+        if (numbers.size() < 2) return res;
+        int left = 0, right = numbers.size() - 1, sum;
+        while (left < right) {
+            sum = numbers[left] + numbers[right];
+            if (sum == target) {
+                res[0] = left + 1;
+                res[1] = right + 1;
+                break;
+            } else if (sum > target) right--;
+            else left++;
+        }
+        return res;
+    }
+    /*
+     *
+     *     337. House Robber III
+     *
+     */
+    int rob(TreeNode* root) {
+        int l, r;
+        return tryRob(root, l, r);
+    }
+    int tryRob(TreeNode* root, int& leftTotal, int& rightTotal) {
+        if (!root) return 0;
+        int leftLeftTotal = 0, leftRightTotal = 0;
+        int rightLeftTotal = 0, rightRightTotal = 0;
+        leftTotal = tryRob(root->left, leftLeftTotal, leftRightTotal);
+        rightTotal = tryRob(root->right, rightLeftTotal, rightRightTotal);
+        return max(root->val + leftLeftTotal + leftRightTotal + rightLeftTotal + rightRightTotal, leftTotal + rightTotal);
+    }
+    /*
+     *
+     *     378. Kth Smallest Element in a Sorted Matrix
+     *
+     */
+    int kthSmallest(vector<vector<int>>& matrix, int k) {
+        int n = matrix.size();
+        
+        
+        int left = matrix[0][0];
+        int right = matrix[n-1][n-1];
+        
+        int mid;
+        while (left < right) {
+            mid = (left + right) / 2;
+            int count = 0;
+            for (int i = 0; i < n; i++) {
+                auto row = matrix[i];
+                count += upper_bound(row.begin(), row.end(), mid) - row.begin();
+            }
+            if (count < k) left = mid + 1;
+            else right = mid;
+        }
+        return left;
+    }
+    /*
+     *
+     *     221. Maximal Square
+     *
+     */
+    int maximalSquare1(vector<vector<char>>& matrix) {
+        int m = matrix.size();
+        if (m == 0) return 0;
+        int n = matrix[0].size();
+        int maxLength = 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 1) {
+                    int length = checkSquare(matrix, i, j, m, n);
+                    maxLength = max(length, maxLength);
+                    cout<<length<<endl;
+                    j += length - 1;
+                    i += length - 1;
+                };
+            }
+        }
+        return maxLength * maxLength;
+    }
+    int checkSquare(vector<vector<char>>& matrix, int x, int y, int m, int n) {
+        int length;
+        for (length = 1; length + x <= m && length + y <= n; length++) {
+            for (int i = x; i < x + length; i++) {
+                for (int j = y; j < y + length; j++) {
+                    cout<<"matrix[i][j]: "<<matrix[i][j]<<endl;
+                    cout<<"length: "<<length<<endl;
+                    if (matrix[i][j] == 0) break;
+                }
+            }
+        }
+        return length;
+    }
+    //time: O(mn) Space:O(mn);
+    int maximalSquare2(vector<vector<char>>& matrix) {
+        int m = matrix.size();
+        if (m == 0) return 0;
+        int n = matrix[0].size();
+        int maxLength = 0;
+        vector<vector<int>> dp(m, vector<int> (n, 0));
+        for (int i = 0; i < m; i++) {
+            dp[i][0] = matrix[i][0] - '0';
+            if (dp[i][0] == 1) maxLength = 1;
+        }
+        for (int j = 0; j < n; j++) {
+            dp[0][j] = matrix[0][j] - '0';
+            if (dp[0][j] == 1) maxLength = 1;
+        }
+        for (int i = 1; i < m; i++) {
+            
+            for (int j = 1; j < n; j++) {
+                if (matrix[i][j] == '0') dp[i][j] = 0;
+                else if (matrix[i - 1][j - 1] == '1') {
+                    dp[i][j] = min(dp[i-1][j], min(dp[i-1][j-1], dp[i][j-1])) + 1;
+                    maxLength = max(dp[i][j], maxLength);
+                } else {
+                    dp[i][j] = matrix[i][j] - '0';
+                }
+            }
+        }
+        return maxLength * maxLength;
+    }
+    //time: O(mn) Space:O(n);
+    int maximalSquare3(vector<vector<char>>& matrix) {
+        int m = matrix.size();
+        if (m == 0) return 0;
+        int n = matrix[0].size();
+        int maxLength = 0, prev = matrix[0][0];
+        vector<int> dp(n + 1, 0);
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                int tmp = dp[j];
+                if (matrix[i - 1][j - 1] == '1') {
+                    dp[j] = min(prev, min(dp[j-1], tmp)) + 1;
+                    maxLength = max(dp[j], maxLength);
+                } else {
+                    dp[j] = 0;
+                }
+                prev = tmp;
+            }
+        }
+        return maxLength * maxLength;
+    }
+    /*
+     *
+     *     277. Find the Celebrity
+     *
+     */
+    int knows(int a, int b) {return true;}
+    int findCelebrity(int n) {
+        if (n <= 1) return n;
+        int candidate = 0;
+        for (int i = 1; i < n; i++) {
+            if (!knows(i, candidate)) candidate = i;
+        }
+        for (int i = 0; i < n; i++) {
+            if (i == candidate) continue;
+            if (!knows(i, candidate) || knows(candidate, i)) return -1;
+        }
+        return candidate;
+    }
+    /*
+     *
+     *     406. Queue Reconstruction by Height
+     *
+     */
+    vector<pair<int, int>> reconstructQueue(vector<pair<int, int>>& people) {
+        sort(people.begin(), people.end(), [] (pair<int, int> a, pair<int, int> b) {return a.first > b.first || (a.first == b.first && a.second < b.second); });
+        vector<pair<int, int>> result;
+        for (auto p : people) {
+            result.insert(result.begin() + p.second, p);
+        }
+        return result;
+    }
+    /*
+     *
+     *     253. Meeting Rooms II
+     *
+     */
+    int minMeetingRooms(vector<Interval>& intervals) {
+        int size = intervals.size();
+        vector<int> start(size, 0);
+        vector<int> end(size, 0);
+        
+        for (int i = 0; i < size; i++) {
+            start[i] = intervals[i].start;
+            end[i] = intervals[i].end;
+        }
+        sort(start.begin(), start.end());
+        sort(end.begin(), end.end());
+        int room = 0;
+        for (int i = 0, j = 0; i < size; i++) {
+            if (start[i] < end[j]) room++;
+            else j++;
+        }
+        return room;
+    }
 };
