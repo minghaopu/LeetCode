@@ -3183,12 +3183,17 @@ public:
         }
         return length == INT_MAX?0:length;
     }
+    /*
+     *
+     *     207. Course Schedule
+     *
+     */
     bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
         vector<set<int>> graph = makeGraph(numCourses, prerequisites);
-        
+        vector<bool> visited(numCourses, false);
+        vector<bool> color(numCourses, false);
         for (int i = 0; i < numCourses; i++) {
-            vector<bool> visited(numCourses, false);
-            if (dfsHasCircle(i, visited, graph)) return false;
+            if (color[i] == false && dfsHasCircle(i, visited, graph, color)) return false;
         }
         return true;
     }
@@ -3199,12 +3204,55 @@ public:
         }
         return graph;
     }
-    bool dfsHasCircle(int node,vector<bool>& visited,vector<set<int>>& graph) {
-        if (visited[node]) return true;
+    bool dfsHasCircle(int node, vector<bool>& visited, vector<set<int>>& graph, vector<bool>& color) {
         visited[node] = true;
+        color[node] = true;
         for (int neighbor : graph[node]) {
-            if(dfsHasCircle(neighbor, visited, graph)) return true;
+            if (visited[neighbor] || dfsHasCircle(neighbor, visited, graph, color)) return true;
         }
+        visited[node] = false;
         return false;
+    }
+    /*
+     *
+     *     274. H-Index
+     *
+     */
+    int hIndex(vector<int>& citations) {
+        if (citations.empty()) return 0;
+        sort(citations.begin(), citations.end(), [](int a, int b) {return a < b;});
+        int len = citations.size();
+        for (int i = 0; i < citations.size(); i++) {
+            if (len <= citations[i]) return len;
+            else {
+                len--;
+            }
+        }
+        return len;
+    }
+    /*
+     *
+     *     216. Combination Sum III
+     *
+     */
+    vector<vector<int>> combinationSum3(int k, int n) {
+        vector<vector<int>> result;
+        if (n > 45 || k > 9) return result;
+        vector<int> path;
+        dfs(k, n, result, path);
+        return result;
+    }
+    void dfs(int k, int n, vector<vector<int>>& result, vector<int>& path) {
+        if (n == 0 && k == 0) {
+            result.push_back(path);
+        } else if (k > 0) {
+            for (int i = path.empty() ? 1: path.back() + 1; i <= 9; i++) {
+                if (n >= i) {
+                    path.push_back(i);
+                    dfs(k - 1, n - i, result, path);
+                    path.pop_back();
+                }
+            }
+        }
     }
 };

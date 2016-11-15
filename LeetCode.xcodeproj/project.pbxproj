@@ -104,6 +104,8 @@
 		702453151DDAB44400B3E936 /* 412.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452B31DDAB44400B3E936 /* 412.cpp */; };
 		702453161DDAB44400B3E936 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452B51DDAB44400B3E936 /* main.cpp */; };
 		702453171DDAB44400B3E936 /* Medium.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452B61DDAB44400B3E936 /* Medium.cpp */; };
+		702453191DDACCCB00B3E936 /* 210_course_schedule_II.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702453181DDACCCB00B3E936 /* 210_course_schedule_II.cpp */; };
+		7024531B1DDAE41100B3E936 /* 372_Super_Pow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7024531A1DDAE41100B3E936 /* 372_Super_Pow.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -217,6 +219,8 @@
 		702452B41DDAB44400B3E936 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		702452B51DDAB44400B3E936 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		702452B61DDAB44400B3E936 /* Medium.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Medium.cpp; sourceTree = "<group>"; };
+		702453181DDACCCB00B3E936 /* 210_course_schedule_II.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 210_course_schedule_II.cpp; sourceTree = "<group>"; };
+		7024531A1DDAE41100B3E936 /* 372_Super_Pow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 372_Super_Pow.cpp; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -298,11 +302,13 @@
 				702452821DDAB44400B3E936 /* 205.cpp */,
 				702452831DDAB44400B3E936 /* 206_Reverse_Linked_List.cpp */,
 				702452841DDAB44400B3E936 /* 208.cpp */,
+				702453181DDACCCB00B3E936 /* 210_course_schedule_II.cpp */,
 				702452851DDAB44400B3E936 /* 217_Contains_Duplicate.cpp */,
 				702452861DDAB44400B3E936 /* 219_Contains_Duplicate.cpp */,
 				702452871DDAB44400B3E936 /* 224_227_Basic_Calculator.cpp */,
 				702452881DDAB44400B3E936 /* 225.cpp */,
 				702452891DDAB44400B3E936 /* 226.cpp */,
+				7024531A1DDAE41100B3E936 /* 372_Super_Pow.cpp */,
 				7024528A1DDAB44400B3E936 /* 230.cpp */,
 				7024528B1DDAB44400B3E936 /* 231.cpp */,
 				7024528C1DDAB44400B3E936 /* 232_queue_using_stacks.cpp */,
@@ -469,6 +475,7 @@
 				702453131DDAB44400B3E936 /* 397.cpp in Sources */,
 				702452F41DDAB44400B3E936 /* 249_Group_Shifted_Strings.cpp in Sources */,
 				702452B91DDAB44400B3E936 /* 7_Reverse_Integer.cpp in Sources */,
+				702453191DDACCCB00B3E936 /* 210_course_schedule_II.cpp in Sources */,
 				702452F31DDAB44400B3E936 /* 246.cpp in Sources */,
 				702452DB1DDAB44400B3E936 /* 172_Factorial_Trailing_Zeroes.cpp in Sources */,
 				702453161DDAB44400B3E936 /* main.cpp in Sources */,
@@ -476,6 +483,7 @@
 				702453111DDAB44400B3E936 /* 389.cpp in Sources */,
 				702452C71DDAB44400B3E936 /* 101.cpp in Sources */,
 				702452EA1DDAB44400B3E936 /* 225.cpp in Sources */,
+				7024531B1DDAE41100B3E936 /* 372_Super_Pow.cpp in Sources */,
 				702452B71DDAB44400B3E936 /* 1.cpp in Sources */,
 				702452D61DDAB44400B3E936 /* 155_Min_Stack.cpp in Sources */,
 				702452DA1DDAB44400B3E936 /* 170.cpp in Sources */,
