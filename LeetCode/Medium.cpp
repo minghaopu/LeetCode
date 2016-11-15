@@ -3255,4 +3255,123 @@ public:
             }
         }
     }
+    /*
+     *
+     *     60. Permutation Sequence
+     *
+     */
+    string getPermutation(int n, int k) {
+        string res;
+        string nums = "123456789";
+        int fact[n];
+        fact[0] = 1;
+        for (int i = 1; i < n; i++) fact[i] = i * fact[i - 1];
+        k--;
+        for (int i = n; i > 0; i--) {
+            int j = k / fact[i - 1];
+            k %= fact[i - 1];
+            res += nums[j];
+            cout<<res<<endl;
+            nums.erase(nums.begin() + j);
+        }
+        return res;
+    }
+    /*
+     *
+     *     156. Binary Tree Upside Down
+     *
+     */
+    TreeNode* upsideDownBinaryTree(TreeNode* root) {
+        if (root == NULL) return root;
+        stack<TreeNode*> S;
+        while (root->left) {
+            S.push(root);
+            root = root->left;
+        }
+        if (S.empty()) {
+            root->right = NULL;
+            return root;
+        }
+        TreeNode* newRoot = root;
+        while (!S.empty()) {
+            TreeNode* node = S.top();
+            S.pop();
+            root->left = node->right;
+            node->left = NULL;
+            node->right = NULL;
+            root->right = node;
+            root = root->right;
+        }
+        return newRoot;
+    }
+    /*
+     *
+     *    375. Guess Number Higher or Lower II
+     *
+     */
+    int getMoneyAmount(int n) {
+        vector<vector<int>> dp(n+1, vector<int> (n+1, 0));
+        for (int i = 2; i <= n; i++) {
+            for (int j = i-1; j >= 1; j--) {
+                if (j+1 == i) dp[j][i] = j;
+                else {
+                    int tempMin = INT_MAX;
+                    for (int k = j+1; k < i; k++) {
+                        tempMin = min(max(dp[j][k-1], dp[k+1][i]) + k, tempMin);
+                    }
+                    dp[j][i] = tempMin;
+                }
+            }
+        }
+        return dp[1][n];
+    }
+    /*
+     *
+     *    377. Combination Sum IV
+     *
+     */
+    int combinationSum4(vector<int>& nums, int target) {            //TLE
+        if (target == 0) return {};
+        vector<vector<int>> result;
+        vector<int> path;
+        dfs_377(nums, target, path, result);
+        return result.size();
+    }
+    void dfs_377(vector<int>& nums, int target, vector<int>& path, vector<vector<int>>& result) {
+        if (target == 0) {
+            result.push_back(path);
+            return;
+        }
+        for (int i = 0; i < nums.size(); i++) {
+            int num = nums[i];
+            int rest = target - num;
+            if (rest < 0) break;
+            path.push_back(num);
+            dfs_377(nums, rest, path, result);
+            path.pop_back();
+        }
+    }
+    int combinationSum4_method2(vector<int>& nums, int target) {    //accepted
+        vector<int> dp(target+1, 0);
+        sort(nums.begin(), nums.end());
+        for (int i = 1; i <= target; i++) {
+            for (int num : nums) {
+                if (num > i) break;
+                else if (num == i) dp[i] += 1;
+                else {
+                    dp[i] += dp[i - num];
+                }
+            }
+        }
+        return dp[target];
+    }
+    /*
+     *
+     *    377. Combination Sum IV
+     *
+     */
+    int lastRemaining(int n) {
+        return n == 1? 1 : (n/2 + 1 - lastRemaining(n/2)) * 2;
+    }
+
 };

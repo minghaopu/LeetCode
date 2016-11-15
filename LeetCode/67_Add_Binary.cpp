@@ -11,7 +11,7 @@
 class Solution {
 public:
     string addBinary(string a, string b) {
-        int i = a.length() - 1, j = b.length() - 1;
+        int i = int(a.length()) - 1, j = int(b.length()) - 1;
         int k = max(i,j)+1;
         string r = "";
         int flag = 0;

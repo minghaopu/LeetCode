@@ -14,7 +14,7 @@ private:
 public:
     Solution(vector<int> nums) {
         this->array = nums;
-        this->size = nums.size();
+        this->size = int(nums.size());
     }
     
     /** Resets the array to its original configuration and return it. */

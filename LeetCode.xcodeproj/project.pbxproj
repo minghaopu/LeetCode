@@ -106,6 +106,8 @@
 		702453171DDAB44400B3E936 /* Medium.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452B61DDAB44400B3E936 /* Medium.cpp */; };
 		702453191DDACCCB00B3E936 /* 210_course_schedule_II.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702453181DDACCCB00B3E936 /* 210_course_schedule_II.cpp */; };
 		7024531B1DDAE41100B3E936 /* 372_Super_Pow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7024531A1DDAE41100B3E936 /* 372_Super_Pow.cpp */; };
+		706CA4441DDBA9880001207F /* 106.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706CA4431DDBA9880001207F /* 106.cpp */; };
+		706CA4461DDBBC880001207F /* 47.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706CA4451DDBBC880001207F /* 47.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -221,6 +223,8 @@
 		702452B61DDAB44400B3E936 /* Medium.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Medium.cpp; sourceTree = "<group>"; };
 		702453181DDACCCB00B3E936 /* 210_course_schedule_II.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 210_course_schedule_II.cpp; sourceTree = "<group>"; };
 		7024531A1DDAE41100B3E936 /* 372_Super_Pow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 372_Super_Pow.cpp; sourceTree = "<group>"; };
+		706CA4431DDBA9880001207F /* 106.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 106.cpp; sourceTree = "<group>"; };
+		706CA4451DDBBC880001207F /* 47.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 47.cpp; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -349,11 +353,13 @@
 				702452AF1DDAB44400B3E936 /* 389.cpp */,
 				702452B01DDAB44400B3E936 /* 396.cpp */,
 				702452B11DDAB44400B3E936 /* 397.cpp */,
+				706CA4451DDBBC880001207F /* 47.cpp */,
 				702452B21DDAB44400B3E936 /* 409.cpp */,
 				702452B31DDAB44400B3E936 /* 412.cpp */,
 				702452B41DDAB44400B3E936 /* Header.h */,
 				702452B51DDAB44400B3E936 /* main.cpp */,
 				702452B61DDAB44400B3E936 /* Medium.cpp */,
+				706CA4431DDBA9880001207F /* 106.cpp */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -384,7 +390,7 @@
 		7089197F1CC436220042FCA1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Minghao Pu";
 				TargetAttributes = {
 					708919861CC436220042FCA1 = {
@@ -473,6 +479,7 @@
 				702452BB1DDAB44400B3E936 /* 26_Remove_Duplicate_from_Sorted_Array.cpp in Sources */,
 				7024530E1DDAB44400B3E936 /* 383.cpp in Sources */,
 				702453131DDAB44400B3E936 /* 397.cpp in Sources */,
+				706CA4441DDBA9880001207F /* 106.cpp in Sources */,
 				702452F41DDAB44400B3E936 /* 249_Group_Shifted_Strings.cpp in Sources */,
 				702452B91DDAB44400B3E936 /* 7_Reverse_Integer.cpp in Sources */,
 				702453191DDACCCB00B3E936 /* 210_course_schedule_II.cpp in Sources */,
@@ -487,6 +494,7 @@
 				702452B71DDAB44400B3E936 /* 1.cpp in Sources */,
 				702452D61DDAB44400B3E936 /* 155_Min_Stack.cpp in Sources */,
 				702452DA1DDAB44400B3E936 /* 170.cpp in Sources */,
+				706CA4461DDBBC880001207F /* 47.cpp in Sources */,
 				702452BE1DDAB44400B3E936 /* 38_Count_and_Say.cpp in Sources */,
 				702452EC1DDAB44400B3E936 /* 230.cpp in Sources */,
 				702452DE1DDAB44400B3E936 /* 189_Rotate_Array.cpp in Sources */,
@@ -533,8 +541,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -577,8 +587,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";

@@ -12,7 +12,7 @@ class Solution {
 public:
     int strStr(string haystack, string needle) {
         int i = 0, j = 0;
-        int m = haystack.length(), n = needle.length();
+        int m = (int)haystack.length(), n = (int)needle.length();
         if (n == 0) return 0;
         while (i < m && j < n) {
             if (m-i < n-j) return -1;

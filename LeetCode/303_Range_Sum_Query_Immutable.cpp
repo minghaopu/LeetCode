@@ -103,7 +103,7 @@ private:
     int *ss;
 public:
     NumArray(vector<int> &nums) {
-        int l = nums.size();
+        int l = int(nums.size());
         ss = new int [l+1];
         ss[0] = 0;
         int k = 0;

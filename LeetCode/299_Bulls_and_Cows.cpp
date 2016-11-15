@@ -22,7 +22,7 @@ public:
         guess = s2;
     }
     string getHint() {
-        int len = secret.length();
+        int len = int(secret.length());
         int *numsA = new int[10],
             *numsB = new int[10];
         int A = 0, B = 0;

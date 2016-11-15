@@ -21,7 +21,7 @@ public:
         
         for (int i = 0; i < dictionary.size(); i++) {
             string s = dictionary[i];
-            int l = s.length();
+            int l = (int)s.length();
             if (s == "") {
                 continue;
             }
@@ -31,7 +31,7 @@ public:
     }
     
     bool isUnique(string word) {
-        int l = word.length();
+        int l = (int)word.length();
         if (abd.size()==0 || l == 0) return true;
         
         string t = word;

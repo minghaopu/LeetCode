@@ -26,7 +26,7 @@ public:
     bool wordPattern() {
         
         int i = 0;
-        int length = pattern.length();
+        int length = int(pattern.length());
         istringstream iss(str);
         string token;
         

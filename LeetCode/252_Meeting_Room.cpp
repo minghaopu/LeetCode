@@ -30,10 +30,10 @@ public:
     }
     bool isAll = true;
     bool canAttendMeetings(vector<Interval>& intervals) {
-        int sz = intervals.size();
+        int sz = (int)intervals.size();
         if (sz < 2) return true;
 
-        quicksort(intervals, 0, intervals.size()-1);
+        quicksort(intervals, 0, (int)intervals.size()-1);
 
         return isAll;
     };

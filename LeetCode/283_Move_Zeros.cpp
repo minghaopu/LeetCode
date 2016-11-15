@@ -19,7 +19,7 @@ public:
     void moveZeros() {
         int i = -1; // non-zero position
         int j = 0;  // zero postion
-        int length = nums.size();
+        int length = (int)nums.size();
         int temp;
         while (j<length) {
             if (nums[j] == 0) {
