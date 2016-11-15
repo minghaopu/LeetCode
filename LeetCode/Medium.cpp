@@ -3105,4 +3105,106 @@ public:
         }
         return false;
     }
+    /*
+     *
+     *     300. Longest Increasing Subsequence
+     *
+     */
+    int lengthOfLIS(vector<int>& nums) {
+        if (nums.size() == 0) return 0;
+        vector<int> result;
+        int length = 1;
+        for (int i = 0; i < nums.size(); i++) {
+            auto it = lower_bound(result.begin(), result.end(), nums[i]);
+            cout<<result[it-result.begin()]<<endl;
+            if (it == result.end()) result.push_back(nums[i]);
+            else *it = nums[i];
+        }
+        return result.size();
+    }
+    /*
+     *
+     *     357. Count Numbers with Unique Digits
+     *
+     */
+    int countNumbersWithUniqueDigits(int n) {
+        if (n == 0) return 1;
+        if (n > 10) return countNumbersWithUniqueDigits(10);
+        int total = 9;
+        for (int i = 1; i < n && i <= 9; i++) {
+            total *= (10 - i);
+        }
+        return total + countNumbersWithUniqueDigits(n - 1);
+    }
+    /*
+     *
+     *     95. Unique Binary Search Trees II
+     *
+     */
+    vector<TreeNode*> generateTrees(int n) {
+        if (n == 0) return {};
+        return generateSubTrees(1, n);
+    }
+    vector<TreeNode*> generateSubTrees(int start, int end) {
+        vector<TreeNode*> res;
+        if (start > end) {
+            res.push_back(NULL);
+            return res;
+        }
+        for (int i = start; i <= end; i++) {
+            vector<TreeNode*> left = generateSubTrees(start, i - 1);
+            vector<TreeNode*> right = generateSubTrees(i + 1, end);
+            
+            for (int l = 0; l < left.size(); l++) {
+                for (int r = 0; r < right.size(); r++) {
+                    TreeNode* root = new TreeNode(i);
+                    root->left = left[l];
+                    root->right = right[r];
+                    res.push_back(root);
+                }
+            }
+        }
+        return res;
+    }
+    /*
+     *
+     *     209. Minimum Size Subarray Sum
+     *
+     */
+    int minSubArrayLen(int s, vector<int>& nums) {
+        int start = 0, sum = 0, length = INT_MAX;
+        for (int i = 0; i < nums.size(); i++) {
+            sum += nums[i];
+            while (sum >=  s) {
+                length = min(length, i - start + 1);
+                sum -= nums[start];
+                start++;
+            }
+        }
+        return length == INT_MAX?0:length;
+    }
+    bool canFinish(int numCourses, vector<pair<int, int>>& prerequisites) {
+        vector<set<int>> graph = makeGraph(numCourses, prerequisites);
+        
+        for (int i = 0; i < numCourses; i++) {
+            vector<bool> visited(numCourses, false);
+            if (dfsHasCircle(i, visited, graph)) return false;
+        }
+        return true;
+    }
+    vector<set<int>> makeGraph(int numCourses, vector<pair<int, int>>& prerequisites) {
+        vector<set<int>> graph(numCourses);
+        for (auto it = prerequisites.begin(); it != prerequisites.end(); it++) {
+            graph[it->first].insert(it->second);
+        }
+        return graph;
+    }
+    bool dfsHasCircle(int node,vector<bool>& visited,vector<set<int>>& graph) {
+        if (visited[node]) return true;
+        visited[node] = true;
+        for (int neighbor : graph[node]) {
+            if(dfsHasCircle(neighbor, visited, graph)) return true;
+        }
+        return false;
+    }
 };
