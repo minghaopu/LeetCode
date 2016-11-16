@@ -3367,11 +3367,184 @@ public:
     }
     /*
      *
-     *    377. Combination Sum IV
+     *    390. Elimination Game
      *
      */
     int lastRemaining(int n) {
         return n == 1? 1 : (n/2 + 1 - lastRemaining(n/2)) * 2;
     }
-
+    /*
+     *
+     *    256. Paint House
+     *
+     */
+    int minCost(vector<vector<int>>& costs) {
+        int n = costs.size();
+        if (n == 0) return 0;
+        n--;
+        int pre;
+        for (int i = 1, pre = 0; i <= n; i++) {
+            pre = i - 1;
+            costs[i][0] += min(costs[pre][1], costs[pre][2]);
+            costs[i][1] += min(costs[pre][0], costs[pre][2]);
+            costs[i][2] += min(costs[pre][1], costs[pre][0]);
+        }
+        return min(min(costs[n][0], costs[n][1]), costs[n][2]);
+    }
+    /*
+     *
+     *    285. Inorder Successor in BST
+     *
+     */
+    TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p) {
+        stack<TreeNode*> S;
+        bool isNode = false;
+        while (root) {
+            S.push(root);
+            root = root->left;
+        }
+        while (!S.empty()) {
+            TreeNode* node = S.top();
+            if (isNode) return node;
+            S.pop();
+            if (node == p) isNode = true;
+            if (node->right) {
+                node = node->right;
+                while (node) {
+                    S.push(node);
+                    node = node->left;
+                }
+            }
+        }
+        return NULL;
+    }
+    // since it's a binary search tree instead of just binary tree, there is another smiple method;
+    TreeNode* inorderSuccessor_method2(TreeNode* root, TreeNode* p) {
+        if (root == NULL || p == NULL) return NULL;
+        TreeNode* suc = NULL;
+        while (root) {
+            if (root->val <= p->val) {
+                root = root->right;
+            } else {
+                suc = root;
+                root = root->left;
+            }
+        }
+        return suc;
+    }
+    /*
+     *
+     *    82. Remove Duplicates from Sorted List II
+     *
+     */
+    ListNode* deleteDuplicates(ListNode* head) {
+        ListNode* fakeHead = new ListNode(0);
+        fakeHead->next = head;
+        ListNode* pre = fakeHead;
+        ListNode* p = head;
+        ListNode* pnext;
+        while (p) {
+            pnext = p->next;
+            int val = p->val;
+            if (pnext && pnext->val == val) {
+                while (pnext && pnext->val == val) pnext = pnext->next;
+                pre->next = pnext;
+                p = pnext;
+            } else {
+                pre = p;
+            }
+            p = pnext;
+        }
+        return fakeHead->next;
+    }
+    /*
+     *
+     *    320. Generalized Abbreviation
+     *
+     */
+    vector<string> generateAbbreviations(string word) {
+        int l = word.length();
+        vector<string> res;
+        helper(word, res, "", 0, false);
+        return res;
+    }
+    void helper(string word, vector<string>& res, string abbr, int start, bool isPreNum) {
+        if (start == word.length()) {
+            res.push_back(abbr);
+            return;
+        }
+        helper(word, res, abbr + word[start], start + 1, false);
+        if (!isPreNum) {
+            for (int i = 1; start + i <= word.length(); i++) {
+                helper(word, res, abbr + to_string(i), start + i, true);
+            }
+        }
+    }
+    /*
+     *
+     *    113. Path Sum II -- negative may exist
+     *
+     */
+    vector<vector<int>> pathSum(TreeNode* root, int sum) {
+        vector<vector<int>> res;
+        vector<int> path;
+        dfs_113(root, sum, res, path);
+        return res;
+    }
+    void dfs_113(TreeNode* node, int sum, vector<vector<int>>& res, vector<int>& path) {
+        if (node == NULL) return;
+        sum -= node->val;
+        path.push_back(node->val);
+        if (node->left) dfs_113(node->left, sum, res, path);
+        if (node->right) dfs_113(node->right, sum, res, path);
+        if (!node->left && !node->right && sum == 0) res.push_back(path);
+        path.pop_back();
+    }
+    /*
+     *
+     *    394. Decode String
+     *
+     */
+    string decodeString(string s) {
+        int index = 0;
+        return recursiveDecode(s, index);
+    }
+    string recursiveDecode(string s, int& index) {
+        int num = 0;
+        string res = "";
+        while (index < s.length() && s[index] != ']') {
+            if (isalpha(s[index])) {
+                res += s[index];
+                index++;
+            } else {
+                while (isdigit(s[index])) {
+                    num = num * 10 + s[index] - '0';
+                    index++;
+                }
+                index++;
+                string temp = recursiveDecode(s, index);
+                index++;
+                while (num != 0) {
+                    res += temp;
+                    num--;
+                }
+            }
+        }
+        return res;
+    }
+    /*
+     *
+     *    298. Binary Tree Longest Consecutive Sequence
+     *
+     */
+    int longestConsecutive(TreeNode* root) {
+        if (root == NULL) return 0;
+        return max(helper_298(root->left, 1, root->val), helper_298(root->right, 1, root->val));
+    }
+    int helper_298(TreeNode* node, int count, int val) {
+        if (node == NULL) return count;
+        if (node->val == val + 1) count++;
+        else count = 1;
+        return max(max(helper_298(node->left, count, node->val),helper_298(node->right, count, node->val)), count);
+    }
 };

@@ -108,6 +108,7 @@
 		7024531B1DDAE41100B3E936 /* 372_Super_Pow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7024531A1DDAE41100B3E936 /* 372_Super_Pow.cpp */; };
 		706CA4441DDBA9880001207F /* 106.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706CA4431DDBA9880001207F /* 106.cpp */; };
 		706CA4461DDBBC880001207F /* 47.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706CA4451DDBBC880001207F /* 47.cpp */; };
+		708E2F0F1DDBE395006538CD /* 304.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708E2F0E1DDBE395006538CD /* 304.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -226,6 +227,7 @@
 		706CA4431DDBA9880001207F /* 106.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 106.cpp; sourceTree = "<group>"; };
 		706CA4451DDBBC880001207F /* 47.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 47.cpp; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
+		708E2F0E1DDBE395006538CD /* 304.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 304.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +351,7 @@
 				702452AB1DDAB44400B3E936 /* 371_Sum_of_Two_Intergers.cpp */,
 				702452AC1DDAB44400B3E936 /* 383.cpp */,
 				702452AD1DDAB44400B3E936 /* 384.cpp */,
+				708E2F0E1DDBE395006538CD /* 304.cpp */,
 				702452AE1DDAB44400B3E936 /* 387.cpp */,
 				702452AF1DDAB44400B3E936 /* 389.cpp */,
 				702452B01DDAB44400B3E936 /* 396.cpp */,
@@ -507,6 +510,7 @@
 				702452FB1DDAB44400B3E936 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */,
 				702453091DDAB44400B3E936 /* 344.cpp in Sources */,
 				702452ED1DDAB44400B3E936 /* 231.cpp in Sources */,
+				708E2F0F1DDBE395006538CD /* 304.cpp in Sources */,
 				702453001DDAB44400B3E936 /* 284.cpp in Sources */,
 				702452DC1DDAB44400B3E936 /* 173_Binary_Search_Tree_Iterator.cpp in Sources */,
 				702452D91DDAB44400B3E936 /* 169_Majority_Element.cpp in Sources */,
