@@ -3848,4 +3848,79 @@ public:
             reverse(s.begin(), s.end());
         }
     }
+    /*
+     *
+     *    367. Valid Perfect Square
+     *
+     */
+    
+    bool isPerfectSquare(int num) {
+        // use 1,3,5,7,9....
+        // int i = 1;
+        // while (num > 0) {
+        //     num -= i;
+        //     i += 2;
+        //     cout<<num<<endl;
+        // }
+        // return num == 0;
+        
+        // divide and conquer
+        int low = 1, high = num;
+        while (low <= high) {
+            long mid = (low + high) >> 1;
+            if (mid * mid == num) return true;
+            else if (mid * mid < num) {
+                low = int(mid) + 1;
+            } else {
+                high = int(mid) - 1;
+            }
+        }
+        return false;
+    }
+    /*
+     *
+     *    314. Binary Tree Vertical Order Traversal
+     *
+     */
+    vector<vector<int>> verticalOrder(TreeNode* root) {
+        if (root == NULL) return {};
+        map<int, vector<int>> cache;
+        queue<pair<int, TreeNode*>> Q;
+        vector<vector<int>> res;
+        Q.push(make_pair(0,root));
+        while (!Q.empty()) {
+            int size = Q.size();
+            for (int i = 0; i < size; i++) {
+                auto front = Q.front();
+                TreeNode* node = front.second;
+                int pos = front.first;
+                Q.pop();
+                cache[pos].push_back(node->val);
+                if (node->left) Q.push({pos-1,node->left});
+                if (node->right) Q.push({pos+1, node->right});
+            }
+        }
+        for (auto item : cache) {
+            res.push_back(item.second);
+        }
+        return res;
+    }
+    /*
+     *
+     *    413. Arithmetic Slices
+     *
+     */
+    int numberOfArithmeticSlices(vector<int>& A) {
+        if (A.size() < 3) return 0;
+        int n = A.size();
+        vector<int> dp(n, 0);
+        int res = 0;
+        for (int i = 2; i < n; i++) {
+            if (A[i] - A[i-1] == A[i-1] - A[i-2]) {
+                dp[i] = dp[i-1] + 1;
+            }
+            res += dp[i];
+        }
+        return res;
+    }
 };

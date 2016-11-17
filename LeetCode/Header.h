@@ -22,6 +22,8 @@
 #include <list>
 #include <set>
 #include <sstream>
+#include <map>
+#include <bitset>
 using namespace std;
 
 
