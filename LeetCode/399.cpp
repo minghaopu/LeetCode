@@ -9,72 +9,57 @@
 #include "Header.h"
 class Solution {
 private:
-    unordered_map<string, int> hash;
-    vector<vector<double>> matrix;
+    
+    struct Node {
+        Node* parent;
+        double val = 0.0;
+        Node (double val): val(val), parent(this) {};
+    };
+    unordered_map<string, Node*> map;
+    
+    Node* findParent(Node* node) {
+        if (node->parent == node) return node;
+        node->parent = findParent(node->parent);
+        return node->parent;
+    };
+    void unionNodes(Node* node1, Node* node2, double num) {
+        Node* parent1 = findParent(node1);
+        Node* parent2 = findParent(node2);
+        double ratio = node2->val * num / node1->val;
+        for (auto it = map.begin(); it != map.end(); it++) {
+            if (findParent(it->second) == parent1) {
+                it->second->val *= ratio;
+            }
+        }
+        parent1->parent = parent2;
+    }
 public:
     vector<double> calcEquation(vector<pair<string, string>> equations, vector<double>& values, vector<pair<string, string>> queries) {
-        makeGraph(equations, values);
         vector<double> res;
-        for (int i = 0; i < queries.size(); i++) {
-            string node1 = queries[i].first;
-            string node2 = queries[i].second;
-            if (hash.find(node1) != hash.end() && hash.find(node2) != hash.end()) {
-                res.push_back(matrix[hash[node1]][hash[node2]]);
+        for (int i = 0; i < equations.size(); i++) {
+            string s1 = equations[i].first;
+            string s2 = equations[i].second;
+            if (map.count(s1) == 0 && map.count(s2) == 0) {
+                map[s1] = new Node(values[i]);
+                map[s2] = new Node(1);
+                map[s1]->parent = map[s2];
+            } else if (map.count(s1) == 0) {
+                map[s1] = new Node(map[s2]->val * values[i]);
+                map[s1]->parent = map[s2];
+            } else if (map.count(s2) == 0) {
+                map[s2] = new Node(map[s1]->val / values[i]);
+                map[s2]->parent = map[s1];
+            } else {
+                unionNodes(map[s1],map[s2],values[i]);
             }
-            else res.push_back(-1.0);
+        }
+        for (auto query : queries) {
+            if (map.count(query.first) == 0 || map.count(query.second) == 0 || findParent(map[query.first]) != findParent(map[query.second])) {
+                res.push_back(-1);
+            } else {
+                res.push_back(map[query.first]->val / map[query.second]->val);
+            }
         }
         return res;
-    }
-    void makeGraph(vector<pair<string, string>> equations, vector<double>& values) {
-        int count = 0;
-        unordered_map<int, set<int>> edges;
-        for (int i = 0; i < equations.size(); i++) {
-            string node1 = equations[i].first;
-            string node2 = equations[i].second;
-            
-            if (hash.find(node1) == hash.end()) {
-                hash[node1] = count;
-                count++;
-            }
-            if (hash.find(node2) == hash.end()) {
-                hash[node2] = count;
-                count++;
-            }
-            if (edges.find(hash[node1]) == edges.end()) edges[hash[node1]] = set<int> ();
-            edges[hash[node1]].insert(hash[node2]);
-            edges[hash[node2]].insert(hash[node1]);
-        }
-        matrix.assign(count, vector<double> (count, -1.0));
-        for (int i = 0; i < equations.size(); i++) {
-            int node1 = hash[equations[i].first];
-            int node2 = hash[equations[i].second];
-            matrix[node1][node2] = values[i];
-            if (matrix[node2][node1] == -1) matrix[node2][node1] = values[i] == 0 ? INT_MAX:1/values[i];
-        }
-        for (int i = 0; i < count; i++) {
-            matrix[i][i] = 1.0;
-        }
-        for (int i = 0; i < count; i++) {
-            for (int j = 0; j < count; j++) {
-                if (matrix[i][j] == -1) {
-                    dfs(edges, i, j);
-                }
-            }
-        }
-    }
-    double dfs(unordered_map<int, set<int>>& edges, int start, int end) {
-        if (edges[start].find(end) != edges[start].end()) return matrix[start][end];
-        auto nodes = edges[start];
-        for (auto it = nodes.begin(); it != nodes.end(); it++) {
-            int next = *it;
-            double val = dfs(edges, next, end);
-            if (val != -1) {
-                matrix[start][end] = matrix[start][next] * val;
-                matrix[end][start] = val  == 0 ? INT_MAX: 1 / matrix[start][end];
-                edges[start].insert(end);
-                return start;
-            }
-        }
-        return -1.0;
     }
 };
