@@ -3547,4 +3547,305 @@ public:
         else count = 1;
         return max(max(helper_298(node->left, count, node->val),helper_298(node->right, count, node->val)), count);
     }
+    /*
+     *
+     *    368. Largest Divisible Subset
+     *
+     */
+    vector<int> largestDivisibleSubset_TLE(vector<int>& nums) {// use dfs will TLE
+        vector<int> path;
+        vector<int> largest;
+        sort(nums.begin(), nums.end());
+        dfs_368(path, largest, nums, 0);
+        return largest;
+    }
+    void dfs_368(vector<int>& path, vector<int>& largest, vector<int>& nums, int start) {
+        if (start == nums.size()) {
+            if (path.size() > largest.size()) largest = path;
+        }
+        for (int i = start; i < nums.size(); i++) {
+            int val = nums[i];
+            if (canInsert(path, nums[i])) {
+                path.push_back(nums[i]);
+                dfs_368(path, largest, nums, i + 1);
+                path.pop_back();
+            }
+        }
+        if (path.size() > largest.size()) largest = path;
+    }
+    bool canInsert(vector<int> path, int val) {
+        if (path.empty()) return true;
+        return val % path.back() == 0;
+    }
+    vector<int> largestDivisibleSubset_Apt(vector<int>& nums) {
+        int size = nums.size();
+        vector<int> dp(size, 1);
+        vector<int> largest;
+        vector<int> pre(size, -1);
+        sort(nums.begin(), nums.end());
+        int length = 0, index = -1;
+        for (int i = 0; i < size; i++) {
+            dp[i] = 1;
+            for (int j = i - 1; j >= 0; j--) {
+                if (nums[i] % nums[j] == 0) {
+                    if (dp[j] + 1 > dp[i]) {
+                        dp[i] = dp[j] + 1;
+                        pre[i] = j;
+                    }
+                }
+            }
+            if (dp[i] > length) {
+                length = dp[i];
+                index = i;
+            }
+        }
+        while (index != -1) {
+            largest.push_back(nums[index]);
+            index = pre[index];
+        }
+        return largest;
+    }
+    /*
+     *
+     *    129. Sum Root to Leaf Numbers
+     *
+     */
+    int sumNumbers(TreeNode* root) {
+        if (root == NULL) return 0;
+        int result = 0;
+        helper_129(root, 0, result);
+        return result;
+    }
+    void helper_129(TreeNode* node, int val, int& result) {
+        if (node->left == NULL && node->right == NULL) {
+            result += val * 10 + node->val;
+        }
+        if (node->left) helper_129(node->left, val * 10 + node->val, result);
+        if (node->right) helper_129(node->right, val * 10 + node->val, result);
+    }
+    /*
+     *
+     *    103. Binary Tree Zigzag Level Order Traversal
+     *
+     */
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        if (root == NULL) return {};
+        int count = 0;
+        queue<TreeNode*> curLevel;
+        queue<TreeNode*> nextLevel;
+        vector<int> level;
+        curLevel.push(root);
+        vector<vector<int>> res;
+        while (!curLevel.empty()) {
+            TreeNode* node = curLevel.front();
+            curLevel.pop();
+            level.push_back(node->val);
+            if (node->left) nextLevel.push(node->left);
+            if (node->right) nextLevel.push(node->right);
+            if (curLevel.empty()) {
+                swap(curLevel, nextLevel);
+                if (count % 2 == 1) {
+                    vector<int> tmp = level;
+                    reverse(tmp.begin(), tmp.end());
+                    res.push_back(tmp);
+                } else {
+                    res.push_back(level);
+                }
+                count++;
+                level.clear();
+            }
+        }
+        return res;
+    }
+    /*
+     *
+     *    213. House Robber II
+     *
+     */
+    int rob(vector<int>& nums) {
+        int n = nums.size();
+        if (n == 0) return 0;
+        if (n == 1) return nums[0];
+        int pre = 0, cur = 0, tmp = 0, rob1 = 0;
+        for (int i = 0; i < n - 1; i++) {
+            tmp = max(pre + nums[i], cur);
+            pre = cur;
+            cur = tmp;
+        }
+        rob1 = cur;
+        pre = 0;
+        cur = 0;
+        for (int i = 1; i < n; i++) {
+            tmp = max(pre + nums[i], cur);
+            pre = cur;
+            cur = tmp;
+        }
+        return max(rob1, cur);
+    }
+    /*
+     *
+     *    376. Wiggle Subsequence
+     *
+     */
+    int wiggleMaxLength(vector<int>& nums) {
+        if (nums.size() == 0) return 0;
+        int sign = 0;
+        int length = 1;
+        int size = nums.size();
+        for (int i = 1; i < nums.size(); i++) {
+            if (nums[i-1] < nums[i] && (sign == 0 || sign == -1)) {
+                length++;
+                sign = 1;
+            } else if (nums[i-1] > nums[i] && (sign == 0 || sign == 1)){
+                length++;
+                sign = -1;
+            }
+        }
+        return length;
+        
+    }
+    /*
+     *
+     *    286. Walls and Gates
+     *
+     */
+    void wallsAndGates(vector<vector<int>>& rooms) {
+        if (rooms.empty()) return;
+        queue<pair<int, int>> Q;
+        vector<pair<int, int>> dirs = {{-1,0},{1,0},{0,1},{0,-1}};
+        int row = int(rooms.size());
+        int col = int(rooms[0].size());
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (rooms[i][j] == 0) Q.push({i,j});
+            }
+        }
+        while (!Q.empty()) {
+            auto cord = Q.front();
+            int r = cord.first;
+            int c = cord.second;
+            Q.pop();
+            for (auto dir : dirs) {
+                int x = r + dir.first;
+                int y = c + dir.second;
+                if (x < 0 || y < 0 || x >= row || y >= col || rooms[x][y] <= rooms[r][c]+1) continue;
+                rooms[x][y] = rooms[r][c] + 1;
+                Q.push({x,y});
+            }
+        }
+    }
+    /*
+     *
+     *    373. Find K Pairs with Smallest Sums
+     *
+     */
+    vector<pair<int, int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k) {
+        vector<pair<int, int>> res;
+        int m = int(nums1.size());
+        int n = int(nums2.size());
+        k = min(k, m*n);
+        vector<int> indexes(m, 0);
+        while(k-->0) {
+            int tmpIndex = 0;
+            int tmpSum = INT_MAX;
+            for (int i = 0; i < m; i++) {
+                if (indexes[i] < n && tmpSum >= nums2[indexes[i]] + nums1[i]) {
+                    tmpIndex =  i;
+                    tmpSum = nums2[indexes[i]] + nums1[i];
+                }
+            }
+            res.push_back({nums1[tmpIndex], nums2[indexes[tmpIndex]]});
+            indexes[tmpIndex]++;
+        }
+        return res;
+    }
+    /*
+     *
+     *    275. H-Index II
+     *
+     */
+    int hIndex_II(vector<int>& citations) {
+        int len = int(citations.size());
+        int start = 0;
+        int end = len - 1;
+        while (start <= end) {
+            int mid = (start + end) / 2;
+            if (citations[mid] < len - mid) start = mid + 1;
+            else if (citations[mid] > len - mid) end = mid - 1;
+            else return len - mid;
+        }
+        return len - start;
+    }
+    /*
+     *
+     *    63. Unique Paths II
+     *
+     */
+    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
+        int m = int(obstacleGrid.size());
+        if (m == 0) return 0;
+        int n = int(obstacleGrid[0].size());
+        if (obstacleGrid[0][0] == 1 || obstacleGrid[m-1][n-1] == 1) return 0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (obstacleGrid[i][j] == 1) obstacleGrid[i][j] = -1;
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            if (obstacleGrid[i][0] == -1) break;
+            obstacleGrid[i][0] = 1;
+        }
+        for (int j = 0; j < n; j++) {
+            if (obstacleGrid[0][j] == -1) break;
+            obstacleGrid[0][j] = 1;
+        }
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                if (obstacleGrid[i][j] == -1) continue;
+                if (obstacleGrid[i-1][j] != -1) obstacleGrid[i][j] += obstacleGrid[i-1][j];
+                if (obstacleGrid[i][j-1] != -1) obstacleGrid[i][j] += obstacleGrid[i][j-1];
+            }
+        }
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (obstacleGrid[i][j] == -1) obstacleGrid[i][j] = 1;
+            }
+        }
+        return obstacleGrid[m-1][n-1];
+    }
+    int uniquePathsWithObstacles_Method2(vector<vector<int>>& obstacleGrid) {
+        int m = int(obstacleGrid.size());
+        if (m == 0) return 0;
+        int n = int(obstacleGrid[0].size());
+        vector<vector<int>> dp(m+1, vector<int> (n+1, 0));
+        dp[0][1] = 1;
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (obstacleGrid[i-1][j-1] == 0) {
+                    dp[i][j] = dp[i-1][j] + dp[i][j-1];
+                }
+            }
+        }
+        return dp[m][n];
+    }
+    /*
+     *
+     *    186. Reverse Words in a String II
+     *
+     */
+    void reverseWords_II(string &s) {
+        int start = 0;
+        bool hasSpace = false;
+        for (int i = 0; i < s.length(); i++) {
+            if (s[i] == ' ') {
+                hasSpace = true;
+                reverse(s.begin() + start, s.begin() + i);
+                start = i + 1;
+            }
+        }
+        if (hasSpace) {
+            if (start < s.length()) reverse(s.begin() + start, s.end());
+            reverse(s.begin(), s.end());
+        }
+    }
 };

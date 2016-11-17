@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701139AA1DDCB8B600323E56 /* 244_Word_Distance_II.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701139A91DDCB8B600323E56 /* 244_Word_Distance_II.cpp */; };
+		701139AC1DDD017700323E56 /* 307.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701139AB1DDD017700323E56 /* 307.cpp */; };
+		701139AE1DDD25B500323E56 /* 399.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701139AD1DDD25B500323E56 /* 399.cpp */; };
 		702452B71DDAB44400B3E936 /* 1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452551DDAB44400B3E936 /* 1.cpp */; };
 		702452B81DDAB44400B3E936 /* 2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452561DDAB44400B3E936 /* 2.cpp */; };
 		702452B91DDAB44400B3E936 /* 7_Reverse_Integer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452571DDAB44400B3E936 /* 7_Reverse_Integer.cpp */; };
@@ -124,6 +127,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		701139A91DDCB8B600323E56 /* 244_Word_Distance_II.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 244_Word_Distance_II.cpp; sourceTree = "<group>"; };
+		701139AB1DDD017700323E56 /* 307.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 307.cpp; sourceTree = "<group>"; };
+		701139AD1DDD25B500323E56 /* 399.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 399.cpp; sourceTree = "<group>"; };
 		702452551DDAB44400B3E936 /* 1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 1.cpp; sourceTree = "<group>"; };
 		702452561DDAB44400B3E936 /* 2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 2.cpp; sourceTree = "<group>"; };
 		702452571DDAB44400B3E936 /* 7_Reverse_Integer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 7_Reverse_Integer.cpp; sourceTree = "<group>"; };
@@ -324,10 +330,12 @@
 				702452901DDAB44400B3E936 /* 243.cpp */,
 				702452911DDAB44400B3E936 /* 246.cpp */,
 				702452921DDAB44400B3E936 /* 249_Group_Shifted_Strings.cpp */,
+				701139A91DDCB8B600323E56 /* 244_Word_Distance_II.cpp */,
 				702452931DDAB44400B3E936 /* 251.cpp */,
 				702452941DDAB44400B3E936 /* 252_Meeting_Room.cpp */,
 				702452951DDAB44400B3E936 /* 257_Binary_Tree_Paths.cpp */,
 				702452961DDAB44400B3E936 /* 258_Add_Digits.cpp */,
+				701139AB1DDD017700323E56 /* 307.cpp */,
 				702452971DDAB44400B3E936 /* 263_264_313_Ugly_Number.cpp */,
 				702452981DDAB44400B3E936 /* 266_Palindrome_Permutation.cpp */,
 				702452991DDAB44400B3E936 /* 270_Closeset_Binary_Search_Tree_Value.cpp */,
@@ -339,6 +347,7 @@
 				7024529F1DDAB44400B3E936 /* 288_Unique_Word_Abbreviation.cpp */,
 				702452A01DDAB44400B3E936 /* 290_Word_Pattern.cpp */,
 				702452A11DDAB44400B3E936 /* 292_Nim_Game.cpp */,
+				701139AD1DDD25B500323E56 /* 399.cpp */,
 				702452A21DDAB44400B3E936 /* 293_File_Game.cpp */,
 				702452A31DDAB44400B3E936 /* 299_Bulls_and_Cows.cpp */,
 				702452A41DDAB44400B3E936 /* 303_Range_Sum_Query_Immutable.cpp */,
@@ -423,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701139AE1DDD25B500323E56 /* 399.cpp in Sources */,
 				7024530C1DDAB44400B3E936 /* 350.cpp in Sources */,
 				702452D51DDAB44400B3E936 /* 146_LRU_Cache.cpp in Sources */,
 				702452E41DDAB44400B3E936 /* 205.cpp in Sources */,
@@ -457,6 +467,7 @@
 				702452C21DDAB44400B3E936 /* 67_Add_Binary.cpp in Sources */,
 				702453081DDAB44400B3E936 /* 342.cpp in Sources */,
 				7024530F1DDAB44400B3E936 /* 384.cpp in Sources */,
+				701139AC1DDD017700323E56 /* 307.cpp in Sources */,
 				702452E81DDAB44400B3E936 /* 219_Contains_Duplicate.cpp in Sources */,
 				702452FD1DDAB44400B3E936 /* 278_First_Bad_Version.cpp in Sources */,
 				702452EE1DDAB44400B3E936 /* 232_queue_using_stacks.cpp in Sources */,
@@ -493,6 +504,7 @@
 				702453111DDAB44400B3E936 /* 389.cpp in Sources */,
 				702452C71DDAB44400B3E936 /* 101.cpp in Sources */,
 				702452EA1DDAB44400B3E936 /* 225.cpp in Sources */,
+				701139AA1DDCB8B600323E56 /* 244_Word_Distance_II.cpp in Sources */,
 				7024531B1DDAE41100B3E936 /* 372_Super_Pow.cpp in Sources */,
 				702452B71DDAB44400B3E936 /* 1.cpp in Sources */,
 				702452D61DDAB44400B3E936 /* 155_Min_Stack.cpp in Sources */,

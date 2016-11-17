@@ -18,4 +18,14 @@ public:
         }
         return sums[l];
     }
+    int rob_method2(vector<int>& nums) {
+        int n = nums.size();
+        int pre = 0, cur = 0, tmp = 0;
+        for (int i = 0; i < n; i++) {
+            tmp = max(pre + nums[i], cur);
+            pre = cur;
+            cur = tmp;
+        }
+        return cur;
+    }
 };
