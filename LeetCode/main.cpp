@@ -7,14 +7,14 @@
 //
 
 
-#include "Medium.cpp"
-//#include "281.cpp"
+//#include "Medium.cpp"
+#include "355. Design Twitter.cpp"
 
 
 int main(int argc, const char * argv[]) {
-    vector<pair<int, int>> pre = {{0,1},{0,2},{1,2}};
-    vector<int> v2 = {7,8,9,10};
-    Solution so;
-    so.canFinish(3, pre);
+
+    Twitter t(0);
+    t.postTweet(1,5);
+    vector<int> a = t.getNewsFeed(1);
     return 0;
 }

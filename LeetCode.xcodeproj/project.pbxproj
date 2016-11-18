@@ -114,6 +114,13 @@
 		703CB92C1DDDEC5C004A1E9D /* 415.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 703CB92B1DDDEC5C004A1E9D /* 415.cpp */; };
 		70668C211DDE377E00037F50 /* 40.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C201DDE377E00037F50 /* 40.cpp */; };
 		70668C231DDE4ED100037F50 /* 417.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C221DDE4ED100037F50 /* 417.cpp */; };
+		70668C251DDEB23E00037F50 /* 362.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C241DDEB23E00037F50 /* 362.cpp */; };
+		70668C271DDEBBA000037F50 /* 211.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C261DDEBBA000037F50 /* 211.cpp */; };
+		70668C291DDED42300037F50 /* 361. Bomb Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C281DDED42300037F50 /* 361. Bomb Enemy.cpp */; };
+		70668C2B1DDF631200037F50 /* 365. Water and Jug Problem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C2A1DDF631200037F50 /* 365. Water and Jug Problem.cpp */; };
+		70668C2D1DDF7B3E00037F50 /* 348.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C2C1DDF7B3E00037F50 /* 348.cpp */; };
+		70668C2F1DDF88A500037F50 /* 254. Factor Combinations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C2E1DDF88A500037F50 /* 254. Factor Combinations.cpp */; };
+		70668C311DDFBAB900037F50 /* 355. Design Twitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C301DDFBAB900037F50 /* 355. Design Twitter.cpp */; };
 		706CA4441DDBA9880001207F /* 106.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706CA4431DDBA9880001207F /* 106.cpp */; };
 		706CA4461DDBBC880001207F /* 47.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 706CA4451DDBBC880001207F /* 47.cpp */; };
 		708E2F0F1DDBE395006538CD /* 304.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708E2F0E1DDBE395006538CD /* 304.cpp */; };
@@ -240,6 +247,13 @@
 		703CB92B1DDDEC5C004A1E9D /* 415.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 415.cpp; sourceTree = "<group>"; };
 		70668C201DDE377E00037F50 /* 40.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 40.cpp; sourceTree = "<group>"; };
 		70668C221DDE4ED100037F50 /* 417.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 417.cpp; sourceTree = "<group>"; };
+		70668C241DDEB23E00037F50 /* 362.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 362.cpp; sourceTree = "<group>"; };
+		70668C261DDEBBA000037F50 /* 211.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 211.cpp; sourceTree = "<group>"; };
+		70668C281DDED42300037F50 /* 361. Bomb Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "361. Bomb Enemy.cpp"; sourceTree = "<group>"; };
+		70668C2A1DDF631200037F50 /* 365. Water and Jug Problem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "365. Water and Jug Problem.cpp"; sourceTree = "<group>"; };
+		70668C2C1DDF7B3E00037F50 /* 348.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 348.cpp; sourceTree = "<group>"; };
+		70668C2E1DDF88A500037F50 /* 254. Factor Combinations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "254. Factor Combinations.cpp"; sourceTree = "<group>"; };
+		70668C301DDFBAB900037F50 /* 355. Design Twitter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "355. Design Twitter.cpp"; sourceTree = "<group>"; };
 		706CA4431DDBA9880001207F /* 106.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 106.cpp; sourceTree = "<group>"; };
 		706CA4451DDBBC880001207F /* 47.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 47.cpp; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +298,7 @@
 				7024525A1DDAB44400B3E936 /* 27_Remove_Element.cpp */,
 				7024525B1DDAB44400B3E936 /* 28_Implement_strStr.cpp */,
 				7024525C1DDAB44400B3E936 /* 38_Count_and_Say.cpp */,
+				70668C201DDE377E00037F50 /* 40.cpp */,
 				706CA4451DDBBC880001207F /* 47.cpp */,
 				7024525D1DDAB44400B3E936 /* 50_Pow(x, n).cpp */,
 				7024525E1DDAB44400B3E936 /* 58.cpp */,
@@ -295,6 +310,7 @@
 				702452641DDAB44400B3E936 /* 100_Same_Tree.cpp */,
 				702452651DDAB44400B3E936 /* 101.cpp */,
 				702452661DDAB44400B3E936 /* 102.cpp */,
+				70668C2E1DDF88A500037F50 /* 254. Factor Combinations.cpp */,
 				706CA4431DDBA9880001207F /* 106.cpp */,
 				702452671DDAB44400B3E936 /* 107.cpp */,
 				702452681DDAB44400B3E936 /* 110__Balanced_Binary_Tree.cpp */,
@@ -327,6 +343,7 @@
 				702452831DDAB44400B3E936 /* 206_Reverse_Linked_List.cpp */,
 				702452841DDAB44400B3E936 /* 208.cpp */,
 				702453181DDACCCB00B3E936 /* 210_course_schedule_II.cpp */,
+				70668C261DDEBBA000037F50 /* 211.cpp */,
 				702452851DDAB44400B3E936 /* 217_Contains_Duplicate.cpp */,
 				702452861DDAB44400B3E936 /* 219_Contains_Duplicate.cpp */,
 				702452871DDAB44400B3E936 /* 224_227_Basic_Calculator.cpp */,
@@ -349,8 +366,9 @@
 				702452971DDAB44400B3E936 /* 263_264_313_Ugly_Number.cpp */,
 				702452981DDAB44400B3E936 /* 266_Palindrome_Permutation.cpp */,
 				702452991DDAB44400B3E936 /* 270_Closeset_Binary_Search_Tree_Value.cpp */,
-				70668C221DDE4ED100037F50 /* 417.cpp */,
+				703CB9271DDD5A20004A1E9D /* 271.cpp */,
 				7024529A1DDAB44400B3E936 /* 276_Paint_Fence.cpp */,
+				70668C301DDFBAB900037F50 /* 355. Design Twitter.cpp */,
 				7024529B1DDAB44400B3E936 /* 278_First_Bad_Version.cpp */,
 				7024529C1DDAB44400B3E936 /* 281.cpp */,
 				7024529D1DDAB44400B3E936 /* 283_Move_Zeros.cpp */,
@@ -365,25 +383,28 @@
 				701139AB1DDD017700323E56 /* 307.cpp */,
 				702452A51DDAB44400B3E936 /* 341_Flatten_Nested_List_Iterator.cpp */,
 				702452A61DDAB44400B3E936 /* 342.cpp */,
-				70668C201DDE377E00037F50 /* 40.cpp */,
 				702452A71DDAB44400B3E936 /* 344.cpp */,
 				702452A81DDAB44400B3E936 /* 345.cpp */,
+				70668C2C1DDF7B3E00037F50 /* 348.cpp */,
 				702452A91DDAB44400B3E936 /* 349.cpp */,
 				702452AA1DDAB44400B3E936 /* 350.cpp */,
+				70668C281DDED42300037F50 /* 361. Bomb Enemy.cpp */,
+				70668C241DDEB23E00037F50 /* 362.cpp */,
+				70668C2A1DDF631200037F50 /* 365. Water and Jug Problem.cpp */,
 				702452AB1DDAB44400B3E936 /* 371_Sum_of_Two_Intergers.cpp */,
 				7024531A1DDAE41100B3E936 /* 372_Super_Pow.cpp */,
 				702452AC1DDAB44400B3E936 /* 383.cpp */,
-				703CB9271DDD5A20004A1E9D /* 271.cpp */,
-				703CB92B1DDDEC5C004A1E9D /* 415.cpp */,
-				703CB9291DDD7CB7004A1E9D /* 401.cpp */,
 				702452AD1DDAB44400B3E936 /* 384.cpp */,
 				702452AE1DDAB44400B3E936 /* 387.cpp */,
 				702452AF1DDAB44400B3E936 /* 389.cpp */,
 				702452B01DDAB44400B3E936 /* 396.cpp */,
 				702452B11DDAB44400B3E936 /* 397.cpp */,
 				701139AD1DDD25B500323E56 /* 399.cpp */,
+				703CB9291DDD7CB7004A1E9D /* 401.cpp */,
 				702452B21DDAB44400B3E936 /* 409.cpp */,
 				702452B31DDAB44400B3E936 /* 412.cpp */,
+				703CB92B1DDDEC5C004A1E9D /* 415.cpp */,
+				70668C221DDE4ED100037F50 /* 417.cpp */,
 				702452B41DDAB44400B3E936 /* Header.h */,
 				702452B51DDAB44400B3E936 /* main.cpp */,
 				702452B61DDAB44400B3E936 /* Medium.cpp */,
@@ -479,6 +500,7 @@
 				7024530B1DDAB44400B3E936 /* 349.cpp in Sources */,
 				702452B81DDAB44400B3E936 /* 2.cpp in Sources */,
 				702452F51DDAB44400B3E936 /* 251.cpp in Sources */,
+				70668C311DDFBAB900037F50 /* 355. Design Twitter.cpp in Sources */,
 				702452CD1DDAB44400B3E936 /* 118_Pascal_Triangle.cpp in Sources */,
 				702452C21DDAB44400B3E936 /* 67_Add_Binary.cpp in Sources */,
 				702453081DDAB44400B3E936 /* 342.cpp in Sources */,
@@ -498,10 +520,13 @@
 				702452F11DDAB44400B3E936 /* 242_Valid_Anagram.cpp in Sources */,
 				702452E61DDAB44400B3E936 /* 208.cpp in Sources */,
 				702452E51DDAB44400B3E936 /* 206_Reverse_Linked_List.cpp in Sources */,
+				70668C251DDEB23E00037F50 /* 362.cpp in Sources */,
 				702452BC1DDAB44400B3E936 /* 27_Remove_Element.cpp in Sources */,
 				702452F71DDAB44400B3E936 /* 257_Binary_Tree_Paths.cpp in Sources */,
 				702453171DDAB44400B3E936 /* Medium.cpp in Sources */,
+				70668C2F1DDF88A500037F50 /* 254. Factor Combinations.cpp in Sources */,
 				702452E71DDAB44400B3E936 /* 217_Contains_Duplicate.cpp in Sources */,
+				70668C2B1DDF631200037F50 /* 365. Water and Jug Problem.cpp in Sources */,
 				702452C51DDAB44400B3E936 /* 88_Merge_Sorted_Array.cpp in Sources */,
 				702453071DDAB44400B3E936 /* 341_Flatten_Nested_List_Iterator.cpp in Sources */,
 				702452CA1DDAB44400B3E936 /* 110__Balanced_Binary_Tree.cpp in Sources */,
@@ -536,6 +561,7 @@
 				702452BF1DDAB44400B3E936 /* 50_Pow(x, n).cpp in Sources */,
 				702452C81DDAB44400B3E936 /* 102.cpp in Sources */,
 				703CB92A1DDD7CB7004A1E9D /* 401.cpp in Sources */,
+				70668C2D1DDF7B3E00037F50 /* 348.cpp in Sources */,
 				702452F91DDAB44400B3E936 /* 263_264_313_Ugly_Number.cpp in Sources */,
 				702453141DDAB44400B3E936 /* 409.cpp in Sources */,
 				702452FB1DDAB44400B3E936 /* 270_Closeset_Binary_Search_Tree_Value.cpp in Sources */,
@@ -554,6 +580,8 @@
 				70668C231DDE4ED100037F50 /* 417.cpp in Sources */,
 				702452D01DDAB44400B3E936 /* 125_Valid_Palindrome.cpp in Sources */,
 				702452C11DDAB44400B3E936 /* 66_Plus_One.cpp in Sources */,
+				70668C271DDEBBA000037F50 /* 211.cpp in Sources */,
+				70668C291DDED42300037F50 /* 361. Bomb Enemy.cpp in Sources */,
 				702452CC1DDAB44400B3E936 /* 112.cpp in Sources */,
 				702452C91DDAB44400B3E936 /* 107.cpp in Sources */,
 				702452F81DDAB44400B3E936 /* 258_Add_Digits.cpp in Sources */,

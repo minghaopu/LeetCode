@@ -1228,7 +1228,6 @@ public:
         for (int i = 0; i < size; i++) {
             
             if (i > k) rec.erase(nums[i - k - 1]);
-            long long a = nums[i];
             set<int>::iterator it = rec.lower_bound(nums[i] - t);
             if (it != rec.end() && abs(nums[i] - *it) <= t) return true;
             rec.insert(nums[i]);
@@ -1334,7 +1333,7 @@ public:
         auto m = matrix.size();
         if (m == 0) return;
         auto n = matrix[0].size();
-        bool col = false, row = false;
+        bool row = false;
         for (int i = 0; i < m; i++) {
             if (matrix[i][0] == 0) row = true;
             for (int j = 1; j < n; j++) {
@@ -1823,7 +1822,6 @@ public:
         int res = 0;
         int level = 0;
         int count = 0;
-        bool isFile = false;
         stringstream ss(input);
         while (getline(ss, token)) {
             count = 0;
@@ -2359,7 +2357,7 @@ public:
         vector<char> operation;
         string num = "";
         int l = input.length();
-        for (int i = 0; i < input.length(); i++) {
+        for (int i = 0; i < l; i++) {
             char t = input[i];
             if (t <= '9' && t >= '0') {
                 num += t;
@@ -3113,10 +3111,8 @@ public:
     int lengthOfLIS(vector<int>& nums) {
         if (nums.size() == 0) return 0;
         vector<int> result;
-        int length = 1;
         for (int i = 0; i < nums.size(); i++) {
             auto it = lower_bound(result.begin(), result.end(), nums[i]);
-            cout<<result[it-result.begin()]<<endl;
             if (it == result.end()) result.push_back(nums[i]);
             else *it = nums[i];
         }
@@ -3463,7 +3459,6 @@ public:
      *
      */
     vector<string> generateAbbreviations(string word) {
-        int l = word.length();
         vector<string> res;
         helper(word, res, "", 0, false);
         return res;
@@ -3565,8 +3560,8 @@ public:
         }
         for (int i = start; i < nums.size(); i++) {
             int val = nums[i];
-            if (canInsert(path, nums[i])) {
-                path.push_back(nums[i]);
+            if (canInsert(path, val)) {
+                path.push_back(val);
                 dfs_368(path, largest, nums, i + 1);
                 path.pop_back();
             }
@@ -3692,7 +3687,7 @@ public:
         int sign = 0;
         int length = 1;
         int size = nums.size();
-        for (int i = 1; i < nums.size(); i++) {
+        for (int i = 1; i < size; i++) {
             if (nums[i-1] < nums[i] && (sign == 0 || sign == -1)) {
                 length++;
                 sign = 1;
@@ -3953,7 +3948,6 @@ public:
      */
     int thirdMax(vector<int>& nums) {
         long max1 = LONG_MIN, max2 = max1, max3 = max1;
-        int count = 0;
         for (int i = 0; i < nums.size(); i++) {
             if (nums[i] > max1) {
                 max3 = max2;
@@ -3973,7 +3967,6 @@ public:
      *    451. Sort Characters By Frequency
      *
      */
-    
     string frequencySort(string s) {
         pair<int, int> map[128];
         for (int i = 0; i < 128; i++) {
@@ -3988,5 +3981,209 @@ public:
             res.append(map[i].second, map[i].first);
         }
         return res;
+    }
+    /*
+     *
+     *    404. Sum of Left Leaves
+     *
+     */
+    int sumOfLeftLeaves(TreeNode* root) {
+        if (root == NULL) return 0;
+        int total = 0;
+        if (root->left) {
+            if (root->left->left == NULL && root->left->right == NULL) total += root->left->val;
+            else total += sumOfLeftLeaves(root->left);
+        }
+        if (root->right) total += sumOfLeftLeaves(root->right);
+        return total;
+    }
+    /*
+     *
+     *    453. Minimum Moves to Equal Array Elements
+     *
+     */
+    int minMoves(vector<int>& nums) {
+        int minVal = INT_MAX;
+        int sum = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (minVal > nums[i]) minVal = nums[i];
+            sum += nums[i];
+        }
+        return int(sum - long(nums.size()) * long(minVal));
+    }
+    /*
+     *
+     *    392. Is Subsequence
+     *
+     */
+    bool isSubsequence(string s, string t) {
+        int pre = -1;
+        for (int i = 0; i < s.length(); i++) {
+            int po = pre > -1 ? int(t.find_first_of(s[i], pre)) : int(t.find_first_of(s[i], 0));
+            if (po >= pre) pre = po + 1;
+            else return false;
+        }
+        return true;
+    }
+    /*
+     *
+     *    364. Nested List Weight Sum II
+     *
+     */
+    int depthSumInverse(vector<NestedInteger>& nestedList) {
+        if (nestedList.empty()) return 0;
+        queue<vector<NestedInteger>> listQ;
+        vector<pair<int, int>> valQ; // level & val
+        listQ.push(nestedList);
+        int height = 0;
+        int total = 0;
+        while (!listQ.empty()) {
+            int size = listQ.size();
+            for (int i = 0; i < size; i++) {
+                auto front = listQ.front();
+                listQ.pop();
+                for (int j = 0; j < front.size(); j++) {
+                    if (front[j].isInteger()) valQ.push_back({height, front[j].getInteger()});
+                    else listQ.push(front[j].getList());
+                }
+            }
+            height++;
+        }
+        for (int i = 0; i < valQ.size(); i++) {
+            total += (height - valQ[i].first) * valQ[i].second;
+        }
+        return total;
+    }
+    /*
+     *
+     *    364. Nested List Weight Sum II
+     *
+     */
+    int maxKilledEnemies(vector<vector<char>>& grid) {
+        if (grid.empty() || grid[0].size() == 0) return 0;
+        int i, j, head, tail;
+        int row = grid.size();
+        int col = grid[0].size();
+        vector<vector<int>> count(row, vector<int> (col, 0));
+        for (i = 0; i < row; i++) {
+            for (head = tail = j = 0; j < col; j++) {
+                count[i][j] = grid[i][j] != '0' ? 0 : (count[i][j] + head);
+                count[i][col - 1 - j] = grid[i][col - 1 - j] != '0' ? 0 : (count[i][col - 1 - j] + tail);
+                head = grid[i][j] == 'W' ? 0 :  (head + (grid[i][j] == 'E'? 1 : 0));
+                tail = grid[i][col - 1 - j] == 'W' ? 0 :  (tail + (grid[i][col - 1 - j] == 'E'? 1 : 0));
+            }
+        }
+        for (j = 0; j < col; j++) {
+            for (head = tail = i = 0; i < row; i++) {
+                count[i][j] = grid[i][j] != '0' ? 0 : (count[i][j] + head);
+                count[row - 1 - i][j] = grid[row - 1 - i][j] != '0' ? 0 : (count[row - 1 - i][j] + tail);
+                head = grid[i][j] == 'W' ? 0 :  (head + (grid[i][j] == 'E'? 1 : 0));
+                tail = grid[row - 1 - i][j] == 'W' ? 0 :  (tail + (grid[row - 1 - i][j] == 'E'? 1 : 0));
+            }
+        }
+        int result = 0;
+        for (i = 0; i < row; i++) {
+            for (j = 0; j < col; j++) {
+                result = max(result, count[i][j]);
+            }
+        }
+        return result;
+    }
+    /*
+     *
+     *    310. Minimum Height Trees
+     *
+     */
+    vector<int> findMinHeightTrees(int n, vector<pair<int, int>>& edges) {
+        vector<set<int>> graph(n);
+        for (auto e : edges) {
+            graph[e.first].insert(e.second);
+            graph[e.second].insert(e.first);
+        }
+        vector<int> degree(n, 0);
+        for (int i = 0; i < n; i++) degree[i] = int(graph[i].size());
+        int remain = n;
+        while (remain > 2) {
+            vector<int> toDelete;
+            for (int i = 0; i < n; i++) {
+                if (degree[i] == 1) {
+                    remain--;
+                    toDelete.push_back(i);
+                    degree[i] = -1;
+                }
+            }
+            for (int node : toDelete) {
+                for (auto neighbor : graph[node]) degree[neighbor]--;
+            }
+        }
+        vector<int> res;
+        for (int i = 0; i < n; i++) if (degree[i] >= 0) res.push_back(i);
+        return res;
+    }
+    /*
+     *
+     *    418. Sentence Screen Fitting
+     *
+     */
+    int wordsTyping(vector<string>& sentence, int rows, int cols) {
+        string s = "";
+        for (string word : sentence) s += word + " ";
+        int start = 0;
+        int l = s.length();
+        for (int i = 0; i < rows; i++) {
+            start += cols;
+            if (s[start % l] == ' ') {
+                start++;
+            }
+            else {
+                while (start > 0 && s[(start-1) % l] != ' ') {
+                    start--;
+                }
+            }
+        }
+        return start / l;
+    }
+    /*
+     *
+     *    255. Verify Preorder Sequence in Binary Search Tree
+     *
+     */
+    bool verifyPreorder(vector<int>& preorder) {
+        stack<int> S;
+        int low = INT_MIN;
+        for (int node : preorder) {
+            if (node < low) return false;
+            while (!S.empty() && node > S.top()) {
+                low = S.top();
+                S.pop();
+            }
+            S.push(node);
+            
+        }
+        return true;
+    }
+    /*
+     *
+     *    400. Nth Digit
+     *
+     */
+    int findNthDigit(int n) {
+        long base = 9;
+        int bit = 1;
+        long last = 0;
+        while (n > base*bit) {
+            n -= base * bit;
+            last += base;
+            bit++;
+            base *= 10;
+        }
+        int shift = n % bit;
+        long index = last + (n - shift) / bit;
+        if (shift != 0) {
+            index++;
+            shift = bit - shift;
+            for (int i = 0; i < shift; i++) index /= 10;
+        }
+        return index % 10;
     }
 };
