@@ -3968,4 +3968,25 @@ public:
         }
         return (max3 == LONG_MIN ? max1 : max3);
     }
+    /*
+     *
+     *    451. Sort Characters By Frequency
+     *
+     */
+    
+    string frequencySort(string s) {
+        pair<int, int> map[128];
+        for (int i = 0; i < 128; i++) {
+            map[i] = {i,0};
+        }
+        for (int i = 0; i < s.size(); i++) {
+            map[s[i]].second++;
+        }
+        sort(map, map + 128, [](const pair<int, int> a, const pair<int,int> b) {return a.second > b.second;});
+        string res = "";
+        for (int i = 0; i < 128; i++) {
+            res.append(map[i].second, map[i].first);
+        }
+        return res;
+    }
 };
