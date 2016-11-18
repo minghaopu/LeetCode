@@ -3578,7 +3578,7 @@ public:
         return val % path.back() == 0;
     }
     vector<int> largestDivisibleSubset_Apt(vector<int>& nums) {
-        int size = nums.size();
+        int size = int(nums.size());
         vector<int> dp(size, 1);
         vector<int> largest;
         vector<int> pre(size, -1);
@@ -3889,7 +3889,7 @@ public:
         vector<vector<int>> res;
         Q.push(make_pair(0,root));
         while (!Q.empty()) {
-            int size = Q.size();
+            int size = int(Q.size());
             for (int i = 0; i < size; i++) {
                 auto front = Q.front();
                 TreeNode* node = front.second;
@@ -3912,7 +3912,7 @@ public:
      */
     int numberOfArithmeticSlices(vector<int>& A) {
         if (A.size() < 3) return 0;
-        int n = A.size();
+        int n = int(A.size());
         vector<int> dp(n, 0);
         int res = 0;
         for (int i = 2; i < n; i++) {
@@ -3922,5 +3922,50 @@ public:
             res += dp[i];
         }
         return res;
+    }
+    /*
+     *
+     *    259. 3Sum Smaller
+     *
+     */
+    int threeSumSmaller(vector<int>& nums, int target) {
+        int l = int(nums.size());
+        if (l < 3) return 0;
+        sort(nums.begin(), nums.end());
+        
+        int count = 0;
+        for (int i = 0; i < l - 2; i++) {
+            if (nums[i] + nums[i+1] + nums[i+2] > target) break;
+            int j = i + 1;
+            int k = l - 1;
+            while (j < k) {
+                while (j < k && nums[i] + nums[j] + nums[k] >= target) k--;
+                count += k - j; // since nums[j] + nums[k] satisfy the requirement, then all the value that smaller than nums[k] like (nums[k-1], nums[k-2]... nums[j+1]) + nums[j] satisfy the requrement. from j + 1 to k, there is k - (j + 1) + 1 items.
+                j++;
+            }
+        }
+        return count;
+    }
+    /*
+     *
+     *    414. Third Maximum Number
+     *
+     */
+    int thirdMax(vector<int>& nums) {
+        long max1 = LONG_MIN, max2 = max1, max3 = max1;
+        int count = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] > max1) {
+                max3 = max2;
+                max2 = max1;
+                max1 = nums[i];
+            } else if (nums[i] < max1 && nums[i] > max2) {
+                max3 = max2;
+                max2 = nums[i];
+            } else if (nums[i] < max2 && nums[i] > max3) {
+                max3 = nums[i];
+            }
+        }
+        return (max3 == LONG_MIN ? max1 : max3);
     }
 };
