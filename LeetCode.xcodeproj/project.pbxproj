@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		700480BE1DDFF56E006DF677 /* 351. Android Unlock Patterns.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 700480BD1DDFF56E006DF677 /* 351. Android Unlock Patterns.cpp */; };
+		700480C01DE0088C006DF677 /* 441. Arranging Coins.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 700480BF1DE0088C006DF677 /* 441. Arranging Coins.cpp */; };
+		700480C21DE00C01006DF677 /* 437. Path Sum III.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 700480C11DE00C01006DF677 /* 437. Path Sum III.cpp */; };
+		700480C41DE00D8C006DF677 /* 246_247_248_Strobogrammatic_Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 700480C31DE00D8C006DF677 /* 246_247_248_Strobogrammatic_Number.cpp */; };
+		700480C61DE02D11006DF677 /* 405. Convert a Number to Hexadecimal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 700480C51DE02D11006DF677 /* 405. Convert a Number to Hexadecimal.cpp */; };
 		701139AA1DDCB8B600323E56 /* 244_Word_Distance_II.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701139A91DDCB8B600323E56 /* 244_Word_Distance_II.cpp */; };
 		701139AC1DDD017700323E56 /* 307.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701139AB1DDD017700323E56 /* 307.cpp */; };
 		701139AE1DDD25B500323E56 /* 399.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 701139AD1DDD25B500323E56 /* 399.cpp */; };
@@ -139,6 +144,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		700480BD1DDFF56E006DF677 /* 351. Android Unlock Patterns.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "351. Android Unlock Patterns.cpp"; sourceTree = "<group>"; };
+		700480BF1DE0088C006DF677 /* 441. Arranging Coins.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "441. Arranging Coins.cpp"; sourceTree = "<group>"; };
+		700480C11DE00C01006DF677 /* 437. Path Sum III.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "437. Path Sum III.cpp"; sourceTree = "<group>"; };
+		700480C31DE00D8C006DF677 /* 246_247_248_Strobogrammatic_Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 246_247_248_Strobogrammatic_Number.cpp; sourceTree = "<group>"; };
+		700480C51DE02D11006DF677 /* 405. Convert a Number to Hexadecimal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "405. Convert a Number to Hexadecimal.cpp"; sourceTree = "<group>"; };
 		701139A91DDCB8B600323E56 /* 244_Word_Distance_II.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 244_Word_Distance_II.cpp; sourceTree = "<group>"; };
 		701139AB1DDD017700323E56 /* 307.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 307.cpp; sourceTree = "<group>"; };
 		701139AD1DDD25B500323E56 /* 399.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 399.cpp; sourceTree = "<group>"; };
@@ -387,17 +397,22 @@
 				702452A81DDAB44400B3E936 /* 345.cpp */,
 				70668C2C1DDF7B3E00037F50 /* 348.cpp */,
 				702452A91DDAB44400B3E936 /* 349.cpp */,
+				700480C51DE02D11006DF677 /* 405. Convert a Number to Hexadecimal.cpp */,
 				702452AA1DDAB44400B3E936 /* 350.cpp */,
 				70668C281DDED42300037F50 /* 361. Bomb Enemy.cpp */,
 				70668C241DDEB23E00037F50 /* 362.cpp */,
 				70668C2A1DDF631200037F50 /* 365. Water and Jug Problem.cpp */,
 				702452AB1DDAB44400B3E936 /* 371_Sum_of_Two_Intergers.cpp */,
+				700480C11DE00C01006DF677 /* 437. Path Sum III.cpp */,
 				7024531A1DDAE41100B3E936 /* 372_Super_Pow.cpp */,
 				702452AC1DDAB44400B3E936 /* 383.cpp */,
 				702452AD1DDAB44400B3E936 /* 384.cpp */,
+				700480C31DE00D8C006DF677 /* 246_247_248_Strobogrammatic_Number.cpp */,
+				700480BD1DDFF56E006DF677 /* 351. Android Unlock Patterns.cpp */,
 				702452AE1DDAB44400B3E936 /* 387.cpp */,
 				702452AF1DDAB44400B3E936 /* 389.cpp */,
 				702452B01DDAB44400B3E936 /* 396.cpp */,
+				700480BF1DE0088C006DF677 /* 441. Arranging Coins.cpp */,
 				702452B11DDAB44400B3E936 /* 397.cpp */,
 				701139AD1DDD25B500323E56 /* 399.cpp */,
 				703CB9291DDD7CB7004A1E9D /* 401.cpp */,
@@ -483,6 +498,7 @@
 				7024530D1DDAB44400B3E936 /* 371_Sum_of_Two_Intergers.cpp in Sources */,
 				702452D71DDAB44400B3E936 /* 160_Intersection_of_Two_Linked_List.cpp in Sources */,
 				702452D31DDAB44400B3E936 /* 136.cpp in Sources */,
+				700480C21DE00C01006DF677 /* 437. Path Sum III.cpp in Sources */,
 				702452C01DDAB44400B3E936 /* 58.cpp in Sources */,
 				702452FA1DDAB44400B3E936 /* 266_Palindrome_Permutation.cpp in Sources */,
 				702452BD1DDAB44400B3E936 /* 28_Implement_strStr.cpp in Sources */,
@@ -520,6 +536,7 @@
 				702452F11DDAB44400B3E936 /* 242_Valid_Anagram.cpp in Sources */,
 				702452E61DDAB44400B3E936 /* 208.cpp in Sources */,
 				702452E51DDAB44400B3E936 /* 206_Reverse_Linked_List.cpp in Sources */,
+				700480BE1DDFF56E006DF677 /* 351. Android Unlock Patterns.cpp in Sources */,
 				70668C251DDEB23E00037F50 /* 362.cpp in Sources */,
 				702452BC1DDAB44400B3E936 /* 27_Remove_Element.cpp in Sources */,
 				702452F71DDAB44400B3E936 /* 257_Binary_Tree_Paths.cpp in Sources */,
@@ -535,6 +552,7 @@
 				702452BB1DDAB44400B3E936 /* 26_Remove_Duplicate_from_Sorted_Array.cpp in Sources */,
 				7024530E1DDAB44400B3E936 /* 383.cpp in Sources */,
 				702453131DDAB44400B3E936 /* 397.cpp in Sources */,
+				700480C41DE00D8C006DF677 /* 246_247_248_Strobogrammatic_Number.cpp in Sources */,
 				706CA4441DDBA9880001207F /* 106.cpp in Sources */,
 				702452F41DDAB44400B3E936 /* 249_Group_Shifted_Strings.cpp in Sources */,
 				702452B91DDAB44400B3E936 /* 7_Reverse_Integer.cpp in Sources */,
@@ -548,6 +566,7 @@
 				702452C71DDAB44400B3E936 /* 101.cpp in Sources */,
 				702452EA1DDAB44400B3E936 /* 225.cpp in Sources */,
 				701139AA1DDCB8B600323E56 /* 244_Word_Distance_II.cpp in Sources */,
+				700480C61DE02D11006DF677 /* 405. Convert a Number to Hexadecimal.cpp in Sources */,
 				7024531B1DDAE41100B3E936 /* 372_Super_Pow.cpp in Sources */,
 				702452B71DDAB44400B3E936 /* 1.cpp in Sources */,
 				702452D61DDAB44400B3E936 /* 155_Min_Stack.cpp in Sources */,
@@ -571,6 +590,7 @@
 				702453001DDAB44400B3E936 /* 284.cpp in Sources */,
 				702452DC1DDAB44400B3E936 /* 173_Binary_Search_Tree_Iterator.cpp in Sources */,
 				702452D91DDAB44400B3E936 /* 169_Majority_Element.cpp in Sources */,
+				700480C01DE0088C006DF677 /* 441. Arranging Coins.cpp in Sources */,
 				702452DD1DDAB44400B3E936 /* 177_Excel_Sheet_Column_Number.cpp in Sources */,
 				702452D11DDAB44400B3E936 /* 131.cpp in Sources */,
 				702452E21DDAB44400B3E936 /* 202_Happy_Number.cpp in Sources */,

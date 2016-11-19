@@ -4186,4 +4186,68 @@ public:
         }
         return index % 10;
     }
+    /*
+     *
+     *    267. Palindrome Permutation II
+     *
+     */
+    vector<string> generatePalindromes(string s) {
+        int cache[128];
+        memset(cache, 0, sizeof(cache));
+        vector<string> res;
+        for (char c : s) cache[c]++;
+        int odd = 0;
+        for (int i = 0; i < 128; i++) {
+            if (cache[i] % 2 == 1) {
+                if(++odd > 1) return {};
+            }
+        }
+        dfs_267(cache, res, "");
+        return res;
+    }
+    void dfs_267(int cache[], vector<string>& res, string path) {
+        bool useOdd = true;
+        string odd = "";
+        for (int i = 0; i < 128; i++) {
+            if (cache[i] > 1) {
+                useOdd = false;
+                cache[i] -= 2;
+                string t = path + char(i);
+                dfs_267(cache, res, t);
+                cache[i] += 2;
+            } else if (cache[i] == 1) {
+                odd += char(i);
+            }
+        }
+        if (useOdd) {
+            string t = path;
+            reverse(t.begin(), t.end());
+            res.push_back(path + odd + t);
+        }
+    }
+    /*
+     *
+     *    366. Find Leaves of Binary Tree
+     *
+     */
+    vector<vector<int>> findLeaves(TreeNode* root) {
+        if (root == NULL) return {};
+        vector<vector<int>> res;
+        while (root) {
+            vector<int> tmp;
+            helper_366(root, tmp);
+            res.push_back(tmp);
+        }
+        return res;
+    }
+    void helper_366(TreeNode* &node, vector<int>& res) {
+        if (node == NULL) return;
+        if (node->left == NULL && node->right == NULL) {
+            res.push_back(node->val);
+            node = NULL;
+            return;
+        }
+        if (node->left) helper_366(node->left, res);
+        if (node->right) helper_366(node->right, res);
+    }
 };
