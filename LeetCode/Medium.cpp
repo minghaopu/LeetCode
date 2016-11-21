@@ -4250,4 +4250,427 @@ public:
         if (node->left) helper_366(node->left, res);
         if (node->right) helper_366(node->right, res);
     }
+    /*
+     *
+     *    393. UTF-8 Validation
+     *
+     */
+    bool validUtf8(vector<int>& data) {
+        int count = 0;
+        for (int c : data) {
+            if (count == 0) {
+                if (c >> 5 == 0b110) count = 1;
+                else if (c >> 4 == 0b1110) count = 2;
+                else if (c >> 3 == 0b11110) count = 3;
+                else if (c >> 7 == 0b1) return false;
+            } else {
+                if (c >> 6 != 0b10) return false;
+                count--;
+            }
+        }
+        return count == 0;
+    }
+    /*
+     *
+     *    360. Sort Transformed Array
+     *
+     */
+    vector<int> sortTransformedArray(vector<int>& nums, int a, int b, int c) {
+        transform(nums.begin(), nums.end(), nums.begin(), [&a, &b, &c](const int n) {return a*n*n + b*n + c;});
+        vector<int> res(nums.size());
+        for (int l = 0, r = nums.size() - 1, k = a > 0 ? r : l, add = a > 0 ? -1 : 1; l <= r; k += add) {
+            if (a > 0) {
+                if (nums[l] > nums[r]) res[k] = nums[l++];
+                else res[k] = nums[r--];
+            } else {
+                if (nums[l] < nums[r]) res[k] = nums[l++];
+                else res[k] = nums[r--];
+            }
+        }
+        return res;
+    }
+    /*
+     *
+     *    370. Range Addition
+     *
+     */
+    vector<int> getModifiedArray(int length, vector<vector<int>>& updates) {
+        vector<int> res(length, 0);
+        for (int i = 0; i < updates.size(); i++) {
+            int start = updates[i][0];
+            int end = updates[i][1];
+            int value = updates[i][2];
+            res[start] += value;
+            if (end != length-1) res[end + 1] -= value;
+        }
+        int sum = 0;
+        for (int i = 0; i < length; i++) {
+            sum += res[i];
+            res[i] = sum;
+        }
+        return res;
+    }
+    /*
+     *
+     *    294. Flip Game II
+     *
+     */
+    bool canWin(string s) {
+        if (s.empty()) return false;
+        return dfs_294(s, 0);
+    }
+    bool dfs_294(string& s, int count) {;
+        for (int i = 0; i < s.length() - 1; i++) {
+            if (s[i] == s[i+1] && s[i] == '+') {
+                string t = s;
+                t[i] = '-';
+                t[i+1] = '-';
+                bool canWin = !dfs_294(t, count + 1);
+                s[i] = '+';
+                s[i+1] = '+';
+                if (canWin) return true;
+            }
+        }
+        return false;
+    }
+    /*
+     *
+     *    424. Longest Repeating Character Replacement
+     *
+     */
+    int characterReplacement(string s, int k) {
+        int cache[26];
+        memset(cache, 0, sizeof(cache));
+        int start = 0;
+        int result = 0;
+        int maxCount = 0;
+        int n = s.length();
+        for (int end = 0; end < n; end++) {
+            cache[s[end] - 'A']++;
+            if (maxCount < cache[s[end] - 'A']) maxCount = cache[s[end] - 'A'];
+            while (end - start - maxCount + 1 > k) {
+                cache[s[start] - 'A']--;
+                start++;
+                for (int i = 0; i < 26; i++) {
+                    if (maxCount < cache[i]) maxCount = cache[i];
+                }
+            }
+            result = max(result, end - start + 1);
+        }
+        return result;
+    }
+    /*
+     *
+     *    447. Number of Boomerangs
+     *
+     */
+    int numberOfBoomerangs(vector<pair<int, int>>& points) {
+        
+        int size = points.size();
+        int res = 0;
+        for (int i = 0; i < size; i++) {
+            unordered_map<int, int> cache;
+            for (int j = 0; j < size; j++) {
+                cache[getDistances(points[i], points[j])]++;
+            }
+            for (auto it = cache.begin(); it != cache.end(); it++) res += it->second * (it->second - 1);
+        }
+        return res;
+    }
+    int getDistances(pair<int, int> a, pair<int, int> b) {
+        return pow((a.first - b.first), 2) + pow((a.second - b.second), 2);
+    }
+    /*
+     *
+     *   323. Number of Connected Components in an Undirected Graph
+     *
+     */
+    int countComponents(int n, vector<pair<int, int>>& edges) {
+        int p[n];
+        iota(p, p + n, 0);
+        
+        function<int (int)> find = [&](int v) {
+            return p[v] == v ? v : p[v] = find(p[v]);
+        };
+        for (auto& edge : edges) {
+            int v = find(edge.first), w = find(edge.second);
+            p[v] = w;
+            n -= v != w;
+        }
+        return n;
+    }
+    /*
+     *
+     *   261. Graph Valid Tree
+     *
+     */
+    bool validTree(int n, vector<pair<int, int>>& edges) {
+        int cache[n];
+        memset(cache, -1, sizeof(cache));
+        for (auto edge:edges) {
+            int node1 = find_261(cache, edge.first);
+            int node2 = find_261(cache, edge.second);
+            if (node1 == node2) return false;
+            cache[node1] = node2;
+        }
+        return edges.size() == n - 1;
+    }
+    int find_261(int cache[], int node) {
+        if (cache[node] == -1) return node;
+        return find_261(cache, cache[node]);
+    }
+    /*
+     *
+     *   245. Shortest Word Distance III
+     *
+     */
+    int shortestWordDistance(vector<string>& words, string word1, string word2) {
+        int dis = words.size(), index1 = -words.size(), index2 = -words.size(), i = 0;
+        if (word1 != word2) {
+            while (i < words.size()) {
+                if (words[i] == word1) {
+                    index1 = i;
+                    dis = min(dis, index1 - index2);
+                } else if (words[i] == word2){
+                    index2 = i;
+                    dis = min(dis, index2 - index1);
+                }
+                i++;
+            }
+        } else {
+            while (i < words.size()) {
+                if (words[i] == word1) {
+                    dis = min(dis, i - index1);
+                    index1 = i;
+                }
+                i++;
+            }
+        }
+        return dis;
+    }
+    /*
+     *
+     *   438. Find All Anagrams in a String
+     *
+     */
+    vector<int> findAnagrams(string s, string p) {
+        vector<int> pv(26, 0), sv(26, 0), res;
+        if (s.size() < p.size()) return {};
+        for (int i = 0; i < p.size(); i++) {
+            pv[p[i] - 'a']++;
+            sv[s[i] - 'a']++;
+        }
+        int pl = p.size();
+        if (pv == sv) res.push_back(0);
+        for (int i = pl; i < s.size(); i++) {// start from pl since the first 0 ~ (pl-1) has been calculated;
+            sv[s[i] - 'a']++;
+            sv[s[i - pl] - 'a']--;
+            if (pv == sv) res.push_back(i - pl + 1);
+        }
+        return res;
+    }
+    /*
+     *
+     *   423. Reconstruct Original Digits from English
+     *
+     */
+    string originalDigits(string s) {
+        int map[26];
+        memset(map, 0, sizeof(map));
+        for (char c : s) map[c - 'a']++;
+        int count[10];
+        count[0] = map[25];
+        count[2] = map[22];
+        count[4] = map[20];
+        count[6] = map[23];
+        count[8] = map[6];
+        map[14] -= (count[2] + count[4]+ count[0]) ;
+        count[1] = map[14];
+        map[7] -= count[8];
+        count[3] = map[7];
+        map[5] -= count[4];
+        count[5] = map[5];
+        map[18] -= map[23];
+        count[7] = map[18];
+        map[8] -= (count[5] + count[6] + count[8]);
+        count[9] = map[8];
+        string res ="";
+        for (int i = 0; i <= 9; i++) {
+            if (count[i] != 0) res.append(count[i], char('0' + i));
+        }
+        return res;
+    }
+    /*
+     *
+     *   435. Non-overlapping Intervals
+     *
+     */
+    int eraseOverlapIntervals(vector<Interval>& intervals) {
+        int res = 0, pre = 0;
+        auto comp = [](const Interval& a, const Interval& b) {
+            return a.start < b.start;
+        };
+        sort(intervals.begin(), intervals.end(), comp);
+        for (int i = 1; i < intervals.size(); i++) {
+            if (intervals[i].start < intervals[pre].end) {
+                res++;
+                if (intervals[i].end < intervals[pre].end) pre = i;
+            } else pre = i;
+        }
+        return res;
+    }
+    /*
+     *
+     *   333. Largest BST Subtree
+     *
+     */
+    int largestBSTSubtree(TreeNode* root) {
+        int nodeCount = 0;
+        if (isSubTreeValid(root, INT_MAX, INT_MIN, nodeCount)) return nodeCount;
+        return max(largestBSTSubtree(root->left), largestBSTSubtree(root->right));
+    }
+    bool isSubTreeValid(TreeNode* node, int max, int min, int& nodeCount) {
+        if (node == NULL) {
+            nodeCount = 0;
+            return true;
+        }
+        if ((min >= node->val) || (max <= node->val)) return false;
+        int leftNodes = 0, rightNodes = 0;
+        bool left = isSubTreeValid(node->left, node->val, min, leftNodes);
+        if (!left) return false;
+        bool right = isSubTreeValid(node->right, max, node->val, rightNodes);
+        if (!right) return false;
+        nodeCount = leftNodes + rightNodes + 1;
+        return true;
+    }
+    /*
+     *
+     *   369. Plus One Linked List
+     *
+     */
+    ListNode* plusOne(ListNode* head) {
+        if (head == NULL) return NULL;
+        ListNode* reverseHead = new ListNode(0);
+        ListNode* p = head;
+        ListNode* next;
+        while (p) {
+            next = p->next;
+            p->next = reverseHead;
+            reverseHead = p;
+            p = next;
+        }
+        p = reverseHead;
+        ListNode* pre = NULL;
+        int carry = 1;
+        while (p) {
+            
+            next = p->next;
+            p->next = pre;
+            p->val += carry;
+            
+            if (p->val > 9) {
+                p->val -= 10;
+                carry = 1;
+            } else {
+                carry = 0;
+            }
+            
+            if (next == NULL) {
+                if (p->val == 0) head = pre;
+                else head = p;
+            }
+            
+            pre = p;
+            p = next;
+        }
+        return head;
+    }
+    /*
+     *
+     *   402. Remove K Digits
+     *
+     */
+    string removeKdigits(string s, int k) {
+        string res = "";
+        for (char c : s) {
+            while (res.length() && res.back() > c && k) {
+                res.pop_back();
+                k--;
+            }
+            if (res != "" || c != '0') res += c;
+        }
+        while (res != "" && k--) res.pop_back();
+        return res == "" ? "0" : res;
+    }
+    /*
+     *
+     *   452. Minimum Number of Arrows to Burst Balloons
+     *
+     */
+    int findMinArrowShots(vector<pair<int, int>>& points) {
+        sort(points.begin(), points.end(), [](const pair<int, int> a, const pair<int, int> b) {return a.second < b.second;});
+        int pre = 0, i = 0, res = 0;
+        while (i < points.size()) {
+            res++;
+            pre = points[i].second;
+            i++;
+            while (pre >= points[i].first && i < points.size()) i++;
+        }
+        return res;
+    }
+    /*
+     *
+     *   455. Assign Cookies
+     *
+     */
+    int findContentChildren(vector<int>& g, vector<int>& s) {
+        if (s.empty() || g.empty()) return 0;
+        sort(g.begin(), g.end());
+        sort(s.begin(), s.end());
+        int i = 0, j = 0;
+        while (i < g.size() && j < s.size()) {
+            if (g[i] > s[j]) j++;
+            else { // s[j] >= g[i]; fullfill
+                i++;
+                j++;
+            }
+        }
+        return i;
+    }
+    /*
+     *
+     *   436. Find Right Interval
+     *
+     */
+    vector<int> findRightInterval(vector<Interval>& intervals) {
+        map<int, int> cache;
+        vector<int> res(intervals.size(), -1);
+        for (int i = 0; i < intervals.size(); i++) {
+            if (cache.find(intervals[i].start) == cache.end()) cache[intervals[i].start] = i;
+        }
+        for (int i = 0; i < intervals.size(); i++) {
+            auto it = cache.lower_bound(intervals[i].end);
+            if (it != cache.end()) res[i] = it->second;
+        }
+        return res;
+    }
+    /*
+     *
+     *   356. Line Reflection
+     *
+     */
+    bool isReflected(vector<pair<int, int>>& points) {
+        int minx = INT_MAX, maxx = INT_MIN;
+        unordered_map<int,int> cache;
+        for(auto point:points){
+            minx = min(minx, point.first);
+            maxx = max(maxx, point.first);
+            cache[point.first] = point.second;
+        }
+        for (auto it = cache.begin(); it != cache.end(); it++) {
+            int opposite = minx + maxx - it->first;
+            if (cache.find(opposite) == cache.end() || cache[opposite] != it->second) return false;
+        }
+        return true;
+    }
 };

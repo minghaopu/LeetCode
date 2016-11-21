@@ -24,6 +24,7 @@
 #include <sstream>
 #include <map>
 #include <bitset>
+#include <numeric>
 using namespace std;
 
 
