@@ -4673,4 +4673,53 @@ public:
         }
         return true;
     }
+    /*
+     *
+     *   422. Valid Word Square
+     *
+     */
+    bool validWordSquare(vector<string>& words) {
+        if (words.empty()) return true;
+        int m = words.size();
+        int lastSize = words.back().size();
+        for (int i = 0; i < m; i++) {
+            if (words[i].size() > m || words[i].size() < lastSize) return false;
+            for (int j = 0; j < words[i].size(); j++) {
+                if (i >= words[j].size()) return false;
+                else if (words[i][j] != words[j][i]) return false;
+            }
+        }
+        return true;
+    }
+    /*
+     *
+     *   408. Valid Word Abbreviation
+     *
+     */
+    bool validWordAbbreviation(string s, string abbr) {
+        int num = 0, i, j;
+        for (i = 0, j = 0; i < abbr.size(); i++) {
+            char c = abbr[i];
+            if (isdigit(c)) {
+                if (c == '0' && num == 0) return false;
+                num = num * 10 + c - '0';
+            } else {
+                j += num;
+                num = 0;
+                if (abbr[i] != s[j]) return false;
+                j++;
+            }
+        }
+        if (num != 0 && j + num != s.length()) return false;
+        return true;
+    }
+    /*
+     *
+     *   462. Minimum Moves to Equal Array Elements II
+     *
+     */
+    int minMoves2(vector<int>& nums) {
+        nth_element(nums.begin(), nums.begin() + nums.size() / 2, nums.end());
+        return accumulate(nums.begin(), nums.end(), 0, [&](const int sum, const int n){return sum + abs(n - nums[nums.size() / 2]);});
+    }
 };

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7002A35F1DE3CDB500A6B2BC /* 382. Linked List Random Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7002A35E1DE3CDB500A6B2BC /* 382. Linked List Random Node.cpp */; };
+		7002A3611DE3D0BA00A6B2BC /* 463.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7002A3601DE3D0BA00A6B2BC /* 463.cpp */; };
 		702453161DDAB44400B3E936 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452B51DDAB44400B3E936 /* main.cpp */; };
 		702453171DDAB44400B3E936 /* Medium.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452B61DDAB44400B3E936 /* Medium.cpp */; };
 		70668C351DE15AD400037F50 /* 416. Partition Equal Subset Sum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70668C341DE15AD400037F50 /* 416. Partition Equal Subset Sum.cpp */; };
@@ -27,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7002A35E1DE3CDB500A6B2BC /* 382. Linked List Random Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "382. Linked List Random Node.cpp"; sourceTree = "<group>"; };
+		7002A3601DE3D0BA00A6B2BC /* 463.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 463.cpp; sourceTree = "<group>"; };
 		702452B41DDAB44400B3E936 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		702452B51DDAB44400B3E936 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		702452B61DDAB44400B3E936 /* Medium.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Medium.cpp; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				70668C361DE20F3A00037F50 /* 379. Design Phone Directory.cpp */,
 				702452B51DDAB44400B3E936 /* main.cpp */,
 				70668C381DE2C5A000037F50 /* 353. Design Snake Game.cpp */,
+				7002A3601DE3D0BA00A6B2BC /* 463.cpp */,
+				7002A35E1DE3CDB500A6B2BC /* 382. Linked List Random Node.cpp */,
 				70668C341DE15AD400037F50 /* 416. Partition Equal Subset Sum.cpp */,
 				702452B61DDAB44400B3E936 /* Medium.cpp */,
 			);
@@ -135,7 +141,9 @@
 				70668C351DE15AD400037F50 /* 416. Partition Equal Subset Sum.cpp in Sources */,
 				702453171DDAB44400B3E936 /* Medium.cpp in Sources */,
 				70668C391DE2C5A000037F50 /* 353. Design Snake Game.cpp in Sources */,
+				7002A3611DE3D0BA00A6B2BC /* 463.cpp in Sources */,
 				70668C371DE20F3A00037F50 /* 379. Design Phone Directory.cpp in Sources */,
+				7002A35F1DE3CDB500A6B2BC /* 382. Linked List Random Node.cpp in Sources */,
 				702453161DDAB44400B3E936 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
