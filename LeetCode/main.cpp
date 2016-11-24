@@ -8,13 +8,11 @@
 
 
 //#include "Medium.cpp"
-#include "355. Design Twitter.cpp"
-
+#include "273. Integer to English Words.cpp"
+//#include "Hard.cpp"
 
 int main(int argc, const char * argv[]) {
-
-    Twitter t(0);
-    t.postTweet(1,5);
-    vector<int> a = t.getNewsFeed(1);
+    Solution s;
+    cout<<s.numberToWords(1111111111)<<endl;;
     return 0;
 }

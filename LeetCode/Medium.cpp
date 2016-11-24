@@ -4722,4 +4722,92 @@ public:
         nth_element(nums.begin(), nums.begin() + nums.size() / 2, nums.end());
         return accumulate(nums.begin(), nums.end(), 0, [&](const int sum, const int n){return sum + abs(n - nums[nums.size() / 2]);});
     }
+    /*
+     *
+     *   456. 132 Pattern
+     *
+     */
+    bool find132pattern(vector<int>& nums) {
+        if (nums.size() < 3) return false;
+        stack<int> S;
+        int s3 = INT_MIN;
+        for (int i = nums.size() - 1; i > -1; i--) {
+            if (nums[i] < s3) return true;
+            else {
+                while (!S.empty() && nums[i] > S.top()) {
+                    s3 = S.top();
+                    S.pop();
+                }
+            }
+            S.push(nums[i]);
+        }
+        return false;
+    }
+    /*
+     *
+     *   456. 132 Pattern
+     *
+     */
+    bool sequenceReconstruction(vector<int>& org, vector<vector<int>>& seqs) {
+        if (seqs.empty()) return false;
+        int n = int(org.size());
+        int rest = n - 1;
+        vector<int> pos (n + 1);
+        for (int i = 0; i < n; i++) pos[org[i]] = i;
+        vector<int> flag (n + 1, 0);
+        for (auto seq : seqs) {
+            for (int i = 0; i < seq.size(); i++) {
+                if (seq[i] <= 0 || seq[i] > n) return false;
+                if (i == 0) continue;
+                int pre = seq[i-1], cur = seq[i];
+                if (pos[pre] >= pos[cur]) return false;
+                if (pos[pre] + 1 == pos[cur] && flag[pre] == 0) {
+                    flag[pre] = 1;
+                    rest--;
+                }
+            }
+        }
+        return rest == 0;
+    }
+    /*
+     *
+     *   439. Ternary Expression Parser
+     *
+     */
+    string parseTernary(string s) {
+        if (s == "") return "";
+        if (s.length() == 1) return s;
+        int level = 0;
+        char c = s[0];
+        for (int i = 1; i < s.size(); i++) {
+            if (s[i] == '?') level++;
+            else if (s[i] == ':') {
+                level--;
+                if (level == 0) return c == 'T'? parseTernary(s.substr(2, i - 2)) : parseTernary(s.substr(i + 1));
+            }
+        }
+        return "";
+    }
+    /*
+     *
+     *   454. 4Sum II
+     *
+     */
+    void fillMap(vector<int>& A, vector<int>& B, unordered_map<int, int>& sums) {
+        int n = A.size();
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) sums[A[i] + B[j]]++;
+        }
+    }
+    int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D) {
+        unordered_map<int,int> m1, m2;
+        fillMap(A, B, m1);
+        fillMap(C, D, m2);
+        int res = 0;
+        for (auto it = m1.begin(); it != m1.end(); it++) {
+            auto it2 = m2.find(-it->first);
+            if (it2 != m2.end()) res += it->second * it2->second;
+        }
+        return res;
+    }
 };

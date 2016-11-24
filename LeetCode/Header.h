@@ -53,6 +53,18 @@ struct TreeLinkNode {
     TreeLinkNode *left, *right, *next;
     TreeLinkNode(int x): val(x), left(NULL), right(NULL), next(NULL) {}
 };
+struct Point {
+    int x;
+    int y;
+    Point() : x(0), y(0) {};
+    Point(int a, int b) : x(a), y(b) {};
+};
+
+struct RandomListNode {
+    int label;
+    RandomListNode *next, *random;
+    RandomListNode(int x) : label(x), next(NULL), random(NULL) {}
+};
 class NestedInteger {
 public:
     // Return true if this NestedInteger holds a single integer, rather than a nested list.
