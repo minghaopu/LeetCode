@@ -974,12 +974,105 @@ public:
         }
         sort(row.begin(), row.end());
         sort(col.begin(), col.end());
-        int r = row.size(), c = col.size();
+        int r = int(row.size()), c = int(col.size());
         int mid_row = r % 2 ? row[r / 2] : (row[r / 2 - 1] + row[r / 2]) / 2;
         int mid_col = c % 2 ? col[c / 2] : (col[c / 2 - 1] + col[c / 2]) / 2;
         int dis = 0;
         for (int i = 0; i < r; i++) dis += abs(mid_row - row[i]);
         for (int i = 0; i < c; i++) dis += abs(mid_col - col[i]);
         return dis;
+    }
+    /*
+     *
+     *      239. Sliding Window Maximum
+     *
+     */
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        vector<int> res;
+        deque<int> dq;
+        for (int i = 0; i < nums.size(); i++) {
+            if (!dq.empty() && dq.front() == i - k) dq.pop_front();
+            while (!dq.empty() && nums[dq.back()] < nums[i]) {
+                dq.pop_back();
+            }
+            dq.push_back(i);
+            if (i >= k - 1) res.push_back(nums[dq.front()]);
+        }
+        return res;
+    }
+    /*
+     *
+     *      239. Sliding Window Maximum
+     *
+     */
+    bool isScramble(string s1, string s2) {
+        if (s1 == s2) return true;
+        if (s1.length() != s2.length()) return false;
+        int l = int(s1.length());
+        int count[128] = {0};
+        for (int i = 0; i < l; i++) {
+            count[s1[i]]++;
+            count[s2[i]]--;
+        }
+        for (int i = 0; i < 128; i++) {
+            if (count[i] != 0) return false;
+        }
+        for (int i = 1; i< l; i++) {
+            if (isScramble(s1.substr(0, i), s2.substr(0, i)) && isScramble(s1.substr(i), s2.substr(i))) return true;
+            if (isScramble(s1.substr(0, i), s2.substr(l - i)) && isScramble(s1.substr(i), s2.substr(0, l - i))) return true;
+        }
+        return false;
+    }
+    /*
+     *
+     *      97. Interleaving String
+     *
+     */
+    bool isInterleave(string s1, string s2, string s3) {
+        if (s3.length() != s1.length() + s2.length()) return false;
+        bool table[s1.length() + 1][s2.length() + 1];
+        for (int i = 0; i <= s1.length(); i++) {
+            for (int j = 0; j <= s2.length(); j++) {
+                if (i == 0 && j == 0) table[i][j] = true;
+                else if (i == 0) table[i][j] = table[i][j-1] && (s3[i+j-1] == s2[j-1]);
+                else if (j == 0) table[i][j] = table[i-1][j] && (s3[i+j-1] == s1[i-1]);
+                else table[i][j] = (table[i-1][j] && (s3[i+j-1] == s1[i-1])) || (table[i][j-1] && (s3[i+j-1] == s2[j-1]));
+            }
+        }
+        return table[s1.length()][s2.length()];
+    }
+    /*
+     *
+     *      25. Reverse Nodes in k-Group
+     *
+     */
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        if (head == NULL || k < 2) return head;
+        int count = 0;
+        ListNode* cur = head;
+        ListNode* preHead = new ListNode(-1);
+        preHead->next = head;
+        while (cur) {
+            count++;
+            cur = cur->next;
+        }
+        
+        ListNode* pre = preHead;
+        ListNode* next = NULL;
+        ListNode* tmp = NULL;
+        while (count >= k) {
+            cur = pre->next;
+            next = cur->next;
+            for (int i = 1; i < k; i++) {
+                tmp = next->next;
+                next->next = pre->next;
+                pre->next = next;
+                cur->next = tmp;
+                next = tmp;
+            }
+            count -= k;
+            pre = cur;
+        }
+        return preHead->next;
     }
 };
