@@ -10,6 +10,14 @@
 		702453161DDAB44400B3E936 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 702452B51DDAB44400B3E936 /* main.cpp */; };
 		707128D01DE4C32D00AC1DFF /* Hard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128CF1DE4C32D00AC1DFF /* Hard.cpp */; };
 		707128D21DE6859000AC1DFF /* 273. Integer to English Words.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128D11DE6859000AC1DFF /* 273. Integer to English Words.cpp */; };
+		707128D41DE7432900AC1DFF /* 312. Burst Balloons.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128D31DE7432900AC1DFF /* 312. Burst Balloons.cpp */; };
+		707128D61DE77A9400AC1DFF /* 297. Serialize and Deserialize Binary Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128D51DE77A9400AC1DFF /* 297. Serialize and Deserialize Binary Tree.cpp */; };
+		707128D81DEB427400AC1DFF /* 421. Maximum XOR of Two Numbers in an Array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128D71DEB427400AC1DFF /* 421. Maximum XOR of Two Numbers in an Array.cpp */; };
+		707128DA1DEB868900AC1DFF /* 36_37. Sudoku.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128D91DEB868900AC1DFF /* 36_37. Sudoku.cpp */; };
+		707128DC1DEB927000AC1DFF /* 301.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128DB1DEB927000AC1DFF /* 301.cpp */; };
+		707128DE1DEB9BA000AC1DFF /* 51. N-Queens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128DD1DEB9BA000AC1DFF /* 51. N-Queens.cpp */; };
+		707128E01DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128DF1DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp */; };
+		707128E21DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128E11DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +37,14 @@
 		702452B51DDAB44400B3E936 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		707128CF1DE4C32D00AC1DFF /* Hard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Hard.cpp; sourceTree = "<group>"; };
 		707128D11DE6859000AC1DFF /* 273. Integer to English Words.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "273. Integer to English Words.cpp"; sourceTree = "<group>"; };
+		707128D31DE7432900AC1DFF /* 312. Burst Balloons.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "312. Burst Balloons.cpp"; sourceTree = "<group>"; };
+		707128D51DE77A9400AC1DFF /* 297. Serialize and Deserialize Binary Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "297. Serialize and Deserialize Binary Tree.cpp"; sourceTree = "<group>"; };
+		707128D71DEB427400AC1DFF /* 421. Maximum XOR of Two Numbers in an Array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "421. Maximum XOR of Two Numbers in an Array.cpp"; sourceTree = "<group>"; };
+		707128D91DEB868900AC1DFF /* 36_37. Sudoku.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "36_37. Sudoku.cpp"; sourceTree = "<group>"; };
+		707128DB1DEB927000AC1DFF /* 301.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 301.cpp; sourceTree = "<group>"; };
+		707128DD1DEB9BA000AC1DFF /* 51. N-Queens.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "51. N-Queens.cpp"; sourceTree = "<group>"; };
+		707128DF1DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "295. Find Median from Data Stream.cpp"; sourceTree = "<group>"; };
+		707128E11DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "99. Recover Binary Search Tree.cpp"; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -64,7 +80,15 @@
 			children = (
 				702452B41DDAB44400B3E936 /* Header.h */,
 				702452B51DDAB44400B3E936 /* main.cpp */,
+				707128DB1DEB927000AC1DFF /* 301.cpp */,
+				707128D31DE7432900AC1DFF /* 312. Burst Balloons.cpp */,
+				707128D51DE77A9400AC1DFF /* 297. Serialize and Deserialize Binary Tree.cpp */,
+				707128D91DEB868900AC1DFF /* 36_37. Sudoku.cpp */,
 				707128CF1DE4C32D00AC1DFF /* Hard.cpp */,
+				707128E11DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp */,
+				707128DF1DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp */,
+				707128DD1DEB9BA000AC1DFF /* 51. N-Queens.cpp */,
+				707128D71DEB427400AC1DFF /* 421. Maximum XOR of Two Numbers in an Array.cpp */,
 				707128D11DE6859000AC1DFF /* 273. Integer to English Words.cpp */,
 			);
 			path = LeetCode;
@@ -126,8 +150,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				707128D61DE77A9400AC1DFF /* 297. Serialize and Deserialize Binary Tree.cpp in Sources */,
+				707128DA1DEB868900AC1DFF /* 36_37. Sudoku.cpp in Sources */,
 				707128D01DE4C32D00AC1DFF /* Hard.cpp in Sources */,
+				707128E01DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp in Sources */,
 				707128D21DE6859000AC1DFF /* 273. Integer to English Words.cpp in Sources */,
+				707128DC1DEB927000AC1DFF /* 301.cpp in Sources */,
+				707128E21DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp in Sources */,
+				707128D41DE7432900AC1DFF /* 312. Burst Balloons.cpp in Sources */,
+				707128D81DEB427400AC1DFF /* 421. Maximum XOR of Two Numbers in an Array.cpp in Sources */,
+				707128DE1DEB9BA000AC1DFF /* 51. N-Queens.cpp in Sources */,
 				702453161DDAB44400B3E936 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

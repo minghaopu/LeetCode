@@ -8,11 +8,13 @@
 
 
 //#include "Medium.cpp"
-#include "273. Integer to English Words.cpp"
+//#include "312. Burst Balloons.cpp"
 //#include "Hard.cpp"
+#include "421. Maximum XOR of Two Numbers in an Array.cpp"
 
 int main(int argc, const char * argv[]) {
+    vector<int> v = {3, 10, 5, 25, 2, 8};
     Solution s;
-    cout<<s.numberToWords(1111111111)<<endl;;
+    cout<<s.findMaximumXOR(v)<<endl;;
     return 0;
 }

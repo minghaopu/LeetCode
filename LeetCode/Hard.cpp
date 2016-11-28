@@ -219,7 +219,7 @@ public:
     int countDigitOne(int n) {
         if (n <= 0) return 0;
         if (n <= 9) return 1;
-        int len = to_string(n).length();// 2234, lenthg is 4;
+        int len = int(to_string(n).length());// 2234, lenthg is 4;
         int num = pow(10, len - 1); // num = 10^(4-1) = 1000;
         if (n >= 2 * num) return num + countDigitOne(n % num) + (n/num) * countDigitOne(num - 1);
         // 1000 + count(234) + 2 * count(999);
@@ -461,5 +461,525 @@ public:
             visited[i] = 1;
         }
         return res;
+    }
+    /*
+     *
+     *      123. Best Time to Buy and Sell Stock III
+     *
+     */
+    int maxProfit_III(vector<int>& prices) {
+        int buy1 = INT_MIN, buy2 = INT_MIN;
+        int sell1 = 0, sell2 = 0;
+        for (int price : prices) {
+            sell2 = max(sell2, buy2 + price);
+            buy2 = max(buy2, sell1 - price);
+            sell1 = max(sell1, buy1 + price);
+            buy1 = max(buy1, -price);
+        }
+        return sell2;
+    }
+    /*
+     *
+     *      123. Best Time to Buy and Sell Stock IV
+     *
+     */
+    int maxProfit_IV(int k, vector<int>& prices) {
+        int n = int(prices.size());
+        // if k >= n / 2 which means buy and sell no limitation
+        if (k>=n/2) {
+            int sum = 0;
+            for(int i=1; i<n; i++){
+                if(prices[i] > prices[i-1]){
+                    sum += prices[i] - prices[i-1];
+                }
+            }
+            return sum;
+        }
+        int buys[k+1];
+        int sells[k+1];
+        
+        for (int i= 0; i<= k; i++) {
+            buys[i] = INT_MIN;
+            sells[i] = 0;
+        }
+        for (int price: prices) {
+            for (int i = k; i > 0; i--) {
+                sells[i] = max(sells[i], buys[i] + price);
+                buys[i] = max(buys[i], sells[i-1] - price);
+            }
+        }
+        return sells[k];
+    }
+    /*
+     *
+     *      41. First Missing Positive
+     *
+     */
+    int firstMissingPositive(vector<int>& A) {
+        int n = int(A.size());
+        int i = 0;
+        while (i < n) {
+            if (A[i] == i+1 || A[i] <= 0 || A[i] > n || A[A[i]-1] == A[i]) i++;
+            else swap(A[i], A[A[i]-1]);
+        }
+        for (int i = 0; i < n; i++) {
+            if (A[i] != i+1) return i+1;
+        }
+        return n+1;
+    }
+    /*
+     *
+     *      41. First Missing Positive
+     *
+     */
+    int numDistinct_TLE(string s, string t) {
+        if (s.size() < t.size()) return 0;
+        if (s == t) return 1;
+        if (s[0] != t[0]) return numDistinct_TLE(s.substr(1), t);
+        else return numDistinct_TLE(s.substr(1), t.substr(1)) + numDistinct_TLE(s.substr(1), t);
+    }
+    int numDistinct(string s, string t) { // 6ms O(mn) for space and time;
+        int m = int(s.length()), n = int(t.length());
+        int dp[m+1][n+1];
+        for (int j = 0; j <= n; j++) {
+            dp[0][j] = 0;
+        }
+        for (int i = 0; i <= m; i++) {
+            dp[i][0] = 1;
+        }
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (s[i-1] == t[j-1]) {
+                    dp[i][j] = dp[i-1][j] + dp[i-1][j-1];
+                } else {
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
+        return dp[m][n];
+    }
+    int numDistinct3(string s, string t) { // 3ms O(n) space
+        // the index of prefix indicate the index of t
+        // prefix stores the numbers of t's prefixes occur when we iterate through s.
+        // the dp equation is when we encounter a character which also occurs in t at position i, then prefixVec[i] += prefixVec[i-1] (i > 0), prefixVec[i]++ (i = 0).
+        int n = int(t.length());
+        int prefix[n+1];
+        prefix[0] = 1; //sentinel
+        for (char c : s) {
+            for (int j = n; j > 0; j--) {
+                if (c == t[j-1]) prefix[j] += prefix[j-1];
+            }
+        }
+        return prefix[n];
+    }
+    /*
+     *
+     *      124. Binary Tree Maximum Path Sum
+     *
+     */
+    int maxPathSum(TreeNode* root) {
+        if (!root) return 0;
+        int res = INT_MIN;
+        helper_124(root, res);
+        return res;
+    }
+    int helper_124(TreeNode* node, int &res) {
+        if (node == NULL) return 0;
+        int tmp = node->val;
+        int left = helper_124(node->left, res), right = helper_124(node->right, res);
+        // if node is in the path
+        res = max(tmp + left + right, res);
+        // node not in the path
+        return max(0, max(left, right) + tmp);
+    }
+    /*
+     *
+     *      124. Binary Tree Maximum Path Sum
+     *
+     */
+    int findMin(vector<int>& nums) {
+        int start = 0, end = int(nums.size()) - 1;
+        while (start < end) {
+            while (start < end - 1 && nums[start] == nums[start+1]) start++;
+            while (start < end - 1 && nums[end] == nums[end-1]) end--;
+            int mid = (start + end) / 2;
+            if (nums[mid] < nums[end]) end = mid;
+            else start = mid + 1;
+        }
+        return nums[start];
+    }
+    /*
+     *
+     *      282. Expression Add Operators
+     *
+     */
+    vector<string> addOperators(string num, int target) {
+        if (num == "") return {};
+        vector<string> res;
+        helper_282(res, "", num, target, 0, 0, 0);
+        return res;
+    }
+    void helper_282(vector<string>& res, string path, string num, int target, int pos, long cur, long preval) {
+        if (pos == num.length()) {
+            if (cur == target) res.push_back(path);
+            return;
+        }
+        for (int i = pos; i < num.length(); i++) {
+            if (num[pos] == '0' && i > pos) break; // 105 -> eliminate 1 + 05;
+            string sub = num.substr(pos, i - pos + 1);
+            long value = stol(sub);
+            if (pos == 0) {
+                helper_282(res, sub, num, target, i + 1, value, value);
+            } else {
+                helper_282(res, path + "+" + sub, num, target, i + 1, cur + value, value);
+                helper_282(res, path + "-" + sub, num, target, i + 1, cur - value, -value);
+                helper_282(res, path + "*" + sub, num, target, i + 1, cur - preval + preval * value, preval * value);
+            }
+        }
+    }
+    /*
+     *
+     *      315. Count of Smaller Numbers After Self
+     *
+     */
+    vector<int> countSmaller(vector<int>& nums) {
+        vector<int> res(nums.size());
+        vector<int> arr;
+        for (int i = int(nums.size()) - 1; i > -1; i--) {
+            res[i] = binarySearch(arr, nums[i]);
+        }
+        return res;
+    }
+    int binarySearch(vector<int>& arr, int target) {
+        int l = 0, r = int(arr.size());
+        while (l < r) {
+            int m = l + (r - l) / 2;
+            if (arr[m] < target) l = m + 1;
+            else r = m;
+        }
+        arr.insert(arr.begin() + l, target);
+        return l;
+    }
+    /*
+     *
+     *      65. Valid Number
+     *
+     */
+    bool isNumber(string str) {
+        int state = 0, flag = 0;
+        while (str[0] == ' ') str.erase(0,1);
+        while (str[str.length() - 1] == ' ') str.erase(str.length()-1,1);
+        for (int i = 0; i < str.length(); i++) {
+            if ('0' <= str[i] && str[i] <= '9') {
+                flag = 1;
+                if (state <= 2) state = 2;
+                else state = (state <= 5) ? 5 : 7;
+            } else if ('+' == str[i] || '-' == str[i]) {
+                if (state == 0 || state == 3) state++;
+                else return false;
+            } else if ('.' == str[i]) {
+                if (state <= 2) state = 6;
+                else return false;
+            } else if ('e' == str[i]) {
+                if (flag && (state == 2 || state == 6 || state == 7)) state = 3;
+                else return false;
+            }
+            else return false;
+        }
+        return (state == 2 || state == 5 || (flag && state == 6) || state == 7);
+    }
+    /*
+     *
+     *      76. Minimum Window Substring
+     *
+     */
+    string minWindow(string s, string t) {
+        int map[128];
+        memset(map, 0, sizeof(map));
+        for (char c : t) map[c]++;
+        int begin = 0, end = 0, counter = int(t.size()), head = 0, subLength = INT_MAX;
+        while (end < s.size()) {
+            if (map[s[end++]]-- > 0) counter--;
+            while (counter == 0) {
+                if (end - begin < subLength) {
+                    subLength = end - begin;
+                    head = begin;
+                }
+                if (map[s[begin]] == 0) {
+                    map[s[begin]]++;
+                    counter++;
+                    begin++;
+                }
+            }
+        }
+        return subLength == INT_MAX ? "" : s.substr(head, subLength);
+    }
+    /*
+     *
+     *      135. Candy
+     *
+     */
+    int candy_TLE(vector<int>& ratings) {
+        vector<int> tmp(ratings.size(), 0);
+        tmp[0] = 1;
+        int i = 1, j = 0;
+        int total = 1;
+        while (i < ratings.size()) {
+            if (ratings[i] > ratings[i-1]) {
+                tmp[i] = tmp[i-1] + 1;
+                j = i;
+            } else if (ratings[i] < ratings[i-1]) {
+                tmp[i] = 1;
+                if (tmp[i-1] == 1) {
+                    int k = i;
+                    while (k > j) {
+                        if ((ratings[k-1] > ratings[k] && tmp[k-1] <= tmp[k]) || (ratings[k-1] > ratings[k] && tmp[k-1] < tmp[k])) {
+                            tmp[k-1]++;
+                            total++;
+                        }
+                        k--;
+                    }
+                }
+                
+            } else {
+                tmp[i] = 1;
+            }
+            total += tmp[i];
+            i++;
+        }
+        return total;
+    }
+    int candy(vector<int>& ratings) {
+        int size = int(ratings.size());
+        if (size <= 1) return size;
+        vector<int> tmp(size, 1);
+        for (int i = 1; i < ratings.size(); i++) {
+            if (ratings[i] > ratings[i-1]) tmp[i] = tmp[i-1] + 1;
+        }
+        for (int i = size - 1; i > 0; i--) {
+            if (ratings[i-1] > ratings[i]) tmp[i-1] = max(tmp[i] + 1, tmp[i-1]);
+        }
+        int result = 0;
+        for (int i = 0; i < size; i++) {
+            result += tmp[i];
+        }
+        return result;
+    }
+    /*
+     *
+     *      214. Shortest Palindrome
+     *
+     */
+    string shortestPalindrome_TLE(string s) {
+        if (s == "") return s;
+        int i;
+        for (i = int(s.length())-1; i >= 0; i--) {
+            if (isParl(s, 0, i)) break;
+        }
+        string rs = s.substr(i + 1);
+        reverse(rs.begin(), rs.end());
+        
+        return rs + s;
+    }
+    bool isParl(string s, int i, int j) {
+        while (i < j) {
+            if (s[i++] != s[j--]) return false;
+        }
+        return true;
+    }
+    string shortestPalindrome(string s) {
+        string rs = s;
+        reverse(rs.begin(), rs.end());
+        string l = s + "#" + rs;
+        vector<int> p(l.length(), 0);
+        for (int i = 1; i < l.length(); i++) {
+            int j = p[i-1];
+            while (j > 0 && l[i] != l[j]) j = p[j-1];
+            p[i] = j + 1;
+        }
+        return rs.substr(0, s.length() - p[l.length() - 1]) + s;
+    }
+    /*
+     *
+     *      420. Strong Password Checker
+     *
+     */
+    int strongPasswordChecker(string s) {
+        int l = int(s.length());
+        int deleteTarget = s.length() > 20 ? l - 20 : 0;
+        int addTarget = s.length() < 6 ? 6 - l : 0;
+        int toDelete = 0, toAdd = 0, toChange = 0, upper = 1, lower = 1, digit = 1;
+        
+        for (int i = 0, j = 0; i < l; i++) {
+            if (isupper(s[i])) upper = 0;
+            if (isdigit(s[i])) digit = 0;
+            if (islower(s[i])) lower = 0;
+            
+            if (i - j == 2) {
+                if (s[j] == s[j+1] && s[j+1] == s[i]) {
+                    if (toAdd < addTarget) {    // for aaa, if toAdd < addTarget, aaa -> aaba, which also increase the length
+                        toAdd++;
+                        j = i;
+                    } else {
+                        toChange++;     // for aaa, if toChange < addTarget, aaa -> aab, which also keep the same length
+                        j = i + 1;
+                    }
+                } else j++;
+            }
+        }
+        if (s.length() <= 20) return max(addTarget + toChange, upper + lower + digit);
+        toChange = 0;// if tolong, remove aaa-> aa
+        vector<unordered_map<int,int>> lenCount(3);
+        for (int i = 0, j = 0, len; i <= l; i++) {
+            if (i == l || s[j] != s[i]) {
+                len = i - j;
+                if (len > 2) lenCount[len % 3][len]++;
+                j = i;
+            }
+        }
+        for (int i = 0, numLetters, dec; i < 3; i++) {
+            for (auto it = lenCount[i].begin(); it != lenCount[i].end(); it++) {
+                if (i < 2) {
+                    numLetters = i + 1;
+                    dec = min(it->second, (deleteTarget - toDelete) / numLetters);
+                    toDelete += dec * numLetters;
+                    it->second -= dec;
+                    if (it->first - numLetters > 2) lenCount[2][it->first - numLetters] += dec;
+                }
+                toChange += (it->second) * (it->first / 3);
+            }
+        }
+        int dec = (deleteTarget - toDelete) / 3;
+        toChange -= dec;
+        toDelete -= dec * 3;
+        
+        return deleteTarget + max(toChange, upper + lower + digit);
+    }
+    /*
+     *
+     *      327. Count of Range Sum
+     *
+     */
+    int countRangeSum(vector<int>& nums, int lower, int upper) {
+        vector<long> sums (nums.size() + 1, 0);
+        for (int i = 0; i < nums.size(); i++) {
+            sums[i+1] = sums[i] + nums[i];
+        }
+        return helper_327(sums, 0, int(sums.size()), lower, upper);
+    }
+    int helper_327(vector<long>& sums, int start, int end, int lower, int upper) {
+        if (end - start <= 1) return 0; // only one number;
+        int mid = start + (end - start) / 2;
+        int count = helper_327(sums, start, mid, lower, upper) + helper_327(sums, mid, end, lower, upper);
+        
+        int left = mid, right = mid;
+        int index = 0;
+        vector<long> cache(end - start, 0);
+        
+        for (int i = start, j = mid; i < mid; i++) {
+            while (left < end && sums[left] - sums[i] < lower) left++;
+            while (right < end && sums[right] - sums[i] <= upper) right++;
+            while (j < end && sums[i] >= sums[j]) cache[index++] = sums[j++];
+            cache[index++] = sums[i];
+            count += (right - left);
+        }
+        
+        for (int i = 0; i < index; i++) {
+            sums[start + i] = cache[i];
+        }
+        return count;
+    }
+    /*
+     *
+     *      30. Substring with Concatenation of All Words
+     *
+     */
+    vector<int> findSubstring(string s, vector<string>& words) {
+        unordered_map<string, int> dic;
+        int len = int(words[0].length());
+        int num = int(words.size());
+        for (string word : words) {
+            dic[word]++;
+        }
+        vector<int> res;
+        for (int i = 0; i < s.length() - num * len + 1; i++) {
+            unordered_map<string, int> window;
+            int j = 0;
+            while (j < num) {
+                string word = s.substr(i + j * len, len);
+                if (dic.find(word) != dic.end()) {
+                    window[word]++;
+                    if (window[word] > dic[word]) break;
+                } else break;
+                j++;
+            }
+            if (j == num) res.push_back(i);
+            
+        }
+        return res;
+    }
+    /*
+     *
+     *      45. Jump Game II
+     *
+     */
+    int jump_TLE(vector<int>& nums) {
+        int count = INT_MAX;
+        dfs_45(nums, 0, 0, int(nums.size() - 1), count);
+        return count;
+    }
+    void dfs_45(vector<int>& nums, int start, int steps, int end, int& count) {
+        if (start >= end) {
+            if (steps < count) count = steps;
+            return;
+        }
+        int total = nums[start];
+        for (int j = 1; j <= total; j++) {
+            if (steps + 1 >= count) break;
+            dfs_45(nums, start + j, steps + 1, end, count);
+        }
+    }
+    int jump(vector<int>& nums) {
+        if (nums.size() < 2) return 0;
+        int nextMax = 0;
+        int curMax = 0;
+        int level = 0;
+        int i = 0;
+        while (curMax - i + 1 > 0) {
+            level++;
+            while (i <= curMax) {
+                nextMax = max(nextMax, nums[i] + i);
+                if (nextMax >= nums.size() - 1) return level;
+                i++;
+            }
+            curMax = nextMax;
+        }
+        return 0;
+    }
+    /*
+     *
+     *      296. Best Meeting Point
+     *
+     */
+    int minTotalDistance(vector<vector<int>>& grid) {
+        vector<int> row;
+        vector<int> col;
+        for (int i = 0; i < grid.size(); i++) {
+            for (int j = 0; j < grid[0].size(); j++) {
+                if (grid[i][j]) {
+                    row.push_back(i);
+                    col.push_back(j);
+                }
+            }
+        }
+        sort(row.begin(), row.end());
+        sort(col.begin(), col.end());
+        int r = row.size(), c = col.size();
+        int mid_row = r % 2 ? row[r / 2] : (row[r / 2 - 1] + row[r / 2]) / 2;
+        int mid_col = c % 2 ? col[c / 2] : (col[c / 2 - 1] + col[c / 2]) / 2;
+        int dis = 0;
+        for (int i = 0; i < r; i++) dis += abs(mid_row - row[i]);
+        for (int i = 0; i < c; i++) dis += abs(mid_col - col[i]);
+        return dis;
     }
 };
