@@ -6,15 +6,18 @@
 //  Copyright © 2016年 Minghao Pu. All rights reserved.
 //
 
-
+#include "Header.h"
 //#include "Medium.cpp"
 //#include "312. Burst Balloons.cpp"
 //#include "Hard.cpp"
-#include "421. Maximum XOR of Two Numbers in an Array.cpp"
-
+//#include "421. Maximum XOR of Two Numbers in an Array.cpp"
 int main(int argc, const char * argv[]) {
-    vector<int> v = {3, 10, 5, 25, 2, 8};
-    Solution s;
-    cout<<s.findMaximumXOR(v)<<endl;;
+    string word = "ZZZZ";
+    int _len = 4;
+    int val = 0;
+    for (int i = 0; i < _len && i < word.length(); i++) {
+        val = val * 26 + (word[i] - 'A' + 1);
+    }
+    cout<<val-1<<endl;;
     return 0;
 }

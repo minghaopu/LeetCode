@@ -1075,4 +1075,71 @@ public:
         }
         return preHead->next;
     }
+    /*
+     *
+     *      44. Wildcard Matching
+     *
+     */
+    bool isMatch44(string s, string p) {
+        int sl = int(s.length()), pl = int(p.length()), i, j, istar = -1, jstar = -1;
+        for (i = 0, j = 0; i < sl; i++, j++) {
+            if (p[j] == '*') {
+                istar = i;
+                jstar = j;
+                i--;
+            } else {
+                if (s[i] != p[j] && p[j] != '?') {
+                    if (istar > -1) {
+                        i = istar++;
+                        j = jstar;
+                    } else return false;
+                }
+            }
+        }
+        while (p[j] == '*') j++;
+        return j == pl;
+    }
+    /*
+     *
+     *      32. Longest Valid Parentheses
+     *
+     */
+    int longestValidParentheses(string s) {
+        if (s.length() <= 1) return 0;
+        int maxLen = 0;
+        vector<int> dp(s.length(), 0);
+        for (int i = 0; i < s.length(); i++) {
+            if (s[i] == ')') {
+                if (s[i-1] == '(') {
+                    dp[i] = (i - 2) >= 0 ? (dp[i-2] + 2) : 2;
+                } else {
+                    if (i - dp[i-1] - 1 >= 0 && s[i - dp[i-1] - 1] == '(') {
+                        dp[i] = dp[i-1] + 2 + ((i-dp[i-1]-2>=0) ? dp[i-dp[i-1]-2]:0);
+                    }
+                }
+                maxLen = max(maxLen, dp[i]);
+            }
+        }
+        return maxLen;
+    }
+    /*
+     *
+     *      174. Dungeon Game
+     *
+     */
+    int calculateMinimumHP(vector<vector<int>>& dungeon) {
+        int m = int(dungeon.size());
+        int n = int(dungeon[0].size());
+        
+        vector<vector<int>> hp(m+1, vector<int> (n+1, INT_MAX));
+        hp[m][n-1] = 1;
+        hp[m-1][n] = 1;
+        for (int i = m - 1; i > -1; i--) {
+            for (int j = n - 1; j > -1; j--) {
+                int need = min(hp[i+1][j], hp[i][j+1]) - dungeon[i][j];
+                hp[i][j] = need <= 0 ? 1 : need;
+            }
+        }
+        return hp[0][0];
+    }
 };

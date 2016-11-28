@@ -18,6 +18,8 @@
 		707128DE1DEB9BA000AC1DFF /* 51. N-Queens.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128DD1DEB9BA000AC1DFF /* 51. N-Queens.cpp */; };
 		707128E01DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128DF1DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp */; };
 		707128E21DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128E11DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp */; };
+		707128E41DEC08FC00AC1DFF /* 260.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128E31DEC08FC00AC1DFF /* 260.cpp */; };
+		707128E61DEC0ED400AC1DFF /* 380.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707128E51DEC0ED400AC1DFF /* 380.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +47,8 @@
 		707128DD1DEB9BA000AC1DFF /* 51. N-Queens.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "51. N-Queens.cpp"; sourceTree = "<group>"; };
 		707128DF1DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "295. Find Median from Data Stream.cpp"; sourceTree = "<group>"; };
 		707128E11DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "99. Recover Binary Search Tree.cpp"; sourceTree = "<group>"; };
+		707128E31DEC08FC00AC1DFF /* 260.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 260.cpp; sourceTree = "<group>"; };
+		707128E51DEC0ED400AC1DFF /* 380.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 380.cpp; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +90,8 @@
 				707128D91DEB868900AC1DFF /* 36_37. Sudoku.cpp */,
 				707128CF1DE4C32D00AC1DFF /* Hard.cpp */,
 				707128E11DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp */,
+				707128E51DEC0ED400AC1DFF /* 380.cpp */,
+				707128E31DEC08FC00AC1DFF /* 260.cpp */,
 				707128DF1DEBCBF400AC1DFF /* 295. Find Median from Data Stream.cpp */,
 				707128DD1DEB9BA000AC1DFF /* 51. N-Queens.cpp */,
 				707128D71DEB427400AC1DFF /* 421. Maximum XOR of Two Numbers in an Array.cpp */,
@@ -150,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				707128E41DEC08FC00AC1DFF /* 260.cpp in Sources */,
 				707128D61DE77A9400AC1DFF /* 297. Serialize and Deserialize Binary Tree.cpp in Sources */,
 				707128DA1DEB868900AC1DFF /* 36_37. Sudoku.cpp in Sources */,
 				707128D01DE4C32D00AC1DFF /* Hard.cpp in Sources */,
@@ -159,6 +166,7 @@
 				707128E21DEBD6F400AC1DFF /* 99. Recover Binary Search Tree.cpp in Sources */,
 				707128D41DE7432900AC1DFF /* 312. Burst Balloons.cpp in Sources */,
 				707128D81DEB427400AC1DFF /* 421. Maximum XOR of Two Numbers in an Array.cpp in Sources */,
+				707128E61DEC0ED400AC1DFF /* 380.cpp in Sources */,
 				707128DE1DEB9BA000AC1DFF /* 51. N-Queens.cpp in Sources */,
 				702453161DDAB44400B3E936 /* main.cpp in Sources */,
 			);
