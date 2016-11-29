@@ -1142,4 +1142,41 @@ public:
         }
         return hp[0][0];
     }
+    /*
+     *
+     *      68. Text Justification
+     *
+     */
+    vector<string> fullJustify(vector<string>& words, int maxWidth) {
+        vector<string> result;
+        int start = 0, end = 1, n = int(words.size());
+        while (start < n) {
+            int space = 1;
+            int wordLength = int(words[start].length());
+            while (end < n && space + wordLength + words[end].length() <= maxWidth) {
+                space++;
+                wordLength += words[end].length();
+                end++;
+            }
+            string line = words[start];
+            if (end == n) {
+                for (int i = start + 1; i < end; i++) line += " " + words[i];
+                for (int k = int(line.length()); k < maxWidth; k++) line += " ";
+            } else if (end - start == 1) {
+                for (int k = int(line.length()); k < maxWidth; k++) line += " ";
+            } else {
+                int average = (maxWidth - wordLength) / (end - start - 1);
+                int remain = (maxWidth - wordLength) % (end - start - 1);
+                for (int i = start + 1; i < end; i++) {
+                    for (int l = 0; l < average; l++) line += " ";
+                    if (remain-- > 0) line += " ";
+                    line += words[i];
+                }
+            }
+            result.push_back(line);
+            start = end;
+            end = end + 1;
+        }
+        return result;
+    }
 };
