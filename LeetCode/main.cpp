@@ -11,6 +11,7 @@
 //#include "312. Burst Balloons.cpp"
 //#include "Hard.cpp"
 //#include "421. Maximum XOR of Two Numbers in an Array.cpp"
+
 int main(int argc, const char * argv[]) {
     string word = "ZZZZ";
     int _len = 4;
@@ -18,6 +19,6 @@ int main(int argc, const char * argv[]) {
     for (int i = 0; i < _len && i < word.length(); i++) {
         val = val * 26 + (word[i] - 'A' + 1);
     }
-    cout<<val-1<<endl;;
+    cout<<INT_MIN<<endl;;
     return 0;
 }
