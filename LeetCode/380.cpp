@@ -21,7 +21,7 @@ public:
     bool insert(int val) {
         if (m.find(val) != m.end()) return false;
         nums.push_back(val);
-        m[val] = nums.size() - 1;
+        m[val] = int(nums.size()) - 1;
         return true;
     }
     

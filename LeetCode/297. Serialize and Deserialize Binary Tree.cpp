@@ -28,7 +28,7 @@ public:
         Q.push(root);
         
         while (!Q.empty()) {
-            int count = Q.size();
+            int count = int(Q.size());
             for (int i = 0; i < count; i++) {
                 TreeNode* p = Q.front();
                 Q.pop();

@@ -1179,4 +1179,76 @@ public:
         }
         return result;
     }
+    /*
+     *
+     *      330. Patching Array
+     *
+     */
+    int minPatches(vector<int>& nums, int n) {
+        long miss = 1, added = 0, i = 0;
+        while (miss <= n) {
+            if (i < nums.size() && nums[i] <= miss) {
+                miss += nums[i++];
+            } else {
+                miss += miss;
+                added++;
+            }
+        }
+        return int(added);
+    }
+    /*
+     *
+     *      329. Longest Increasing Path in a Matrix
+     *
+     */
+    int longestIncreasingPath(vector<vector<int>>& matrix) {
+        int maxLength = 0, m = int(matrix.size());
+        if (matrix.empty() || matrix[0].empty()) return maxLength;
+        int n = int(matrix[0].size());
+        vector<vector<int>> dp(m, vector<int> (n, 0));
+        
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int length = dfs329(i, j, matrix, dp, INT_MAX);
+                maxLength = max(maxLength, length);
+            }
+        }
+        
+        return maxLength;
+    }
+    int dfs329(int row, int col, vector<vector<int>>& matrix, vector<vector<int>>& dp, int pre) {
+        if (row < 0 || col < 0 || row >= matrix.size() || col >= matrix[0].size() || matrix[row][col] >= pre) return 0;
+        
+        if (dp[row][col] > 0) return dp[row][col];
+        int cur = matrix[row][col];
+        int tmp = 0;
+        tmp = max(dfs329(row + 1, col, matrix, dp, cur), tmp);
+        tmp = max(dfs329(row - 1, col, matrix, dp, cur), tmp);
+        tmp = max(dfs329(row, col + 1, matrix, dp, cur), tmp);
+        tmp = max(dfs329(row, col - 1, matrix, dp, cur), tmp);
+        tmp++;
+        dp[row][col] = tmp;
+        return tmp;
+    }
+    /*
+     *
+     *      57. Insert Interval
+     *
+     */
+    vector<Interval> insert(vector<Interval>& intervals, Interval newInterval) {
+        vector<Interval> res;
+        int index = 0;
+        int start = newInterval.start;
+        int end = newInterval.end;
+        while (index < intervals.size() && intervals[index].end < start) res.push_back(intervals[index++]);
+        if (index < intervals.size()) start = min(intervals[index].start, start);
+        while (index < intervals.size() && intervals[index].start <= newInterval.end) {
+            end = max(end, intervals[index++].end);
+        }
+        newInterval.start = start;
+        newInterval.end = end;
+        res.push_back(newInterval);
+        while (index < intervals.size()) res.push_back(intervals[index++]);
+        return res;
+    }
 };
