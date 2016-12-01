@@ -13,6 +13,53 @@
 		707129211DEE859800AC1DFF /* 22.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129201DEE859800AC1DFF /* 22.cpp */; };
 		707129231DEE890700AC1DFF /* 23.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129221DEE890700AC1DFF /* 23.cpp */; };
 		707129251DEE8BDF00AC1DFF /* 24.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129241DEE8BDF00AC1DFF /* 24.cpp */; };
+		707129271DEE97E600AC1DFF /* 25.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129261DEE97E600AC1DFF /* 25.cpp */; };
+		707129291DEE9AD100AC1DFF /* 26.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129281DEE9AD100AC1DFF /* 26.cpp */; };
+		7071292B1DEE9B9800AC1DFF /* 27.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071292A1DEE9B9800AC1DFF /* 27.cpp */; };
+		7071292D1DEEA07D00AC1DFF /* 28.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071292C1DEEA07D00AC1DFF /* 28.cpp */; };
+		7071292F1DEEA8F600AC1DFF /* 29.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071292E1DEEA8F600AC1DFF /* 29.cpp */; };
+		707129311DEEB11200AC1DFF /* 30.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129301DEEB11200AC1DFF /* 30.cpp */; };
+		707129331DEEB31C00AC1DFF /* 31.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129321DEEB31C00AC1DFF /* 31.cpp */; };
+		707129351DEF2C2600AC1DFF /* 32.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129341DEF2C2600AC1DFF /* 32.cpp */; };
+		707129371DEF30E100AC1DFF /* 33.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129361DEF30E100AC1DFF /* 33.cpp */; };
+		707129391DEF358F00AC1DFF /* 34.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129381DEF358F00AC1DFF /* 34.cpp */; };
+		7071293B1DEF37C700AC1DFF /* 35.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071293A1DEF37C700AC1DFF /* 35.cpp */; };
+		7071293D1DEF405900AC1DFF /* 36.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071293C1DEF405900AC1DFF /* 36.cpp */; };
+		7071293F1DEF6DDE00AC1DFF /* 37.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071293E1DEF6DDE00AC1DFF /* 37.cpp */; };
+		707129411DEF711B00AC1DFF /* 38.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129401DEF711B00AC1DFF /* 38.cpp */; };
+		707129431DEF75D400AC1DFF /* 39.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129421DEF75D400AC1DFF /* 39.cpp */; };
+		707129451DEF75E500AC1DFF /* 40.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129441DEF75E500AC1DFF /* 40.cpp */; };
+		707129471DEF785200AC1DFF /* 41.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129461DEF785200AC1DFF /* 41.cpp */; };
+		707129491DEF7E5000AC1DFF /* 42.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129481DEF7E5000AC1DFF /* 42.cpp */; };
+		7071294B1DEF843700AC1DFF /* 43.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071294A1DEF843700AC1DFF /* 43.cpp */; };
+		7071294D1DEF864B00AC1DFF /* 44.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071294C1DEF864B00AC1DFF /* 44.cpp */; };
+		7071294F1DEF881000AC1DFF /* 55.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071294E1DEF881000AC1DFF /* 55.cpp */; };
+		707129511DEF8A6600AC1DFF /* 45.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129501DEF8A6600AC1DFF /* 45.cpp */; };
+		707129531DEFA45A00AC1DFF /* 46.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129521DEFA45A00AC1DFF /* 46.cpp */; };
+		707129551DEFA9FA00AC1DFF /* 47.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129541DEFA9FA00AC1DFF /* 47.cpp */; };
+		707129571DEFACBF00AC1DFF /* 48.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129561DEFACBF00AC1DFF /* 48.cpp */; };
+		707129591DEFB04000AC1DFF /* 49.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129581DEFB04000AC1DFF /* 49.cpp */; };
+		7071295B1DEFBD5300AC1DFF /* 50.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071295A1DEFBD5300AC1DFF /* 50.cpp */; };
+		7071295D1DEFC1C900AC1DFF /* 51.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071295C1DEFC1C900AC1DFF /* 51.cpp */; };
+		7071295F1DEFC40F00AC1DFF /* 52.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071295E1DEFC40F00AC1DFF /* 52.cpp */; };
+		707129611DEFC6A700AC1DFF /* 53.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129601DEFC6A700AC1DFF /* 53.cpp */; };
+		707129631DEFC95E00AC1DFF /* 54.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129621DEFC95E00AC1DFF /* 54.cpp */; };
+		707129651DEFCBA200AC1DFF /* 56.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129641DEFCBA200AC1DFF /* 56.cpp */; };
+		707129671DEFD08A00AC1DFF /* 57. Insert Interval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129661DEFD08A00AC1DFF /* 57. Insert Interval.cpp */; };
+		707129691DEFD2A900AC1DFF /* 58.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129681DEFD2A900AC1DFF /* 58.cpp */; };
+		7071296B1DEFD56500AC1DFF /* 59.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071296A1DEFD56500AC1DFF /* 59.cpp */; };
+		7071296D1DEFDE6F00AC1DFF /* 60.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071296C1DEFDE6F00AC1DFF /* 60.cpp */; };
+		7071296F1DEFE21500AC1DFF /* 61.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071296E1DEFE21500AC1DFF /* 61.cpp */; };
+		707129711DEFE7C000AC1DFF /* 62.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129701DEFE7C000AC1DFF /* 62.cpp */; };
+		707129731DEFECF700AC1DFF /* 63.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129721DEFECF700AC1DFF /* 63.cpp */; };
+		707129751DEFEF7500AC1DFF /* 64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129741DEFEF7500AC1DFF /* 64.cpp */; };
+		707129771DEFF3ED00AC1DFF /* 65.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129761DEFF3ED00AC1DFF /* 65.cpp */; };
+		707129791DEFF55900AC1DFF /* 66.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129781DEFF55900AC1DFF /* 66.cpp */; };
+		7071297B1DEFF89200AC1DFF /* 67.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071297A1DEFF89200AC1DFF /* 67.cpp */; };
+		7071297D1DEFFD2A00AC1DFF /* 70.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071297C1DEFFD2A00AC1DFF /* 70.cpp */; };
+		7071297F1DEFFDCF00AC1DFF /* 69.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7071297E1DEFFDCF00AC1DFF /* 69.cpp */; };
+		707129811DF0047600AC1DFF /* 68.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129801DF0047600AC1DFF /* 68.cpp */; };
+		707129831DF0070F00AC1DFF /* 71.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 707129821DF0070F00AC1DFF /* 71.cpp */; };
 		709E0E6A1DEE461D00981460 /* 8. String to Integer (atoi).cpp in Sources */ = {isa = PBXBuildFile; fileRef = 709E0E691DEE461D00981460 /* 8. String to Integer (atoi).cpp */; };
 		709E0E6C1DEE4D5200981460 /* 9. Palindrome Number.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 709E0E6B1DEE4D5200981460 /* 9. Palindrome Number.cpp */; };
 		709E0E6E1DEE50D700981460 /* 10.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 709E0E6D1DEE50D700981460 /* 10.cpp */; };
@@ -47,6 +94,53 @@
 		707129201DEE859800AC1DFF /* 22.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 22.cpp; sourceTree = "<group>"; };
 		707129221DEE890700AC1DFF /* 23.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 23.cpp; sourceTree = "<group>"; };
 		707129241DEE8BDF00AC1DFF /* 24.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 24.cpp; sourceTree = "<group>"; };
+		707129261DEE97E600AC1DFF /* 25.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 25.cpp; sourceTree = "<group>"; };
+		707129281DEE9AD100AC1DFF /* 26.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 26.cpp; sourceTree = "<group>"; };
+		7071292A1DEE9B9800AC1DFF /* 27.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 27.cpp; sourceTree = "<group>"; };
+		7071292C1DEEA07D00AC1DFF /* 28.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 28.cpp; sourceTree = "<group>"; };
+		7071292E1DEEA8F600AC1DFF /* 29.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 29.cpp; sourceTree = "<group>"; };
+		707129301DEEB11200AC1DFF /* 30.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 30.cpp; sourceTree = "<group>"; };
+		707129321DEEB31C00AC1DFF /* 31.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 31.cpp; sourceTree = "<group>"; };
+		707129341DEF2C2600AC1DFF /* 32.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 32.cpp; sourceTree = "<group>"; };
+		707129361DEF30E100AC1DFF /* 33.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 33.cpp; sourceTree = "<group>"; };
+		707129381DEF358F00AC1DFF /* 34.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 34.cpp; sourceTree = "<group>"; };
+		7071293A1DEF37C700AC1DFF /* 35.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 35.cpp; sourceTree = "<group>"; };
+		7071293C1DEF405900AC1DFF /* 36.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 36.cpp; sourceTree = "<group>"; };
+		7071293E1DEF6DDE00AC1DFF /* 37.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 37.cpp; sourceTree = "<group>"; };
+		707129401DEF711B00AC1DFF /* 38.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 38.cpp; sourceTree = "<group>"; };
+		707129421DEF75D400AC1DFF /* 39.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 39.cpp; sourceTree = "<group>"; };
+		707129441DEF75E500AC1DFF /* 40.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 40.cpp; sourceTree = "<group>"; };
+		707129461DEF785200AC1DFF /* 41.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 41.cpp; sourceTree = "<group>"; };
+		707129481DEF7E5000AC1DFF /* 42.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 42.cpp; sourceTree = "<group>"; };
+		7071294A1DEF843700AC1DFF /* 43.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 43.cpp; sourceTree = "<group>"; };
+		7071294C1DEF864B00AC1DFF /* 44.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 44.cpp; sourceTree = "<group>"; };
+		7071294E1DEF881000AC1DFF /* 55.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 55.cpp; sourceTree = "<group>"; };
+		707129501DEF8A6600AC1DFF /* 45.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 45.cpp; sourceTree = "<group>"; };
+		707129521DEFA45A00AC1DFF /* 46.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 46.cpp; sourceTree = "<group>"; };
+		707129541DEFA9FA00AC1DFF /* 47.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 47.cpp; sourceTree = "<group>"; };
+		707129561DEFACBF00AC1DFF /* 48.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 48.cpp; sourceTree = "<group>"; };
+		707129581DEFB04000AC1DFF /* 49.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 49.cpp; sourceTree = "<group>"; };
+		7071295A1DEFBD5300AC1DFF /* 50.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 50.cpp; sourceTree = "<group>"; };
+		7071295C1DEFC1C900AC1DFF /* 51.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 51.cpp; sourceTree = "<group>"; };
+		7071295E1DEFC40F00AC1DFF /* 52.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 52.cpp; sourceTree = "<group>"; };
+		707129601DEFC6A700AC1DFF /* 53.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 53.cpp; sourceTree = "<group>"; };
+		707129621DEFC95E00AC1DFF /* 54.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 54.cpp; sourceTree = "<group>"; };
+		707129641DEFCBA200AC1DFF /* 56.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 56.cpp; sourceTree = "<group>"; };
+		707129661DEFD08A00AC1DFF /* 57. Insert Interval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "57. Insert Interval.cpp"; sourceTree = "<group>"; };
+		707129681DEFD2A900AC1DFF /* 58.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 58.cpp; sourceTree = "<group>"; };
+		7071296A1DEFD56500AC1DFF /* 59.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 59.cpp; sourceTree = "<group>"; };
+		7071296C1DEFDE6F00AC1DFF /* 60.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 60.cpp; sourceTree = "<group>"; };
+		7071296E1DEFE21500AC1DFF /* 61.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 61.cpp; sourceTree = "<group>"; };
+		707129701DEFE7C000AC1DFF /* 62.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 62.cpp; sourceTree = "<group>"; };
+		707129721DEFECF700AC1DFF /* 63.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 63.cpp; sourceTree = "<group>"; };
+		707129741DEFEF7500AC1DFF /* 64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 64.cpp; sourceTree = "<group>"; };
+		707129761DEFF3ED00AC1DFF /* 65.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 65.cpp; sourceTree = "<group>"; };
+		707129781DEFF55900AC1DFF /* 66.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 66.cpp; sourceTree = "<group>"; };
+		7071297A1DEFF89200AC1DFF /* 67.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 67.cpp; sourceTree = "<group>"; };
+		7071297C1DEFFD2A00AC1DFF /* 70.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 70.cpp; sourceTree = "<group>"; };
+		7071297E1DEFFDCF00AC1DFF /* 69.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 69.cpp; sourceTree = "<group>"; };
+		707129801DF0047600AC1DFF /* 68.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 68.cpp; sourceTree = "<group>"; };
+		707129821DF0070F00AC1DFF /* 71.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 71.cpp; sourceTree = "<group>"; };
 		708919871CC436220042FCA1 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		709E0E691DEE461D00981460 /* 8. String to Integer (atoi).cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "8. String to Integer (atoi).cpp"; sourceTree = "<group>"; };
 		709E0E6B1DEE4D5200981460 /* 9. Palindrome Number.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "9. Palindrome Number.cpp"; sourceTree = "<group>"; };
@@ -78,21 +172,68 @@
 			children = (
 				7071291C1DEE274300AC1DFF /* 7. Reverse Integer.cpp */,
 				709E0E691DEE461D00981460 /* 8. String to Integer (atoi).cpp */,
-				709E0E731DEE593F00981460 /* 15.cpp */,
 				709E0E6B1DEE4D5200981460 /* 9. Palindrome Number.cpp */,
-				709E0E6F1DEE544A00981460 /* 11.cpp */,
 				709E0E6D1DEE50D700981460 /* 10.cpp */,
-				709E0E7F1DEE6BAF00981460 /* 20.cpp */,
-				709E0E771DEE5EEF00981460 /* 14.cpp */,
-				709E0E791DEE648400981460 /* 17.cpp */,
+				709E0E6F1DEE544A00981460 /* 11.cpp */,
 				709E0E711DEE572800981460 /* 12_13.cpp */,
-				7071291E1DEE812400AC1DFF /* 21.cpp */,
+				709E0E771DEE5EEF00981460 /* 14.cpp */,
+				709E0E731DEE593F00981460 /* 15.cpp */,
+				709E0E751DEE5D6F00981460 /* 16.cpp */,
+				709E0E791DEE648400981460 /* 17.cpp */,
 				709E0E7B1DEE67BA00981460 /* 18.cpp */,
 				709E0E7D1DEE69F100981460 /* 19.cpp */,
-				709E0E751DEE5D6F00981460 /* 16.cpp */,
-				707129221DEE890700AC1DFF /* 23.cpp */,
+				709E0E7F1DEE6BAF00981460 /* 20.cpp */,
+				7071291E1DEE812400AC1DFF /* 21.cpp */,
 				707129201DEE859800AC1DFF /* 22.cpp */,
+				7071297E1DEFFDCF00AC1DFF /* 69.cpp */,
+				707129221DEE890700AC1DFF /* 23.cpp */,
 				707129241DEE8BDF00AC1DFF /* 24.cpp */,
+				707129261DEE97E600AC1DFF /* 25.cpp */,
+				707129281DEE9AD100AC1DFF /* 26.cpp */,
+				7071292A1DEE9B9800AC1DFF /* 27.cpp */,
+				7071292C1DEEA07D00AC1DFF /* 28.cpp */,
+				7071292E1DEEA8F600AC1DFF /* 29.cpp */,
+				707129301DEEB11200AC1DFF /* 30.cpp */,
+				7071297C1DEFFD2A00AC1DFF /* 70.cpp */,
+				707129321DEEB31C00AC1DFF /* 31.cpp */,
+				707129341DEF2C2600AC1DFF /* 32.cpp */,
+				707129361DEF30E100AC1DFF /* 33.cpp */,
+				707129381DEF358F00AC1DFF /* 34.cpp */,
+				7071293A1DEF37C700AC1DFF /* 35.cpp */,
+				7071293C1DEF405900AC1DFF /* 36.cpp */,
+				7071293E1DEF6DDE00AC1DFF /* 37.cpp */,
+				707129401DEF711B00AC1DFF /* 38.cpp */,
+				707129421DEF75D400AC1DFF /* 39.cpp */,
+				707129441DEF75E500AC1DFF /* 40.cpp */,
+				707129461DEF785200AC1DFF /* 41.cpp */,
+				7071297A1DEFF89200AC1DFF /* 67.cpp */,
+				707129481DEF7E5000AC1DFF /* 42.cpp */,
+				7071294A1DEF843700AC1DFF /* 43.cpp */,
+				7071294C1DEF864B00AC1DFF /* 44.cpp */,
+				707129501DEF8A6600AC1DFF /* 45.cpp */,
+				707129801DF0047600AC1DFF /* 68.cpp */,
+				707129521DEFA45A00AC1DFF /* 46.cpp */,
+				707129541DEFA9FA00AC1DFF /* 47.cpp */,
+				707129561DEFACBF00AC1DFF /* 48.cpp */,
+				707129581DEFB04000AC1DFF /* 49.cpp */,
+				707129781DEFF55900AC1DFF /* 66.cpp */,
+				707129821DF0070F00AC1DFF /* 71.cpp */,
+				7071295A1DEFBD5300AC1DFF /* 50.cpp */,
+				7071295C1DEFC1C900AC1DFF /* 51.cpp */,
+				7071295E1DEFC40F00AC1DFF /* 52.cpp */,
+				707129601DEFC6A700AC1DFF /* 53.cpp */,
+				707129621DEFC95E00AC1DFF /* 54.cpp */,
+				7071294E1DEF881000AC1DFF /* 55.cpp */,
+				707129641DEFCBA200AC1DFF /* 56.cpp */,
+				707129661DEFD08A00AC1DFF /* 57. Insert Interval.cpp */,
+				707129681DEFD2A900AC1DFF /* 58.cpp */,
+				7071296A1DEFD56500AC1DFF /* 59.cpp */,
+				7071296C1DEFDE6F00AC1DFF /* 60.cpp */,
+				7071296E1DEFE21500AC1DFF /* 61.cpp */,
+				707129701DEFE7C000AC1DFF /* 62.cpp */,
+				707129721DEFECF700AC1DFF /* 63.cpp */,
+				707129741DEFEF7500AC1DFF /* 64.cpp */,
+				707129761DEFF3ED00AC1DFF /* 65.cpp */,
 			);
 			name = round2;
 			sourceTree = "<group>";
@@ -179,23 +320,70 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				707129831DF0070F00AC1DFF /* 71.cpp in Sources */,
+				707129691DEFD2A900AC1DFF /* 58.cpp in Sources */,
+				707129651DEFCBA200AC1DFF /* 56.cpp in Sources */,
+				707129671DEFD08A00AC1DFF /* 57. Insert Interval.cpp in Sources */,
+				707129531DEFA45A00AC1DFF /* 46.cpp in Sources */,
+				7071297D1DEFFD2A00AC1DFF /* 70.cpp in Sources */,
+				707129511DEF8A6600AC1DFF /* 45.cpp in Sources */,
+				7071293F1DEF6DDE00AC1DFF /* 37.cpp in Sources */,
+				707129351DEF2C2600AC1DFF /* 32.cpp in Sources */,
+				707129411DEF711B00AC1DFF /* 38.cpp in Sources */,
+				7071295D1DEFC1C900AC1DFF /* 51.cpp in Sources */,
+				707129571DEFACBF00AC1DFF /* 48.cpp in Sources */,
+				7071296F1DEFE21500AC1DFF /* 61.cpp in Sources */,
+				707129451DEF75E500AC1DFF /* 40.cpp in Sources */,
+				707129371DEF30E100AC1DFF /* 33.cpp in Sources */,
 				707129231DEE890700AC1DFF /* 23.cpp in Sources */,
+				7071294B1DEF843700AC1DFF /* 43.cpp in Sources */,
+				707129711DEFE7C000AC1DFF /* 62.cpp in Sources */,
+				7071295F1DEFC40F00AC1DFF /* 52.cpp in Sources */,
 				709E0E7E1DEE69F100981460 /* 19.cpp in Sources */,
 				709E0E7C1DEE67BA00981460 /* 18.cpp in Sources */,
 				709E0E781DEE5EEF00981460 /* 14.cpp in Sources */,
+				707129771DEFF3ED00AC1DFF /* 65.cpp in Sources */,
+				707129611DEFC6A700AC1DFF /* 53.cpp in Sources */,
 				709E0E6E1DEE50D700981460 /* 10.cpp in Sources */,
+				7071293B1DEF37C700AC1DFF /* 35.cpp in Sources */,
 				707129251DEE8BDF00AC1DFF /* 24.cpp in Sources */,
+				7071294F1DEF881000AC1DFF /* 55.cpp in Sources */,
+				707129551DEFA9FA00AC1DFF /* 47.cpp in Sources */,
 				709E0E701DEE544A00981460 /* 11.cpp in Sources */,
+				707129751DEFEF7500AC1DFF /* 64.cpp in Sources */,
+				7071293D1DEF405900AC1DFF /* 36.cpp in Sources */,
+				7071292F1DEEA8F600AC1DFF /* 29.cpp in Sources */,
 				7071291F1DEE812400AC1DFF /* 21.cpp in Sources */,
 				709E0E6C1DEE4D5200981460 /* 9. Palindrome Number.cpp in Sources */,
+				707129731DEFECF700AC1DFF /* 63.cpp in Sources */,
+				707129311DEEB11200AC1DFF /* 30.cpp in Sources */,
 				709E0E721DEE572800981460 /* 12_13.cpp in Sources */,
+				707129811DF0047600AC1DFF /* 68.cpp in Sources */,
 				702453161DDAB44400B3E936 /* main.cpp in Sources */,
+				707129471DEF785200AC1DFF /* 41.cpp in Sources */,
+				7071297B1DEFF89200AC1DFF /* 67.cpp in Sources */,
+				7071292B1DEE9B9800AC1DFF /* 27.cpp in Sources */,
+				7071296B1DEFD56500AC1DFF /* 59.cpp in Sources */,
 				709E0E741DEE593F00981460 /* 15.cpp in Sources */,
+				7071297F1DEFFDCF00AC1DFF /* 69.cpp in Sources */,
+				707129331DEEB31C00AC1DFF /* 31.cpp in Sources */,
+				7071295B1DEFBD5300AC1DFF /* 50.cpp in Sources */,
+				707129431DEF75D400AC1DFF /* 39.cpp in Sources */,
+				707129271DEE97E600AC1DFF /* 25.cpp in Sources */,
 				709E0E6A1DEE461D00981460 /* 8. String to Integer (atoi).cpp in Sources */,
+				7071292D1DEEA07D00AC1DFF /* 28.cpp in Sources */,
 				707129211DEE859800AC1DFF /* 22.cpp in Sources */,
+				7071296D1DEFDE6F00AC1DFF /* 60.cpp in Sources */,
+				707129291DEE9AD100AC1DFF /* 26.cpp in Sources */,
+				707129591DEFB04000AC1DFF /* 49.cpp in Sources */,
+				7071294D1DEF864B00AC1DFF /* 44.cpp in Sources */,
 				709E0E7A1DEE648400981460 /* 17.cpp in Sources */,
 				709E0E801DEE6BAF00981460 /* 20.cpp in Sources */,
 				7071291D1DEE274300AC1DFF /* 7. Reverse Integer.cpp in Sources */,
+				707129791DEFF55900AC1DFF /* 66.cpp in Sources */,
+				707129631DEFC95E00AC1DFF /* 54.cpp in Sources */,
+				707129491DEF7E5000AC1DFF /* 42.cpp in Sources */,
+				707129391DEF358F00AC1DFF /* 34.cpp in Sources */,
 				709E0E761DEE5D6F00981460 /* 16.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
