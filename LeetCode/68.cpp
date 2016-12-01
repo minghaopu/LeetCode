@@ -11,7 +11,7 @@ class Solution {
 public:
     vector<string> fullJustify(vector<string>& words, int maxWidth) {
         vector<string> res;
-        int start = 0, end = 1, n = words.size();
+        int start = 0, end = 1, n = (int)words.size();
         while (start < n) {
             int space = 1;
             int wordLength = (int)words[start].length();
