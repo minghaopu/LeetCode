@@ -693,27 +693,27 @@ public:
      *      76. Minimum Window Substring
      *
      */
-    string minWindow(string s, string t) {
-        int map[128];
-        memset(map, 0, sizeof(map));
-        for (char c : t) map[c]++;
-        int begin = 0, end = 0, counter = int(t.size()), head = 0, subLength = INT_MAX;
-        while (end < s.size()) {
-            if (map[s[end++]]-- > 0) counter--;
-            while (counter == 0) {
-                if (end - begin < subLength) {
-                    subLength = end - begin;
-                    head = begin;
-                }
-                if (map[s[begin]] == 0) {
-                    map[s[begin]]++;
-                    counter++;
-                    begin++;
+    class Solution {
+    public:
+        string minWindow(string s, string t) {
+            int map[128];
+            memset(map, 0, sizeof(map));
+            for (auto c : t) map[c]++;
+            int begin = 0, end = 0, counter = t.size(), subLength = INT_MAX, head = 0;
+            
+            while (end < s.size()) {
+                if (map[s[end++]]-- > 0) counter--;
+                while (counter == 0) {
+                    if (end - begin < subLength) {
+                        subLength = end - begin;
+                        head = begin;
+                    }
+                    if (map[s[begin++]]++ == 0) counter++;
                 }
             }
+            return subLength == INT_MAX ? "" : s.substr(head, subLength);
         }
-        return subLength == INT_MAX ? "" : s.substr(head, subLength);
-    }
+    };
     /*
      *
      *      135. Candy
