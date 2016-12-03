@@ -12,7 +12,7 @@ public:
     bool isScramble(string s1, string s2) {
         if (s1 == s2) return true;
         if (s1.length() != s2.length()) return false;
-        int count[128] = {0}, len = s1.length();
+        int count[128] = {0}, len = (int)s1.length();
         for (int i = 0; i < len; i++) {
             count[s1[i]]++;
             count[s2[i]]--;
