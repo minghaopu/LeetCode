@@ -11,26 +11,14 @@
 //#include "312. Burst Balloons.cpp"
 //#include "Hard.cpp"
 //#include "421. Maximum XOR of Two Numbers in an Array.cpp"
-int largestRectangleArea(vector<int>& heights) {
-    heights.push_back(0);
-    int res = 0, height, width;
-    stack<int> S;
-    for (int i = 0; i < heights.size(); i++) {
-        if (S.empty() || heights[S.top()] < heights[i]) S.push(i);
-        else {
-            while (!S.empty() && heights[S.top()] >= heights[i]) {
-                height = heights[S.top()];
-                S.pop();
-                width = S.empty() ? i : i - (S.top() + 1);
-                res = max(res, height * width);
-            }
-            S.push(i);
-        }
-    }
-    return res;
+int minCut(string s) {
+    int l = (int) s.length();
+    int minCuts[l+1];
+    iota(minCuts, minCuts+l+1, -1);
+    for (int i = 0; i <= l; i++) cout<<minCuts[i]<<endl;
+    return 0;
 }
 int main(int argc, const char * argv[]) {
-    vector<int> v {2,1,5,6,2,3};
-    cout<<largestRectangleArea(v)<<endl;
+    minCut("afdsafdsafsa");
     return 0;
 }

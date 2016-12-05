@@ -139,6 +139,15 @@
 		70AF04681DF4BF910009FC38 /* 161.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF04671DF4BF910009FC38 /* 161.cpp */; };
 		70AF046A1DF4C1280009FC38 /* 162.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF04691DF4C1280009FC38 /* 162.cpp */; };
 		70AF046C1DF4C3220009FC38 /* 163.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF046B1DF4C3220009FC38 /* 163.cpp */; };
+		70AF046E1DF4C9570009FC38 /* 164.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF046D1DF4C9570009FC38 /* 164.cpp */; };
+		70AF04701DF4D3010009FC38 /* 165.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF046F1DF4D3010009FC38 /* 165.cpp */; };
+		70AF04721DF4D5CA0009FC38 /* 166.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF04711DF4D5CA0009FC38 /* 166.cpp */; };
+		70AF04741DF4D8520009FC38 /* 168_171.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF04731DF4D8520009FC38 /* 168_171.cpp */; };
+		70AF04761DF4DCE30009FC38 /* 172.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF04751DF4DCE30009FC38 /* 172.cpp */; };
+		70AF04781DF4EE600009FC38 /* 173.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF04771DF4EE600009FC38 /* 173.cpp */; };
+		70AF047A1DF4FE4B0009FC38 /* 174.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF04791DF4FE4B0009FC38 /* 174.cpp */; };
+		70AF047C1DF5046C0009FC38 /* 179.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF047B1DF5046C0009FC38 /* 179.cpp */; };
+		70AF047E1DF5069C0009FC38 /* 187.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70AF047D1DF5069C0009FC38 /* 187.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -288,6 +297,15 @@
 		70AF04671DF4BF910009FC38 /* 161.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 161.cpp; sourceTree = "<group>"; };
 		70AF04691DF4C1280009FC38 /* 162.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 162.cpp; sourceTree = "<group>"; };
 		70AF046B1DF4C3220009FC38 /* 163.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 163.cpp; sourceTree = "<group>"; };
+		70AF046D1DF4C9570009FC38 /* 164.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 164.cpp; sourceTree = "<group>"; };
+		70AF046F1DF4D3010009FC38 /* 165.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 165.cpp; sourceTree = "<group>"; };
+		70AF04711DF4D5CA0009FC38 /* 166.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 166.cpp; sourceTree = "<group>"; };
+		70AF04731DF4D8520009FC38 /* 168_171.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 168_171.cpp; sourceTree = "<group>"; };
+		70AF04751DF4DCE30009FC38 /* 172.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 172.cpp; sourceTree = "<group>"; };
+		70AF04771DF4EE600009FC38 /* 173.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 173.cpp; sourceTree = "<group>"; };
+		70AF04791DF4FE4B0009FC38 /* 174.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 174.cpp; sourceTree = "<group>"; };
+		70AF047B1DF5046C0009FC38 /* 179.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 179.cpp; sourceTree = "<group>"; };
+		70AF047D1DF5069C0009FC38 /* 187.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 187.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,22 +437,31 @@
 				70AF04411DF2B59C0009FC38 /* 138.cpp */,
 				70AF04431DF2B7A00009FC38 /* 139_140.cpp */,
 				70AF04471DF2BF2F0009FC38 /* 141.cpp */,
+				70AF04711DF4D5CA0009FC38 /* 166.cpp */,
 				70AF04491DF2C52D0009FC38 /* 143.cpp */,
 				70AF044D1DF366E60009FC38 /* 146.cpp */,
 				70AF044F1DF36AE60009FC38 /* 147.cpp */,
+				70AF04751DF4DCE30009FC38 /* 172.cpp */,
 				70AF044B1DF2C8980009FC38 /* 148.cpp */,
 				70AF04651DF4B5200009FC38 /* 159_340_395.cpp */,
 				70AF04511DF36D2D0009FC38 /* 149.cpp */,
+				70AF04731DF4D8520009FC38 /* 168_171.cpp */,
 				70AF04531DF373410009FC38 /* 150.cpp */,
+				70AF04771DF4EE600009FC38 /* 173.cpp */,
+				70AF04791DF4FE4B0009FC38 /* 174.cpp */,
 				70AF04551DF37A7E0009FC38 /* 151_186.cpp */,
 				70AF04571DF37BAA0009FC38 /* 152.cpp */,
 				70AF04671DF4BF910009FC38 /* 161.cpp */,
 				70AF045B1DF3CC8A0009FC38 /* 153_154.cpp */,
 				70AF045D1DF3D3BA0009FC38 /* 155.cpp */,
+				70AF047B1DF5046C0009FC38 /* 179.cpp */,
 				70AF04691DF4C1280009FC38 /* 162.cpp */,
+				70AF047D1DF5069C0009FC38 /* 187.cpp */,
+				70AF046D1DF4C9570009FC38 /* 164.cpp */,
 				70AF046B1DF4C3220009FC38 /* 163.cpp */,
 				70AF045F1DF3DB2E0009FC38 /* 156.cpp */,
 				70AF04591DF3C7A60009FC38 /* 169.cpp */,
+				70AF046F1DF4D3010009FC38 /* 165.cpp */,
 			);
 			name = round2;
 			sourceTree = "<group>";
@@ -524,10 +551,12 @@
 				70AF04481DF2BF300009FC38 /* 141.cpp in Sources */,
 				707129831DF0070F00AC1DFF /* 71.cpp in Sources */,
 				707129691DEFD2A900AC1DFF /* 58.cpp in Sources */,
+				70AF047A1DF4FE4B0009FC38 /* 174.cpp in Sources */,
 				707129651DEFCBA200AC1DFF /* 56.cpp in Sources */,
 				70AF04261DF255330009FC38 /* 120.cpp in Sources */,
 				70AF04421DF2B59C0009FC38 /* 138.cpp in Sources */,
 				707129671DEFD08A00AC1DFF /* 57. Insert Interval.cpp in Sources */,
+				70AF04741DF4D8520009FC38 /* 168_171.cpp in Sources */,
 				707129531DEFA45A00AC1DFF /* 46.cpp in Sources */,
 				7071297D1DEFFD2A00AC1DFF /* 70.cpp in Sources */,
 				70AF044A1DF2C52D0009FC38 /* 143.cpp in Sources */,
@@ -548,6 +577,7 @@
 				707129891DF09CE900AC1DFF /* 73.cpp in Sources */,
 				70AF04661DF4B5200009FC38 /* 159_340_395.cpp in Sources */,
 				707129451DEF75E500AC1DFF /* 40.cpp in Sources */,
+				70AF04721DF4D5CA0009FC38 /* 166.cpp in Sources */,
 				707129371DEF30E100AC1DFF /* 33_81.cpp in Sources */,
 				70AF040C1DF13E400009FC38 /* 97.cpp in Sources */,
 				70AF04161DF1500A0009FC38 /* 104_111.cpp in Sources */,
@@ -561,10 +591,12 @@
 				70AF043A1DF2A6220009FC38 /* 133.cpp in Sources */,
 				70AF04381DF2941D0009FC38 /* 131_132.cpp in Sources */,
 				7071295F1DEFC40F00AC1DFF /* 52.cpp in Sources */,
+				70AF04761DF4DCE30009FC38 /* 172.cpp in Sources */,
 				70AF04361DF291ED0009FC38 /* 130.cpp in Sources */,
 				70AF04281DF25D160009FC38 /* 121_122_123_188_309.cpp in Sources */,
 				7071298F1DF0CA7E00AC1DFF /* 77.cpp in Sources */,
 				709E0E7E1DEE69F100981460 /* 19.cpp in Sources */,
+				70AF047E1DF5069C0009FC38 /* 187.cpp in Sources */,
 				70AF04181DF1566C0009FC38 /* 105_106.cpp in Sources */,
 				709E0E7C1DEE67BA00981460 /* 18.cpp in Sources */,
 				70AF045A1DF3C7A60009FC38 /* 169.cpp in Sources */,
@@ -577,6 +609,7 @@
 				70AF04301DF273EF0009FC38 /* 126_127.cpp in Sources */,
 				70AF046A1DF4C1280009FC38 /* 162.cpp in Sources */,
 				707129A51DF11D7B00AC1DFF /* 93.cpp in Sources */,
+				70AF046E1DF4C9570009FC38 /* 164.cpp in Sources */,
 				7071293B1DEF37C700AC1DFF /* 35.cpp in Sources */,
 				707129251DEE8BDF00AC1DFF /* 24.cpp in Sources */,
 				707129911DF0CD6400AC1DFF /* 78_90.cpp in Sources */,
@@ -600,6 +633,7 @@
 				70AF045E1DF3D3BA0009FC38 /* 155.cpp in Sources */,
 				7071292F1DEEA8F600AC1DFF /* 29.cpp in Sources */,
 				70AF042A1DF26AD70009FC38 /* 114.cpp in Sources */,
+				70AF04701DF4D3010009FC38 /* 165.cpp in Sources */,
 				70AF04341DF28E830009FC38 /* 129.cpp in Sources */,
 				7071291F1DEE812400AC1DFF /* 21.cpp in Sources */,
 				709E0E6C1DEE4D5200981460 /* 9. Palindrome Number.cpp in Sources */,
@@ -615,6 +649,7 @@
 				707129A71DF126A300AC1DFF /* 94_144_145.cpp in Sources */,
 				70AF042E1DF26F920009FC38 /* 125.cpp in Sources */,
 				70AF04241DF250FF0009FC38 /* 118_119.cpp in Sources */,
+				70AF04781DF4EE600009FC38 /* 173.cpp in Sources */,
 				707129471DEF785200AC1DFF /* 41.cpp in Sources */,
 				7071297B1DEFF89200AC1DFF /* 67.cpp in Sources */,
 				7071292B1DEE9B9800AC1DFF /* 27.cpp in Sources */,
@@ -651,6 +686,7 @@
 				707129851DF093B400AC1DFF /* 75.cpp in Sources */,
 				70AF044E1DF366E60009FC38 /* 146.cpp in Sources */,
 				70AF04561DF37A7E0009FC38 /* 151_186.cpp in Sources */,
+				70AF047C1DF5046C0009FC38 /* 179.cpp in Sources */,
 				707129391DEF358F00AC1DFF /* 34.cpp in Sources */,
 				709E0E761DEE5D6F00981460 /* 16.cpp in Sources */,
 			);
