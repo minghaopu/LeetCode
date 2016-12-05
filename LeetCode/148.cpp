@@ -20,7 +20,6 @@ public:
     ListNode* sortList(ListNode* head) {
         if (!head || !head->next) return head;
         ListNode *slow = head, *fast = head->next;// fast has to be head->next;
-        int count = 0;
         while (fast && fast->next) {
             slow = slow->next;
             fast = fast->next->next;
