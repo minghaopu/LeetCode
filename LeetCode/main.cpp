@@ -11,14 +11,15 @@
 //#include "312. Burst Balloons.cpp"
 //#include "Hard.cpp"
 //#include "421. Maximum XOR of Two Numbers in an Array.cpp"
-int minCut(string s) {
-    int l = (int) s.length();
-    int minCuts[l+1];
-    iota(minCuts, minCuts+l+1, -1);
-    for (int i = 0; i <= l; i++) cout<<minCuts[i]<<endl;
-    return 0;
-}
 int main(int argc, const char * argv[]) {
-    minCut("afdsafdsafsa");
+    priority_queue<int, vector<int>, greater<int>> q;
+    for (int i = 0; i < 10; i++) {
+        q.push(i);
+        cout<<q.top()<<endl;
+    }
+    for (int i = 0; i < 10; i++) {
+        q.pop();
+        cout<<q.top()<<endl;
+    }
     return 0;
 }

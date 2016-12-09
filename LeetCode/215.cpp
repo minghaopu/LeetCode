@@ -10,7 +10,7 @@
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-        int left = 0, right = nums.size() - 1;
+        int left = 0, right = (int)nums.size() - 1;
         while (true) {
             int p = partition(nums, left, right);
             if (p == k-1) return nums[p];

@@ -25,6 +25,7 @@
 #include <map>
 #include <bitset>
 #include <numeric>
+#include <functional>
 using namespace std;
 
 

@@ -14,7 +14,7 @@ public:
         long pre = lower-1, cur = 0;
         for (int i = 0; i <= nums.size(); i++) {
             cur = i == nums.size() ? upper + 1 : nums[i];
-            if (cur - pre >= 2) res.push_back(getRange(pre+1, cur-1));
+            if (cur - pre >= 2) res.push_back(getRange((int)pre+1, (int)cur-1));
             pre = cur;
         }
         return res;

@@ -14,7 +14,7 @@ public:
         if (nums.empty()) return {};
         nums.push_back(INT_MAX);
         vector<string> res;
-        int pre = nums[0], i = 1;
+        int pre = nums[0];
         for (int i = 1; i < nums.size(); i++) {
             if (nums[i] - nums[i-1] == 1) continue;
             else if (nums[i-1] == pre) {
