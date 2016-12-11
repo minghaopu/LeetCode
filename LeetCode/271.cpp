@@ -6,7 +6,7 @@
 //  Copyright © 2016 Minghao Pu. All rights reserved.
 //
 
-#include <stdio.h>
+#include "Header.h"
 class Codec {
 public:
     
@@ -24,7 +24,7 @@ public:
         vector<string> res;
         int head = 0;
         while (head < s.length()) {
-            int po = s.find('@', head);
+            int po = (int)s.find('@', head);
             int len = stoi(s.substr(head, po - head));
             head = po + 1;
             res.push_back(s.substr(head, len));
