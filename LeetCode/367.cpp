@@ -16,8 +16,8 @@ public:
             mid = left + (right - left) / 2;
             val = mid * mid;
             if (val == num) return true;
-            else if (val < num) left = mid + 1;
-            else right = mid - 1;
+            else if (val < num) left = (int) mid + 1;
+            else right = (int) mid - 1;
             
         }
         return false;

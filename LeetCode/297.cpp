@@ -28,7 +28,7 @@ public:
         TreeNode* front = NULL;
         int size = 0;
         while (!q.empty()) {
-            size = q.size();
+            size = (int)q.size();
             while (size--) {
                 front = q.front();
                 q.pop();

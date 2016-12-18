@@ -14,7 +14,7 @@ public:
         int res = 0, row = (int)grid.size(), col = (int)grid[0].size();
         int rm = 0, cc = 0;
         int* cm = new int[col];
-        memset(cm, 0, sizeof(cm));
+        memset(cm, 0, sizeof(int) * col);
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 if (grid[i][j] == 'W') continue;
