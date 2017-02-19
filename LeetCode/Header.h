@@ -26,6 +26,7 @@
 #include <bitset>
 #include <numeric>
 #include <functional>
+#include <tuple>
 using namespace std;
 
 
