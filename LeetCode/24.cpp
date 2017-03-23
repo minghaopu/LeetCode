@@ -21,17 +21,14 @@ public:
         if (!head) return head;
         ListNode *newHead = new ListNode(0);
         newHead->next = head;
-        ListNode *pre = newHead, *p = head, *next = head->next;
-        
-        while (p->next) {
+        ListNode *pre = newHead, *p = head, *next;
+        while (p && p->next) {
+            next = p->next;
             pre->next = next;
             p->next = next->next;
             next->next = p;
-            // next = NULL;
             pre = p;
             p = p->next;
-            if (p) next = p->next;
-            else break;
         }
         return newHead->next;
         

@@ -23,3 +23,17 @@ public:
         return int(sign * num);
     }
 };
+class Solution2 {
+public:
+    int reverse(int x) {
+        int res = 0;
+        while (x) {
+            int tail = x % 10;
+            int tmp = res * 10 + tail;
+            if ((tmp - tail) / 10 != res) return 0;
+            res = tmp;
+            x = x / 10;
+        }
+        return res;
+    }
+};

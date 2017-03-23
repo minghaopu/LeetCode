@@ -18,48 +18,30 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        
+        if (!l1) return l2;
+        if (!l2) return l1;
+        int carry = 0, val = 0;
+        ListNode *p = l1, *q = l2;
         ListNode* newHead = new ListNode(0);
-        ListNode *p = newHead;
-        int carry = 0;
-        while (l1 && l2) {
-            p->next = new ListNode(l1->val + l2->val + carry);
-            if (p->next->val > 9) {
-                p->next->val -= 10;
-                carry = 1;
-            } else {
-                carry = 0;
-            }
-            p = p->next;
-            l1 = l1->next;
-            l2 = l2->next;
-        }
-        if (l1) {
-            while (l1) {
-                p->next = new ListNode(l1->val + carry);
-                if (p->next->val > 9) {
-                    p->next->val -= 10;
-                    carry = 1;
-                } else {
-                    carry = 0;
-                }
+        ListNode* t = newHead;
+        while (p || q || carry) {
+            if (p && q) {
+                val = p->val + q->val + carry;
                 p = p->next;
-                l1 = l1->next;
-            }
-        } else if (l2) {
-            while (l2) {
-                p->next = new ListNode(l2->val + carry);
-                if (p->next->val > 9) {
-                    p->next->val -= 10;
-                    carry = 1;
-                } else {
-                    carry = 0;
-                }
+                q = q->next;
+            } else if (p) {
+                val = p->val + carry;
                 p = p->next;
-                l2 = l2->next;
+            } else if (q) {
+                val = q->val + carry;
+                q = q->next;
+            } else if (carry) {
+                val = carry;
             }
+            t->next = new ListNode(val % 10);
+            carry = val / 10;
+            t = t->next;
         }
-        if (carry) p->next = new ListNode(carry);
         return newHead->next;
     }
 };

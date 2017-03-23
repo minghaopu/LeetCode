@@ -7,34 +7,22 @@
 //
 
 #include "Header.h"
-class Queue {
-private:
-    stack<int> sin, sout;
+class Solution {
 public:
-    // Push element x to the back of queue.
-    void push(int x) {
-        sin.push(x);
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> s(nums.begin(), nums.end());
+        return s.size() < nums.size();
     }
-    
-    // Removes the element from in front of queue.
-    void pop(void) {
-        peek();
-        sout.pop();
-    }
-    
-    // Get the front element.
-    int peek(void) {
-        if (sout.empty()) {
-            while (!sin.empty()) {
-                sout.push(sin.top());
-                sin.pop();
-            }
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        int n = (int) nums.size();
+        if (n < 2 || k <= 0) return false;
+        if (k > n) k = n - 1;
+        unordered_set<int> cache;
+        for (int i = 0; i < n; i++) {
+            if (i > k) cache.erase(nums[i - k - 1]);
+            if (cache.count(nums[i])) return true;
+            cache.insert(nums[i]);
         }
-        return sout.top();
-    }
-    
-    // Return whether the queue is empty.
-    bool empty(void) {
-        return sin.empty() && sout.empty();
+        return false;
     }
 };
