@@ -91,7 +91,11 @@ struct UndirectedGraphNode {
     vector<UndirectedGraphNode *> neighbors;
     UndirectedGraphNode(int x) : label(x) {};
 };
-
+struct Info {
+    int id;
+    int rating;
+    Info(int i, int r): id(i), rating(r) {};
+};
 
 #endif /* Header_h */
 
